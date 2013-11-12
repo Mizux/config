@@ -33,7 +33,7 @@ bindkey '\eOB' down-line-or-beginning-search
 bindkey '\e[B' down-line-or-beginning-search
 
 # Completion
-zstyle :compinstall filename '/home/clemolgat/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF
