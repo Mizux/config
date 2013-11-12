@@ -46,3 +46,12 @@ alias qo='qibuild open'
 alias qc='qibuild configure'
 alias qm='qibuild make'
 alias qd='qibuild deploy'
+alias qi='qibuild install'
+
+function qicd {
+  p=$(python -m 'qicd' $1)
+  if [[ $? -ne 0 ]]; then
+    return
+  fi
+  cd ${p}
+}
