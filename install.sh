@@ -3,7 +3,7 @@
 echo "Warning !\nThis script won't do backup !"
 
 echo "Installing zsh configuration..."
-cp zshr ~/.zshrc
+cp zshrc ~/.zshrc
 echo "Installing zsh configuration DONE"
 
 echo "Installing vim configuration..."
