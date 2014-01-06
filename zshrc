@@ -1,7 +1,25 @@
 # Prompt
 autoload -U colors && colors
-PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%~ %{$reset_color%}%#"
-RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
+
+local c_red="%{$fg[red]%}"
+local c_green="%{$fg[green]%}"
+local c_blue="%{$fg[blue]%}"
+local c_yellow="%{$fg[yellow]%}"
+local c_reset="%{$reset_color%}"
+
+local blue_op="%{$fg[blue]%}[%{$reset_color%}"
+local blue_cp="%{$fg[blue]%}]%{$reset_color%}"
+
+local path_p="${blue_op}${c_yellow}%~${c_reset}${blue_cp}"
+local user_host="${c_red}%n${c_reset}@${c_yellow}%m${c_reset}"
+local ret_status="${blue_op}%(?,${c_green}%?${c_reset},${c_red}%?${c_reset})${blue_cp}"
+local hist_no="${blue_op}%h${blue_cp}"
+local smiley="%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})"
+PROMPT="${ret_status}─${path_p}
+${blue_op}${smiley}${blue_cp}─${user_host} %#"
+local cur_cmd="${blue_op}%_${blue_cp}"
+PROMPT2="${cur_cmd}> "
+
 bindkey -e
 export TERM=xterm-256color
 
