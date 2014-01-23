@@ -11,6 +11,10 @@ cp vimrc ~/.vimrc
 cp -r vim ~/.vim
 echo "Installing vim configuration DONE"
 
+echo "Installing git configuration..."
+cp gitconfig ~/.gitconfig
+echo "Installing git configuration DONE"
+
 echo "Installing aldebaran configuration..."
 mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
