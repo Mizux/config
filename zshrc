@@ -73,3 +73,12 @@ function qicd {
   fi
   cd ${p}
 }
+
+# Need minicom to use serial port on robot
+ttyusb() {
+  sudo ln -sf /dev/ttyUSB[0-9] /dev/ttyUSBX
+  echo `ls -la /dev/ttyUSBX`
+  sudo mkdir -pv /etc/minicom
+  sudo sh -c 'echo "pu port /dev/ttyUSBX\npu rtscts No" > /etc/minicom/minirc.dfl'
+  sudo minicom --color=on
+}
