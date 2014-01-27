@@ -26,14 +26,17 @@ export TERM=xterm-256color
 # PATH
 export PATH=~/.local/bin:$PATH
 # Alias
-alias ls='ls --group-directories-first --color'
+alias ls='ls --group-directories-first'
+alias lsc='ls --color'
 alias ll='ls -lh'
+alias llc='ll --color'
 alias la='ls -lha'
+alias lac='la --color'
 
-# History stuff
+# History
 HISTFILE=~/.histfile
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=8192
+SAVEHIST=8192
 setopt append_history
 setopt hist_expire_dups_first
 setopt hist_ignore_space
@@ -51,6 +54,7 @@ bindkey '\eOB' down-line-or-beginning-search
 bindkey '\e[B' down-line-or-beginning-search
 
 # Completion
+setopt autocd
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
