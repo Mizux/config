@@ -1,0 +1,21 @@
+! Urxvt Settings
+
+urxvt*modifier : mod4
+URxvt*background: black
+URxvt*foreground: white
+urxvt*font : xft:Bitstream Vera Sans Mono:pixelsize=10
+
+URxvt*scrollBar: False
+
+! Lien cliquable
+! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      firefox
+URxvt.matcher.button:   3
+
+! Prise en charge des onglets
+! shift+bas ou clic sur NEW= ouvrir nouvel onglet, 
+! shift + fleche gauche/droite=navigation dans les onglets. 
+! ctrl + fleche gauche/droite= deplacement onglet
+! ctrl+d ou taper exit = fermer onglet/terminal
+URxvt.perl-ext-common:  default,tabbed
