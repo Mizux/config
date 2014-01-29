@@ -1,22 +1,22 @@
 [user]
-	email = clemolgat@aldebaran-robotics.com
-	name = clemolgat
+email = dev@mizux.dev
+name = mizux
 
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive = auto
-    ui = true
-    pager = true
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = cyan
+added = yellow
+changed = green
+untracked = cyan
 
 [push]
-    default = current
+default = current
 
 [ui]
 color = auto
