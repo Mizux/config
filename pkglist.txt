@@ -1,0 +1,23 @@
+# System
+zsh perl-rename tree htop hwinfo yaourt
+unrar unzip p7zip
+acpi gvfs
+alsa-utils scrot
+lxappearance gtk-engine-murrine
+oxygen-icons oxygen-icons-svg
+anthy uim ttf-hanazono ttf-inconsolata ttf-sazanami
+awesome
+
+# Media
+chromium firefox flashplugin filezilla xchat
+smplayer audacious audacious-plugins
+gimp inkscape feh gcolor2 blender wings3d
+acroread calibre
+dwarffortress nethack wesnoth
+
+# Dev
+gvim git meld sloccount
+qtcreator clang cmake ctags gdb valgrind
+boost bullet openscenegraph
+doxygen graphviz upx
+desmume
