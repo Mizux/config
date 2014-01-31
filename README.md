@@ -28,5 +28,5 @@ ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 mkinitcpio -p linux
 pacman -S syslinux
 syslinux-install_update -iam
-# edit /boot/syslinux/syslinux.cfg
+then edit /boot/syslinux/syslinux.cfg if /dev/sdaX is not correct
 systemctl enable wicd
