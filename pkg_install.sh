@@ -24,6 +24,6 @@ pacman -Sy --needed unrar unzip p7zip \
 chromium firefox flashplugin filezilla xchat \
 smplayer audacious audacious-plugins \
 scrot gimp inkscape feh gcolor2 blender wings3d \
-calibre \
+calibre zathura zathura-pdf-mupdf \
 nethack wesnoth
 echo "install Media Done"
