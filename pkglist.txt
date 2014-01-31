@@ -1,12 +1,16 @@
 # System
-zsh perl-rename tree htop hwinfo yaourt
+base base-develdialog  zsh vim
+xorg-server xorg-xinit xorg-server-utils mesa
+nvidia nvidia-utils nvidia-libgl
+awesome rxvt-unicode
+
+perl-rename tree htop hwinfo yaourt
 unrar unzip p7zip
 acpi gvfs
 alsa-utils scrot
 lxappearance gtk-engine-murrine
 oxygen-icons oxygen-icons-svg
 anthy uim ttf-hanazono ttf-inconsolata ttf-sazanami
-awesome
 
 # Media
 chromium firefox flashplugin filezilla xchat
