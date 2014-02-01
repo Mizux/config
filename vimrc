@@ -51,6 +51,10 @@ set ssop-=folds      " do not store folds
 
 " Remove trailing whitespace
 function! CleanWhiteSpace()
+  " Don't strip on these filetypes
+  if &ft =~ 'markdown\|perl'
+    return
+  endif
   let _s=@/
   let l = line(".")
   let c = col(".")
@@ -60,8 +64,7 @@ function! CleanWhiteSpace()
 endfunction()
 
 " Remove trailing whitespaces when saving:
-command! -nargs=0 CleanWhiteSpace :call CleanWhiteSpace()
-autocmd bufwritepre * :CleanWhiteSpace
+autocmd bufwritepre * call CleanWhiteSpace()
 
 " Usual include path
 set path+=.;
