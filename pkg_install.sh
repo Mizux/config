@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 
 echo "install System..."
-pacman -Sy --needed base base-devel dialog  zsh gvim \
+pacman -Sy --needed base base-devel dialog acpid zsh gvim \
 perl-rename tree htop hwinfo acpi alsa-utils \
 xorg-server xorg-xinit xorg-server-utils mesa \
 nvidia nvidia-utils nvidia-libgl \
