@@ -1,12 +1,12 @@
 #!/usr/bin/bash
 
 echo "install System..."
-pacman -Sy --needed base base-devel dialog acpid zsh gvim \
-perl-rename tree htop hwinfo acpi alsa-utils \
+pacman -Sy --needed base base-devel udevil dialog zsh gvim \
+perl-rename tree htop hwinfo acpi acpid alsa-utils \
 xorg-server xorg-xinit xorg-server-utils mesa \
 nvidia nvidia-utils nvidia-libgl \
-awesome rxvt-unicode \
-lxappearance gtk-engine-murrine oxygen-icons oxygen-icons-svg \
+awesome rxvt-unicode rox \
+lxappearance gtk-engine-murrine gtk-aurora-engine oxygen-icons oxygen-icons-svg \
 anthy uim otf-ipafont ttf-hanazono \
 ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-freefont
 echo "install System Done"

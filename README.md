@@ -32,3 +32,4 @@ pacman -S syslinux
 syslinux-install_update -iam  
 then edit /boot/syslinux/syslinux.cfg if /dev/sdaX is not correct  
 systemctl enable wicd  
+activate Color and multilib in /etc/pacman.conf  
