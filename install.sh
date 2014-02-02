@@ -19,7 +19,9 @@ echo "Installing X configuration..."
 cp Xdefaults ~/.Xdefaults
 cp xinitrc ~/.xinitrc
 cp xsession ~/.xsession
-echo "Installing X configuration DONE"
+cp gtkrc-2.0 ~/.gtkrc-2.0
+cp gtkrc-2.0.mine ~/.gtkrc-2.0.mine
+echo "Insalling X configuration DONE"
 
 echo "Installing awesome configuration..."
 mkdir -pv ~/.config
