@@ -7,6 +7,12 @@
 xsetroot -cursor_name left_ptr
 setxkbmap fr
 
+export GTK_IM_MODULE='uim'
+export QT_IM_MODULE='uim'
+uim-xim &
+export XMODIFIERS='@im=uim'
+uim-toolbar-gtk &
+
 exec awesome
 #exec xmonad
 
