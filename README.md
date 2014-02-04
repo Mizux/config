@@ -35,7 +35,7 @@ systemctl enable wicd
 activate Color and multilib in /etc/pacman.conf
 
 Japanese
-++++++++
+--------
 
 gtk-query-immodules-2.0  
 copy in ~/.gtkrc-2.0 :  
