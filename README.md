@@ -25,7 +25,7 @@ archroot arch-chroot /mnt
 edit /etc/locale.gen (fr, ja & en_us)  
 locale-gen
 echo "LANG=\"en_US.UTF-8\"" > /etc/locale.conf  
-echo "KEYMAP=fr-pc" > /etc/vconsole.conf  
+echo "KEYMAP=fr-latin9" > /etc/vconsole.conf  
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  
 mkinitcpio -p linux  
 pacman -S syslinux  
