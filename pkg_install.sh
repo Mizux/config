@@ -3,7 +3,7 @@
 echo "install System..."
 pacman -Syu
 pacman -S --needed base base-devel udevil dialog zsh gvim \
-perl-rename tree htop hwinfo acpi acpid \
+perl-rename tree htop hwinfo acpi acpid openssh \
 xorg-server xorg-xinit xorg-server-utils mesa \
 nvidia nvidia-utils nvidia-libgl \
 awesome rxvt-unicode rox \
@@ -26,5 +26,5 @@ chromium firefox flashplugin filezilla xchat \
 smplayer vlc audacious audacious-plugins libcue libmms neon wavpack alsa-utils  \
 scrot gimp inkscape feh gcolor2 blender wings3d \
 calibre zathura zathura-pdf-mupdf \
-nethack wesnoth
+nethack wesnoth dwarffortress
 echo "install Media Done"
