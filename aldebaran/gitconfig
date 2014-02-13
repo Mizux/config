@@ -1,0 +1,25 @@
+[user]
+email = naogentoo@aldebaran-robotics.com
+name = naogentoo
+
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
+
+[color "status"]
+added = yellow
+changed = green
+untracked = cyan
+
+[push]
+default = current
+
+[ui]
+color = auto
+
+[merge]
+tool = meld

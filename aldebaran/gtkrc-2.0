@@ -1,0 +1,9 @@
+style "user-font"
+{
+	font_name = "DejaVu Sans Semi-Condensed 10"
+}
+widget_class "*" style "user-font"
+
+gtk-theme-name="Xfce-dusk"
+gtk-icon-theme-name="oxygen"
+gtk-font-name="DejaVu Sans Semi-Condensed 10"
