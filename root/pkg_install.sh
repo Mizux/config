@@ -2,8 +2,8 @@
 
 echo "install System..."
 pacman -Syu
-pacman -S --needed base base-devel udevil dialog zsh gvim \
-perl-rename tree htop hwinfo acpi acpid openssh \
+pacman -S --needed base base-devel udevil ntfs-3g dialog zsh gvim \
+perl-rename tree htop hwinfo acpi acpid openssh rsync \
 xorg-server xorg-xinit xorg-server-utils mesa \
 nvidia nvidia-utils nvidia-libgl \
 awesome rxvt-unicode rox \
