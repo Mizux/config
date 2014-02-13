@@ -32,6 +32,7 @@ alias ll='ls -lh'
 alias llc='ll --color'
 alias la='ls -lha'
 alias lac='la --color'
+alias qtcreator='qtcreator -style gtk'
 
 # History
 HISTFILE=~/.histfile
@@ -58,12 +59,6 @@ setopt autocd
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
-# Aldebaran STUFF
-export PATH=~/Qt/Tools/QtCreator/bin:$PATH
-export PATH=~/eclipse/android-sdks/platform-tools:$PATH
-
-export PYTHONPATH=~/pynaoqi-python2.7-1.24.0.109-linux64:$PYTHONPATH
-
 alias qo='qibuild open'
 alias qc='qibuild configure'
 alias qm='qibuild make'
@@ -76,13 +71,4 @@ function qicd {
     return
   fi
   cd ${p}
-}
-
-# Need minicom to use serial port on robot
-ttyusb() {
-  sudo ln -sf /dev/ttyUSB[0-9] /dev/ttyUSBX
-  echo `ls -la /dev/ttyUSBX`
-  sudo mkdir -pv /etc/minicom
-  sudo sh -c 'echo "pu port /dev/ttyUSBX\npu rtscts No" > /etc/minicom/minirc.dfl'
-  sudo minicom --color=on
 }

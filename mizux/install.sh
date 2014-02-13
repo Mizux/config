@@ -20,15 +20,9 @@ cp Xdefaults ~/.Xdefaults
 cp xinitrc ~/.xinitrc
 cp xsession ~/.xsession
 cp gtkrc-2.0 ~/.gtkrc-2.0
-cp gtkrc-2.0.mine ~/.gtkrc-2.0.mine
 echo "Insalling X configuration DONE"
 
 echo "Installing awesome configuration..."
-mkdir -pv ~/.config
-cp -r awesome ~/.config
+mkdir -pv ~/.config/awesome
+cp -r rc.lua ~/.config/awesome/rc.lua
 echo "Installing awesome configuration DONE"
-
-echo "Installing aldebaran configuration..."
-mkdir -pv ~/.local/bin
-cp rlist ~/.local/bin/rlist
-echo "Installing aldebaran configuration DONE"
