@@ -1,8 +1,9 @@
 #!/bin/bash
-if [f -ne 1]
-  echo "login will be $1 (${1}@aldebaran-robotics.com)"
+if [ $# -eq 1 ]; then
+  echo "login will be $1 ($1@aldebaran-robotics.com)"
   LOGIN = $1
 else
+  echo "login will be naogentoo (naogentoo@aldebaran-robotics.com)"
   LOGIN = naogentoo
 fi
 
