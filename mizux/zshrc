@@ -14,9 +14,9 @@ local path_p="${blue_op}${c_yellow}%~${c_reset}${blue_cp}"
 local user_host="${c_red}%n${c_reset}@${c_yellow}%m${c_reset}"
 local ret_status="${blue_op}%(?,${c_green}%?${c_reset},${c_red}%?${c_reset})${blue_cp}"
 local hist_no="${blue_op}%h${blue_cp}"
-local smiley="%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})"
+local smiley="${blue_op}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${blue_cp}"
 PROMPT="${ret_status}─${path_p}
-${blue_op}${smiley}${blue_cp}─${user_host} %#"
+${smiley}─${user_host} %#"
 local cur_cmd="${blue_op}%_${blue_cp}"
 PROMPT2="${cur_cmd}> "
 
