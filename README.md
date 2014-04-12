@@ -53,6 +53,8 @@ pacman -S wicd
 systemctl enable wicd  
 activate Color and multilib in /etc/pacman.conf
 
+useradd -g users -m -s /bin/bash <username>  
+
 Japanese
 --------
 
