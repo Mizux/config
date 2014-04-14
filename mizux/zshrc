@@ -59,6 +59,15 @@ setopt autocd
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
+function build_complete {
+  if [ -d build ];then
+    rm -rf build
+  fi
+  mkdir build && cd build
+  CC="$HOME/.vim/bin/cc_args.py gcc" CXX="$HOME/.vim/bin/cc_args.py g++" cmake ..
+  make -l2
+}
+
 alias qo='qibuild open'
 alias qc='qibuild configure'
 alias qm='qibuild make'
