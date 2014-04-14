@@ -87,6 +87,8 @@ set pumheight=16
 let g:SuperTabDefaultCompletionType="context"
 
 " Clang Complete
+" use Clang library
+let g:clang_use_library=1
 "Disable auto popup, use <Tab> to autocomplete
 "if equal to 1, automatically complete after '->', '.', '::'
 let g:clang_complete_auto = 0
