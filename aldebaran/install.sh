@@ -35,5 +35,5 @@ echo "Installing awesome configuration DONE"
 echo "Installing aldebaran configuration..."
 mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
-pip install qibuild --user
+pip2 install qibuild --user
 echo "Installing aldebaran configuration DONE"
