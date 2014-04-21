@@ -10,7 +10,7 @@ URxvt*scrollBar: False
 ! Lien cliquable
 ! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
 URxvt.perl-ext-common:  default,matcher
-URxvt.urlLauncher:      firefox
+URxvt.urlLauncher:      chromium
 URxvt.matcher.button:   3
 
 ! Prise en charge des onglets
