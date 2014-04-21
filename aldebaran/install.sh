@@ -36,4 +36,5 @@ echo "Installing aldebaran configuration..."
 mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
 pip2 install qibuild --user
+pip2 install sphinxcontrib-doxylink --user
 echo "Installing aldebaran configuration DONE"
