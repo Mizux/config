@@ -14,10 +14,13 @@ Archlinux package config
 
 in root run ./pkg_install.sh
 
-Archlinux configuration
+Archlinux Install
 -----------------------
-loadkeys jp106/fr-latin9
+```
+loadkeys jp106
+loadkeys fr-latin9
 wifi-menu
+```
 
 cfdisk (82 swap )...  
 
@@ -29,12 +32,15 @@ cfdisk (82 swap )...
 | sda4 | /home | ALL    | mkfs.ext4  |  
 
 mount all...  
+```
 mount /dev/sda3 /mnt  
 mkdir /mnt/{boot,home}  
 mount /dev/sda1 /mnt/boot  
 mount /dev/sda4 /mnt/home  
 swapon /dev/sda2  
-
+```
+Install...
+```
 pacstrap /mnt base base-devel syslinux vim  
 genfstab -L -p /mnt >> /mnt/etc/fstab  
 archroot arch-chroot /mnt  
@@ -46,18 +52,34 @@ echo "KEYMAP=jp106" > /etc/vconsole.conf
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  
 
 mkinitcpio -p linux  
-syslinux-install_update -iam  
+syslinux-install_update -iam
+```
 then edit /boot/syslinux/syslinux.cfg if /dev/sdaX is not correct  
 
-pacman -S wicd  
-systemctl enable wicd  
+Pacman...  
 activate Color and multilib in /etc/pacman.conf
+
+Wifi...
+```
+pacman -S wicd  
+systemctl enable wicd
+```
+
 
 useradd -g users -m -s /bin/bash <username>  
 
+X Server multi-user
+-------------------
+
+Edit /etc/pam.d/su su-l and add:  
+```
+session        optional        pam_xauth.so
+```
 Japanese
 --------
 
 gtk-query-immodules-2.0  
-copy in ~/.gtkrc-2.0 :  
-  im_module_file "/etc/gtk-2.0/gtk.immodules"
+copy in ~/.gtkrc-2.0 :
+```
+im_module_file "/etc/gtk-2.0/gtk.immodules"
+```
