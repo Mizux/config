@@ -14,9 +14,9 @@ echo "install System Done"
 
 echo "install Dev..."
 pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
-ipython python2-pip python2-sphinx \
+ipython python2-pip python2-sphinx python2-numpy \
 qtcreator clang cmake ninja gdb strace valgrind \
-boost bullet eigen openscenegraph \
+boost bullet eigen openscenegraph opencv \
 doxygen graphviz qt qt4 ctags upx \
 desmume
 echo "install Dev Done"
