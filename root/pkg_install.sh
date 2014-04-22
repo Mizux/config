@@ -16,7 +16,7 @@ echo "install Dev..."
 pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
 ipython python2-pip python2-sphinx \
 qtcreator clang cmake ninja gdb strace valgrind \
-boost bullet openscenegraph \
+boost bullet eigen openscenegraph \
 doxygen graphviz qt qt4 ctags upx \
 desmume
 echo "install Dev Done"
