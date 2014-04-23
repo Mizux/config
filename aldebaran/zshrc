@@ -25,7 +25,7 @@ local cur_cmd="${cyan_op}%_${cyan_cp}"
 PROMPT2="${cur_cmd}> "
 
 bindkey -e
-export TERM=xterm-256color
+export TERM=xterm # robot don't support xterm-256 TERM
 
 # PATH
 export PATH=~/.local/bin:$PATH
