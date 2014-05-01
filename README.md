@@ -65,12 +65,20 @@ pacman -S wicd
 systemctl enable wicd
 ```
 
+Printer...
+```
+pacman -S --needed cups ghostscript hplip
+systemctl enable cups
+systemctl start cups
+```
+Then add printer using http://localhost:631/  
 
+Adding User
+-----------
 useradd -g users -m -s /bin/bash <username>  
 
 X Server multi-user
 -------------------
-
 Edit /etc/pam.d/su su-l and add:  
 ```
 session        optional        pam_xauth.so
