@@ -3,7 +3,7 @@
 echo "install System..."
 pacman -Syu
 pacman -S --needed base base-devel udevil ntfs-3g dialog zsh gvim \
-perl-rename tree ncdu htop hwinfo acpi acpid openssh rsync \
+perl-rename bc tree ncdu htop hwinfo acpi acpid openssh rsync wget \
 xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics mesa \
 nvidia nvidia-utils nvidia-libgl \
 awesome rxvt-unicode rox \
