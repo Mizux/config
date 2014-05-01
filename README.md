@@ -71,7 +71,8 @@ pacman -S --needed cups ghostscript hplip
 systemctl enable cups
 systemctl start cups
 ```
-Then add printer using http://localhost:631/  
+Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network  
+note use hpcups over hpijs to get border printed   
 
 Adding User
 -----------
