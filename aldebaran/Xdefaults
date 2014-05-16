@@ -3,8 +3,6 @@
 urxvt*modifier: mod4
 URxvt*scrollBar: False
 urxvt*font: xft:DejaVu Sans Mono:pixelsize=10
-!URxvt*background: black
-!URxvt*foreground: white
 
 ! grassland
 !*background:  #0d1926

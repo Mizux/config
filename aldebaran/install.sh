@@ -24,6 +24,7 @@ sed "s/naogentoo/${LOGIN}/" -i gitconfig
 echo "Installing git configuration DONE"
 
 echo "Installing X configuration..."
+cp Xdefaults ~/.Xdefaults
 cp gtkrc-2.0 ~/.gtkrc-2.0
 echo "Insalling X configuration DONE"
 
