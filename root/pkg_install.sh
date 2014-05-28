@@ -2,7 +2,7 @@
 
 echo "install System..."
 pacman -Syu
-pacman -S --needed base base-devel udevil ntfs-3g dialog zsh gvim \
+pacman -S --needed base base-devel namcap udevil udisks ntfs-3g dialog zsh gvim \
 perl-rename bc tree ncdu htop hwinfo acpi acpid openssh rsync wget \
 xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics mesa \
 nvidia nvidia-utils nvidia-libgl \
@@ -14,7 +14,7 @@ echo "install System Done"
 
 echo "install Dev..."
 pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
-ipython python2-pip python2-sphinx python2-numpy \
+ipython ipython2 python2-pip python2-sphinx python2-numpy python2-matplotlib \
 qtcreator clang cmake ninja gdb strace valgrind \
 boost bullet eigen openscenegraph opencv \
 doxygen graphviz qt qt4 ctags upx \
@@ -26,6 +26,6 @@ pacman -S --needed unrar unzip p7zip \
 chromium firefox flashplugin filezilla xchat perl-file-mimeinfo \
 smplayer vlc audacious audacious-plugins libcue libmms neon wavpack alsa-utils  \
 scrot gimp inkscape feh gcolor2 blender wings3d \
-calibre udisks zathura zathura-pdf-mupdf \
-nethack wesnoth dwarffortress
+calibre libreoffice zathura zathura-pdf-mupdf \
+nethack wesnoth dwarffortress armagetronad
 echo "install Media Done"
