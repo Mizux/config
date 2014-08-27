@@ -22,6 +22,7 @@ PROMPT2="${cur_cmd}> "
 
 bindkey -e
 export TERM=xterm-256color
+export EDITOR=vim
 
 # PATH
 export PATH=~/.local/bin:$PATH
@@ -66,18 +67,4 @@ function build_complete {
   mkdir build && cd build
   CC="$HOME/.vim/bin/cc_args.py gcc" CXX="$HOME/.vim/bin/cc_args.py g++" cmake ..
   make -l2
-}
-
-alias qo='qibuild open'
-alias qc='qibuild configure'
-alias qm='qibuild make'
-alias qd='qibuild deploy'
-alias qi='qibuild install'
-
-function qicd {
-  p=$(python -m 'qicd' $1)
-  if [[ $? -ne 0 ]]; then
-    return
-  fi
-  cd ${p}
 }
