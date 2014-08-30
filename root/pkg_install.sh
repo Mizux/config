@@ -2,12 +2,15 @@
 
 echo "install System..."
 pacman -Syu
-pacman -S --needed base base-devel namcap udevil udisks ntfs-3g dialog zsh gvim \
-perl-rename bc tree ncdu htop hwinfo acpi acpid openssh rsync wget \
+pacman -S --needed base base-devel namcap zsh gvim \
+udevil udisks ntfs-3g dosfstools ncdu rsync \
+dialog perl-rename bc tree htop hwinfo acpi acpid openssh wget \
 xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics mesa \
 nvidia nvidia-utils nvidia-libgl \
-awesome rxvt-unicode rox \
-lxappearance gtk-engine-murrine gtk-aurora-engine oxygen-icons oxygen-icons-svg \
+awesome rxvt-unicode rox thunar thunar-archive-plugin file-roller \
+lxappearance gtk-engine-murrine gtk-aurora-engine \
+gnome-icon-theme gnome-icon-theme-extras \
+oxygen-icons oxygen-icons-svg oxygen-gtk2 oxygen-gtk3 \
 anthy uim otf-ipafont ttf-hanazono \
 ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-freefont
 echo "install System Done"
@@ -15,6 +18,7 @@ echo "install System Done"
 echo "install Dev..."
 pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
 ipython ipython2 python2-pip python2-sphinx python2-numpy python2-matplotlib \
+python2-paramiko python2-pytz python2-dateutil \
 qtcreator clang cmake ninja gdb strace valgrind \
 boost bullet eigen openscenegraph opencv \
 doxygen graphviz qt qt4 ctags upx \
