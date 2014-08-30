@@ -1,7 +1,10 @@
 #!/usr/bin/bash
 
-echo "install System..."
+echo "update System..."
 pacman -Syu
+echo "update System Done"
+
+echo "install System..."
 pacman -S --needed base base-devel namcap zsh gvim \
 udevil udisks ntfs-3g dosfstools ncdu rsync \
 dialog perl-rename bc tree htop hwinfo acpi acpid openssh wget \
@@ -17,13 +20,16 @@ echo "install System Done"
 
 echo "install Dev..."
 pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
-ipython ipython2 python2-pip python2-sphinx python2-numpy python2-matplotlib \
-python2-paramiko python2-pytz python2-dateutil \
-qtcreator clang cmake ninja gdb strace valgrind \
+qtcreator ipython clang cmake ninja gdb strace valgrind \
 boost bullet eigen openscenegraph opencv \
 doxygen graphviz qt qt4 ctags upx \
 desmume
 echo "install Dev Done"
+
+echo "install Python2 dev..."
+pacman -S --needed ipython2 python2-pip python2-sphinx python2-numpy python2-matplotlib \
+python2-paramiko python2-pytz python2-dateutil \
+echo "install Python2 dev Done"
 
 echo "install Media..."
 pacman -S --needed unrar unzip p7zip \
