@@ -1,10 +1,10 @@
 #!/usr/bin/bash
 
 echo "install Android..."
-yaourt -S --needed
+yaourt -Syu --aur
+yaourt -S --needed --noconfirm \
 android-tools android-udev-git \
 android-sdk android-sdk-platform-tools android-sdk-build-tools \
-android-platform android-ndk \
-android-studio android-apktool
+android-platform android-ndk32 \
+android-apktool android-studio
 echo "install Android Done"
-
