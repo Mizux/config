@@ -64,7 +64,8 @@ function! CleanWhiteSpace()
 endfunction()
 
 " Remove trailing whitespaces when saving:
-autocmd bufwritepre * call CleanWhiteSpace()
+command! -nargs=0 CleanWhiteSpace :call CleanWhiteSpace()
+autocmd bufwritepre * :CleanWhiteSpace
 
 " Usual include path
 set path+=.;
