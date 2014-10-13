@@ -60,6 +60,9 @@ bindkey '\e[B' down-line-or-beginning-search
 # Completion
 setopt autocd
 zstyle :compinstall filename '~/.zshrc'
+
+# folder of all of your autocomplete functions
+fpath=($HOME/.zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF

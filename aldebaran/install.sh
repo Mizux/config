@@ -11,6 +11,8 @@ echo "Warning !\nThis script won't do backup !"
 
 echo "Installing zsh configuration..."
 cp zshrc ~/.zshrc
+mkdir -pv ~/.zsh-completions
+cp zsh-ninja-completion ~/.zsh-completions/_ninja
 echo "Installing zsh configuration DONE"
 
 echo "Installing vim configuration..."
