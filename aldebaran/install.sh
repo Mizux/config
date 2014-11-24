@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 if [ $# -eq 1 ]; then
   echo "login will be $1 ($1@aldebaran-robotics.com)"
   LOGIN=$1
@@ -14,11 +14,6 @@ cp zshrc ~/.zshrc
 mkdir -pv ~/.zsh-completions
 cp zsh-ninja-completion ~/.zsh-completions/_ninja
 echo "Installing zsh configuration DONE"
-
-echo "Installing vim configuration..."
-cp vimrc ~/.vimrc
-cp -r vim ~/.vim
-echo "Installing vim configuration DONE"
 
 echo "Installing git configuration..."
 cp gitconfig ~/.gitconfig
