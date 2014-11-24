@@ -69,6 +69,7 @@ function build_config {
   cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py .
   i=`pwd`
   sed -i "s;\(database_folder =\).*;\1 \'$i\';g" .ycm_extra_conf.py
+  mv .ycm_extra_conf.py ..
 }
 alias qc='build_config'
 
