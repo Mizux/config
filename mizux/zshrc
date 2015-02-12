@@ -26,6 +26,14 @@ export EDITOR=vim
 
 # PATH
 export PATH=~/.local/bin:$PATH
+
+# ANDROID
+export JAVA_HOME=/usr/lib/jvm/default
+export ANDROID_NDK_ROOT=~/android/android-ndk-r10d
+export ANDROID_SDK_ROOT=~/android/android-sdk-linux
+export ANDROID_HOME="$ANDROID_SDK_ROOT"
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
+
 # Alias
 alias ls='ls --group-directories-first'
 alias lsc='ls --color'
@@ -33,7 +41,6 @@ alias ll='ls -lh'
 alias llc='ll --color'
 alias la='ls -lha'
 alias lac='la --color'
-alias qtcreator='qtcreator -style gtk'
 
 # History
 HISTFILE=~/.histfile
