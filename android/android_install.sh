@@ -55,5 +55,6 @@ echo "Test emulator..."
 
 echo "Create Hello World project (using gradle)"
 ~/android/android-sdk-linux/tools/android create project -p AppGradleTemplate -a Main -k com.mizux.app -t android-19 -g -v 1.0.1
+echo "please change in build.gradle: runProguard false -> minifyEnabled false"
 
 echo "SUCCESS !"
