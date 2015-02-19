@@ -31,6 +31,7 @@ cfdisk (82 swap )...
 | sda3 | /     | 20000  | mkfs.ext4  |
 | sda4 | /home | ALL    | mkfs.ext4  |  
 
+mkfs all...  
 mount all...  
 ```
 mount /dev/sda3 /mnt  
@@ -43,7 +44,7 @@ Install...
 ```
 pacstrap /mnt base base-devel syslinux vim  
 genfstab -L -p /mnt >> /mnt/etc/fstab  
-archroot arch-chroot /mnt  
+arch-chroot /mnt  
 vim /etc/locale.gen (en_us, fr, ja & utf-8)  
 locale-gen  
 echo "LANG=\"en_US.UTF-8\"" > /etc/locale.conf  
@@ -54,7 +55,7 @@ ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 mkinitcpio -p linux  
 syslinux-install_update -iam
 ```
-then edit /boot/syslinux/syslinux.cfg if /dev/sdaX is not correct  
+then edit /boot/syslinux/syslinux.cfg if /dev/sda3 is not correct  
 
 Pacman...  
 activate Color and multilib in /etc/pacman.conf
@@ -62,7 +63,8 @@ activate Color and multilib in /etc/pacman.conf
 Wifi...
 ```
 pacman -S wicd  
-systemctl enable wicd
+systemctl enable wicd  
+wicd 1.7.3-1 fix: https://github.com/voidlinux/void-packages/commit/220de599ad3ecba14423289209a3e4e031037edf  
 ```
 
 Printer...
@@ -76,7 +78,7 @@ note use hpcups over hpijs to get border printed
 
 Adding User
 -----------
-useradd -g users -m -s /bin/bash <username>  
+useradd -g users -m -s /bin/bash \<username\>  
 
 X Server multi-user
 -------------------
