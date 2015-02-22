@@ -45,12 +45,13 @@ Install...
 pacstrap /mnt base base-devel syslinux vim  
 genfstab -L -p /mnt >> /mnt/etc/fstab  
 arch-chroot /mnt  
+echo G53J/CX61 > /etc/hostname  
+ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  
 vim /etc/locale.gen (en_us, fr, ja & utf-8)  
 locale-gen  
 echo "LANG=\"en_US.UTF-8\"" > /etc/locale.conf  
 echo "KEYMAP=fr-latin9" > /etc/vconsole.conf  
 echo "KEYMAP=jp106" > /etc/vconsole.conf  
-ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime  
 
 mkinitcpio -p linux  
 syslinux-install_update -iam
