@@ -87,6 +87,12 @@ Edit /etc/pam.d/su su-l and add:
 ```
 session        optional        pam_xauth.so
 ```
+Disable laptop lid switch handle (usefull when using external screen)
+---------------------------------------------------------------------
+Edit /etc/systemd/logind.conf and enable:  
+```
+LidSwitchIgnoreInhibited=yes
+```
 Japanese
 --------
 
