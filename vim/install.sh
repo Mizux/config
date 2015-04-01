@@ -17,5 +17,7 @@ vim +PluginInstall +qall
 echo "Finalize YouCompleteMe install"
 $(cd ~/.vim/bundle/YouCompleteMe && ./install.sh --clang-completer --system-libclang)
 #cp /usr/lib/libclang.so ~/.vim/bundle/YouCompleteMe/third_party/ycmd/.
+echo "Finalize ternJS install"
+$(cd ~/.vim/bundle/tern_for_vim && npm install)
 
 echo "Install VIM...DONE"
