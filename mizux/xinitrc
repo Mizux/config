@@ -7,16 +7,14 @@
 xsetroot -cursor_name left_ptr
 setxkbmap fr
 
-export GTK_IM_MODULE='uim'
-export QT_IM_MODULE='uim'
-uim-xim &
-export XMODIFIERS='@im=uim'
-uim-toolbar-gtk &
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+ibus-daemon -drx
 
 exec awesome
 #exec xmonad
-
-# exec gnome-session
-# exec startkde
-# exec startxfce4
-# ...or the Window Manager of your choice
+#exec gnome-session
+#exec startkde
+#exec startxfce4
+#...or the Window Manager of your choice

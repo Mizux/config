@@ -24,25 +24,3 @@ also in your .xinitrc add this lines at the beginning:
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 ```
-
-Japanese Install
-----------------
-
-To install japaneses, first install fonts:
-```
-pacman -S adobe-source-han-sans-jp-fonts otf-ipafont
-```
-
-Then install ibus and configure it.
-```
-pacman -S ibus ibus-qt ibus-anthy 
-```
-
-Also add this line in your .xinitrc (before setxkbmap fr)
-```
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
-ibus-daemon -drx
-```
-note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)

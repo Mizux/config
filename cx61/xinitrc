@@ -7,13 +7,13 @@
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 
+xsetroot -cursor_name left_ptr
+setxkbmap fr
+
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
-
-xsetroot -cursor_name left_ptr
-setxkbmap fr
 
 #exe awesome
 #exec xmonad
