@@ -29,6 +29,8 @@ export TERM=xterm # robot don't support xterm-256 TERM
 
 # PATH
 export PATH=~/.local/bin:$PATH
+export PATH=~/Qt/Tools/QtCreator/bin:$PATH
+
 # Alias
 alias ls='ls --group-directories-first --color'
 alias lsc='ls --color'
@@ -66,8 +68,6 @@ fpath=($HOME/.zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF
-export PATH=~/qtcreator-3.1.2/bin:$PATH
-export PATH="$PATH:/home/clemolgat/work/master/perception/tools/qiq"
 export PYTHONPATH=~/pynaoqi:$PYTHONPATH
 
 alias qo='qibuild open'
