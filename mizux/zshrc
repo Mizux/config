@@ -31,7 +31,6 @@ export PATH=~/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/default
 export ANDROID_NDK_ROOT=~/android/android-ndk-r10d
 export ANDROID_SDK_ROOT=~/android/android-sdk-linux
-export ANDROID_SDK_HOME=~/.android
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 # Alias
