@@ -35,4 +35,6 @@ mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
 pip2 install qibuild --user
 pip2 install sphinxcontrib-doxylink --user
+pip2 install --user sphinxcontrib-spelling
+pip2 install --user pyenchant
 echo "Installing aldebaran configuration DONE"
