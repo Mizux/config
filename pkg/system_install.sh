@@ -6,6 +6,7 @@ echo "update System Done"
 
 echo "install System..."
 pacman -S --needed base base-devel namcap zsh gvim \
+dialog sudo \
 udevil udisks ntfs-3g dosfstools ncdu rsync \
 dialog perl-rename bc tree htop hwinfo acpi acpid openssh wget \
 xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics mesa xf86-video-intel \
