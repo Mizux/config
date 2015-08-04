@@ -27,10 +27,10 @@ fi
 
 # SDK
 if [ ! -d android-sdk-linux ]; then
-	if [ ! -f android-sdk_r24.1.2-linux.tgz ]; then
+	if [ ! -f android-sdk_r24.3.3-linux.tgz ]; then
 		echo "Download android sdk..."
-		wget http://dl.google.com/android/android-sdk_r24.1.2-linux.tgz
-		echo "35ce351a04d073610896e18971c239cc  android-sdk_r24.1.2-linux.tgz" > check.txt
+		wget http://dl.google.com/android/android-sdk_r24.3.3-linux.tgz
+		echo "cd4cab76c2e3d926b3495c26ec56c831ba77d0d0 android-sdk_r24.3.3-linux.tgz" > check.txt
 		if ! md5sum -c check.txt; then
 			rm check.txt
 			rm *.tgz
@@ -43,9 +43,9 @@ if [ ! -d android-sdk-linux ]; then
 	rm android-sdk_r24.1.2-linux.tgz
 fi
 
-# android list sdk --extended
 echo "Install all revision 19 related (android 4.4.2)"
 export PATH=~/android/android-sdk-linux/tools:$PATH
+# android list sdk --extended
 expect -c ' set timeout -1;\
 spawn android - update sdk --all --no-ui --filter \
 platform-tools,build-tools-22.0.1,android-19,sys-img-armeabi-v7a-android-19;\

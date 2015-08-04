@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-echo "install aur packages..."
-yaourt -Syu --aur
-yaourt -S --needed --noconfirm expect gradle gradle-doc swt
-echo "install aur packages Done"
+echo "update System..."
+sudo pacman -Syu
+echo "update System Done"
+
+echo "install Dev..."
+sudo pacman -S --needed expect jdk8-openjdk jre8-openjdk
+echo "install Dev Done"
