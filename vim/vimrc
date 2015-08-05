@@ -22,7 +22,7 @@ call vundle#end() " required
 filetype plugin indent on " required
 " :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate
 
-colorscheme mustang | set background=dark | set guifont=DejaVu\ Sans\ Mono\ 8
+colorscheme mustang | set background=dark | set guifont=DejaVu\ Sans\ Mono\ 12
 set number | set cursorline | set textwidth=80
 syntax on | set showmatch | set hlsearch | set ignorecase | set smartcase
 set autoindent | set smartindent | set tabstop=4 | set shiftwidth=4 "| set expandtab
