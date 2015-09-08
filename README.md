@@ -55,19 +55,13 @@ activate Color and multilib in /etc/pacman.conf
 
 Wireless network configuration
 ------------------------------
-wicd seems broken on 1.7.3 please consider using networkmanager instead.
-```
-pacman -S wicd  
-systemctl enable wicd  
-wicd 1.7.3-1 fix: https://github.com/voidlinux/void-packages/commit/220de599ad3ecba14423289209a3e4e031037edf  
-```
-
 ```
 pacman -S networkmanager  
 systemctl enable NetworkManager.service  
 ```
 list network: nmcli con show  
 connect to network: nmcli dev wifi connect <name> password <password> [iface wlan1]  
+or use the ncurse ui tool "nmtui"
 
 Archlinux package config
 ------------------------
