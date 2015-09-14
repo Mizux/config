@@ -5,7 +5,7 @@ pacman -Syu
 echo "update System Done"
 
 echo "install Dev..."
-pacman -S --needed git tk tig aspell-en aspell-fr meld sloccount \
+pacman -S --needed git mercurial tk tig aspell-en aspell-fr meld sloccount \
 qtcreator ipython clang cmake ninja gdb strace valgrind \
 boost blas lapack eigen opencv lua \
 bullet box2d openscenegraph qt qt4 qt5-doc \
