@@ -68,6 +68,8 @@ fpath=($HOME/.zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF
+export PATH=~/naoqi/bin:$PATH
+export LD_LIBRARY_PATH=~/naoqi/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=~/pynaoqi:$PYTHONPATH
 
 alias qo='qibuild open'
