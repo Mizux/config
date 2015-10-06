@@ -86,6 +86,13 @@ function qicd {
   cd ${p}
 }
 
+# ROS INDIGO
+indigo() {
+source /opt/ros/indigo/setup.zsh
+alias catkin_make='catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
+alias catkin_make_isolated='catkin_make_isolated -DPYTHON_EXECUTABLE=/usr/bin/python2 -DPYTHON_INCLUDE_DIR=/usr/include/python2.7 -DPYTHON_LIBRARY=/usr/lib/libpython2.7.so'
+}
+
 # Need minicom to use serial port on robot
 ttyusb() {
   sudo ln -sf /dev/ttyUSB[0-9] /dev/ttyUSBX
