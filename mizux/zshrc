@@ -68,26 +68,28 @@ setopt autocd
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
-function build_config {
-  if [ -d build ];then
-    rm -rf build
-  fi
-  mkdir build && cd build
-  cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
-  cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py .
-  i=`pwd`
-  sed -i "s;\(database_folder =\).*;\1 \'$i\';g" .ycm_extra_conf.py
-  mv .ycm_extra_conf.py ..
+function build_config
+{
+	if [ -d build ];then
+		rm -rf build
+	fi
+	mkdir build && cd build
+	cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON ..
+	cp ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py .
+	i=`pwd`
+	sed -i "s;\(database_folder =\).*;\1 \'$i\';g" .ycm_extra_conf.py
+	mv .ycm_extra_conf.py ..
 }
 alias qc='build_config'
 
-function build_make {
-  if [ -d build ];then
-    cd build && make;
-  else
-	echo "build dir missing, run build_config first..."
-    build_config
-	make
-  fi
+function build_make
+{
+	if [ -d build ];then
+		cd build && make;
+	else
+		echo "build dir missing, run build_config first..."
+		build_config
+		make
+	fi
 }
 alias qm='build_make'
