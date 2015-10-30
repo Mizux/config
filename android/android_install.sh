@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-echo "Install archlinux needed package"
-yaourt -S --needed --noconfirm expect
+# You'll need expect
 
 mkdir -pv ~/android
 cd ~/android
