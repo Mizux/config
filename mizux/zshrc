@@ -97,3 +97,8 @@ else
 fi
 }
 alias qm='build_make'
+
+function build_format {
+find . -type f -iname "*.[hc]pp" -exec clang-format -style=Chromium -i {} \;
+}
+alias qf='build_format'
