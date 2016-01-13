@@ -72,13 +72,14 @@ export PATH=~/naoqi/bin:$PATH
 export LD_LIBRARY_PATH=~/naoqi/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=~/pynaoqi:$PYTHONPATH
 
-alias qo='qibuild open'
-alias qc='qibuild configure'
-alias qm='qibuild make'
-alias qd='qibuild deploy'
-alias qi='qibuild install'
+failIfROS() { env | grep ^ROS >/dev/null && echo Cannot ${1:-run}, ROS is set; }
+qo() { failIfROS configure || qibuild open $*; }
+qc() { failIfROS configure || qibuild configure $*; }
+qm() { failIfROS make      || qibuild make      $*; }
+qd() { failIfROS deplot    || qibuild deploy    $*; }
+qi() { failIfROS deplot    || qibuild install    $*; }
 
-function qicd {
+qicd() {
   p=$(python -m 'qicd' $1)
   if [[ $? -ne 0 ]]; then
     return
