@@ -23,8 +23,9 @@ echo "Install NodeJS ...DONE"
 
 echo "Please call: source ~/.zshrc"
 
-#echo "Install npm modules..."
-#npm install -g gulp
+echo "Install npm modules..."
+npm install -g gulp
 #npm install -g karma bower grunt-cli phantomjs jshint
 #npm install -g yo generator-angular generator-webapp
-#echo "Install npm modules...DONE"
+npm list -g --depth=0
+echo "Install npm modules...DONE"
