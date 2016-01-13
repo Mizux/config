@@ -76,7 +76,7 @@ failIfROS() { env | grep ^ROS >/dev/null && echo Cannot ${1:-run}, ROS is set; }
 qo() { failIfROS open      || qibuild open      $*; }
 qc() { failIfROS configure || qibuild configure $*; }
 qm() { failIfROS make      || qibuild make      $*; }
-qd() { failIfROS deplot    || qibuild deploy    $*; }
+qd() { failIfROS deploy    || qibuild deploy    $*; }
 qi() { failIfROS install   || qibuild install   $*; }
 
 qicd() {
