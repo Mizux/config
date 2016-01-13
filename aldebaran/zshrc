@@ -73,11 +73,11 @@ export LD_LIBRARY_PATH=~/naoqi/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=~/pynaoqi:$PYTHONPATH
 
 failIfROS() { env | grep ^ROS >/dev/null && echo Cannot ${1:-run}, ROS is set; }
-qo() { failIfROS configure || qibuild open $*; }
+qo() { failIfROS open      || qibuild open      $*; }
 qc() { failIfROS configure || qibuild configure $*; }
 qm() { failIfROS make      || qibuild make      $*; }
 qd() { failIfROS deplot    || qibuild deploy    $*; }
-qi() { failIfROS deplot    || qibuild install    $*; }
+qi() { failIfROS install   || qibuild install   $*; }
 
 qicd() {
   p=$(python -m 'qicd' $1)
