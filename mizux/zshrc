@@ -95,6 +95,6 @@ fi
 alias qm='build_make'
 
 function build_format {
-find .  -path ./build -prune -o -type f -iname "*.[hc]pp" -exec echo "Formating {}" \; -exec clang-format -style=file -i {} \;
+find .  -path ./build -prune -o -type f -iname "*.[hc]pp" -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
 }
 alias qf='build_format'
