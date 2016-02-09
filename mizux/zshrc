@@ -76,7 +76,7 @@ if [ -d build ]; then
 	rm -rf build
 fi
 mkdir build && cd build
-cmake -GNinja ..
+cmake -GNinja "$@" ..
 cd ..
 }
 alias qc='build_config'
@@ -84,12 +84,12 @@ alias qc='build_config'
 function build_make {
 if [ -d build ]; then
 	cd build
-	ninja $1
+	ninja "$@"
 	cd ..
 else
 	echo "build dir missing, run build_config first..."
 	build_config
-	build_make $1
+	build_make "$@"
 fi
 }
 alias qm='build_make'
