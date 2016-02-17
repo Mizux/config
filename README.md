@@ -73,8 +73,9 @@ Archlinux package config
 ------------------------
 In root run:
 ```
+cd tmp
 git clone --depth=1 https://github.com/Mizux/config.git config
-cd config/root && ./pkg_install.sh
+cd config/pkg && ./dev_install.sh
 ```
 
 User Configuration
