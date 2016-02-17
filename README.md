@@ -21,11 +21,11 @@ Prepare the storage devices
 ---------------------------
 cfdisk (82 swap )...  
 
-| Name | boot  |Size    | Format     | Mount |
+| Name | Boot  | Size   | Format     | Mount |
 | ---- | :---: | -----: | :--------: | ----- |
 | sda1 | *     | 100M   | mkfs.ext2  | /boot |
-| sda2 |       | 2048M  | mkswap     |       |
-| sda3 |       | 20G    | mkfs.ext4  | /     |
+| sda2 |       | 2G     | mkswap     |       |
+| sda3 |       | 32G    | mkfs.ext4  | /     |
 | sda4 |       | ALL    | mkfs.ext4  | /home |
 
 mkfs all...  
