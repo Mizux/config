@@ -3,6 +3,12 @@ My install and configuration script for Archlinux.
 Archlinux Install
 =================
 
+Create USB
+----------
+```
+dd if=*.iso of=/dev/sdb
+```
+
 Init
 ----
 ```
