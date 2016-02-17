@@ -68,18 +68,15 @@ fpath=($HOME/.zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF
-export PATH=~/naoqi/bin:$PATH
-export LD_LIBRARY_PATH=~/naoqi/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=~/pynaoqi:$PYTHONPATH
 
-failIfROS() { env | grep ^ROS >/dev/null && echo Cannot ${1:-run}, ROS is set; }
-qo() { failIfROS open      || qibuild open      $*; }
-qc() { failIfROS configure || qibuild configure $*; }
-qm() { failIfROS make      || qibuild make      $*; }
-qd() { failIfROS deploy    || qibuild deploy    $*; }
-qi() { failIfROS install   || qibuild install   $*; }
+alias qo='qibuild open'
+alias qc='qibuild configure'
+alias qm='qibuild make'
+alias qd='qibuild deploy'
+alias qi='qibuild install'
 
-qicd() {
+function qicd() {
   p=$(python -m 'qicd' $1)
   if [[ $? -ne 0 ]]; then
     return
