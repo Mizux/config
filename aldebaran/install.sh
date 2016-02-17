@@ -30,11 +30,7 @@ mkdir -pv ~/.config/awesome
 cp -r rc.lua ~/.config/awesome/rc.lua
 echo "Installing awesome configuration DONE"
 
-echo "Installing aldebaran configuration..."
+echo "Installing rlist..."
 mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
-pip2 install qibuild --user
-#pip2 install sphinxcontrib-doxylink --user
-#pip2 install --user sphinxcontrib-spelling
-#pip2 install --user pyenchant
-echo "Installing aldebaran configuration DONE"
+echo "Installing rlist DONE"
