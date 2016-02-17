@@ -83,9 +83,13 @@ User Configuration
 
 Adding User
 -----------
+```
 useradd -g users -m -s /usr/bin/zsh \<username\>  
+```
 Adding user to a group:  
+```
 usermod -a -G \<wheel,audio,video,disk,storage\> \<username\>  
+```
 
 User config Installation
 -------------------------
