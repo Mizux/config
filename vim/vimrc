@@ -6,8 +6,7 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
-Plugin 'Valloric/YouCompleteMe' " A code-completion engine
-Plugin 'marijnh/tern_for_vim' " A js-completion engine
+" Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
