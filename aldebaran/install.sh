@@ -30,7 +30,10 @@ mkdir -pv ~/.config/awesome
 cp -r rc.lua ~/.config/awesome/rc.lua
 echo "Installing awesome configuration DONE"
 
-echo "Installing rlist..."
+echo "Installing rlist (depends on avahi)..."
+yaourt -S --needed avahi
+systemctl enable avahi-daemon
+systemctl start avahi-daemon
 mkdir -pv ~/.local/bin
 cp rlist ~/.local/bin/rlist
 echo "Installing rlist DONE"

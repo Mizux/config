@@ -1,5 +1,5 @@
 echo "Installing qibuild"
-sudo pacman -S --needed python2-pip swig
+yaourt -S --needed python2-pip swig
 mkdir -pv ~/.local/bin
 pip2 install qibuild --user
 
@@ -27,7 +27,7 @@ echo "Creating config"
 qibuild add-config linux64 -t linux64
 qibuild add-config nao -t atom -p nao
 qibuild add-config juliette -t atom -p juliette
-qibuild config  
+qibuild config
 
 #pip2 install sphinxcontrib-doxylink --user
 #pip2 install --user sphinxcontrib-spelling
