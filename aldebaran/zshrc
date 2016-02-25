@@ -68,7 +68,7 @@ fpath=($HOME/.zsh-completions $fpath)
 autoload -Uz compinit && compinit
 
 # Aldebaran STUFF
-export PYTHONPATH=~/pynaoqi:$PYTHONPATH
+export PYTHONPATH={$PYTHONPATH}:~/pynaoqi/lib/python2.7/site-packages
 
 alias qo='qibuild open'
 alias qc='qibuild configure'
