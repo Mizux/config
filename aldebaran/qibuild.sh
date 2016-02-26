@@ -1,7 +1,9 @@
 echo "Installing qibuild"
-yaourt -S --needed python2-pip python2-sphinx swig
+yaourt -S --needed python2-pip swig
 mkdir -pv ~/.local/bin
-pip2 install qibuild --user
+pip2 install --user --upgrade qibuild
+pip2 install --user --upgrade sphinx sphinx-intl sphinxcontrib-spelling sphinxcontrib-doxylink
+pip2 install --user --upgrade pyenchant
 
 echo "Generate ssh key"
 ssh-keygen -t rsa
