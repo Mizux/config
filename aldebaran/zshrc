@@ -77,7 +77,7 @@ alias qd='qibuild deploy'
 alias qi='qibuild install'
 
 function qicd() {
-  p=$(python -m 'qicd' $1)
+  p=$(python2 -m 'qicd' $1)
   if [[ $? -ne 0 ]]; then
     return
   fi
