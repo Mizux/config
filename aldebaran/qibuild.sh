@@ -31,7 +31,4 @@ qibuild add-config nao -t atom -p nao
 qibuild add-config juliette -t atom -p juliette
 qibuild config
 
-#pip2 install sphinxcontrib-doxylink --user
-#pip2 install --user sphinxcontrib-spelling
-#pip2 install --user pyenchant
 echo "Installing aldebaran worktree   DONE"
