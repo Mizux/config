@@ -1,5 +1,5 @@
 echo "Installing qibuild"
-yaourt -S --needed python2-pip swig
+yaourt -S --needed python2-pip python2-sphinx swig
 mkdir -pv ~/.local/bin
 pip2 install qibuild --user
 
