@@ -26,6 +26,7 @@ PROMPT2="${cur_cmd}> "
 
 bindkey -e
 export TERM=xterm # robot don't support xterm-256 TERM
+export EDITOR=vim
 
 # PATH
 export PATH=~/.local/bin:$PATH
