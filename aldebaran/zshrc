@@ -96,7 +96,6 @@ alias catkin_make_isolated='catkin_make_isolated -DPYTHON_EXECUTABLE=/usr/bin/py
 ttyusb() {
   sudo ln -sf /dev/ttyUSB[0-9] /dev/ttyUSBX
   echo `ls -la /dev/ttyUSBX`
-  sudo mkdir -pv /etc/minicom
-  sudo sh -c 'echo "pu port /dev/ttyUSBX\npu rtscts No" > /etc/minicom/minirc.dfl'
+  sudo sh -c 'echo -e "pu port /dev/ttyUSBX\npu rtscts No" > /etc/minirc.dfl'
   sudo minicom --color=on
 }
