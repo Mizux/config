@@ -30,6 +30,10 @@ mkdir -pv ~/.config/awesome
 cp -r rc.lua ~/.config/awesome/rc.lua
 echo "Installing awesome configuration DONE"
 
+echo "Installing ttyusb (depends on minicom)..."
+yaourt -S --needed minicom
+echo "Installing ttyusb DONE"
+
 echo "Installing rlist (depends on avahi)..."
 yaourt -S --needed avahi
 systemctl enable avahi-daemon
