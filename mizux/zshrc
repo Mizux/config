@@ -71,30 +71,56 @@ setopt autocd
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
-function build_config {
+# GCC BUILD
+function gcc_config {
 if [ -d build ]; then
 	rm -rf build
 fi
 mkdir build && cd build
-cmake -GNinja "$@" ..
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja "$@" ..
 cd ..
 }
-alias qc='build_config'
+alias qgc='gcc_config'
 
-function build_make {
+function gcc_make {
 if [ -d build ]; then
 	cd build
 	ninja "$@"
 	cd ..
 else
 	echo "build dir missing, run build_config first..."
-	build_config
-	build_make "$@"
+	gcc_config
+	gcc_make "$@"
 fi
 }
-alias qm='build_make'
+alias qgm='gcc_make'
 
-function build_format {
+# Clang Build
+function clang_config {
+if [ -d build ]; then
+	rm -rf build
+fi
+mkdir build && cd build
+cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja "$@" ..
+cd ..
+}
+alias qcc='clang_config'
+
+function clang_make {
+if [ -d build ]; then
+	cd build
+ 	ninja "$@"
+	cd ..
+else
+	echo "build dir missing, run build_config first..."
+	clang_config
+	clang_make "$@"
+fi
+}
+alias qcm='clang_make'
+
+# Formating
+function clang_format {
 find .  -not -path "./build/*" -type f -iname "*.[hc]pp" -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
 }
-alias qf='build_format'
+alias qcf='clang_format'

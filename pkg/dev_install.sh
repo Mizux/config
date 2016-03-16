@@ -11,7 +11,7 @@ doxygen graphviz ctags \
 upx \
 qtcreator ipython cmake ninja clang gcc gdb strace valgrind cppcheck
 echo "install  tools..."
-pacman -S --needed base-devel\
+pacman -S --needed \
 boost blas lapack eigen opencv lua \
 bullet box2d openscenegraph qt qt5-doc qt4
 echo "install Dev Done"
