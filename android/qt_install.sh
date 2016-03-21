@@ -6,7 +6,7 @@ if [ ! -d ~/Qt ]; then
 	if [ ! -f qt-opensource-linux-x64-online.run ]; then
 		echo "Download qt..."
 		wget http://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run
-		echo "4dcd6466db975358195d59cff3442e85  qt-unified-linux-x64-online.run" > check.txt
+		echo "ffce5589bf0c8b814daab32894dd6450  qt-unified-linux-x64-online.run" > check.txt
 		if ! md5sum -c check.txt; then
 			rm check.txt
 			rm *.run
