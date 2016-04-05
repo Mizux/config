@@ -4,6 +4,9 @@
 #
 # Executed by startx (run your window manager from here)
 
+# use DRI_PRIME=1 cmd args...
+xrandr --setprovideroffloadsink nouveau Intel
+
 xsetroot -cursor_name left_ptr
 setxkbmap fr
 
