@@ -15,5 +15,5 @@ echo "install Dev Done"
 echo "install 3rd Party..."
 pacman -S --needed \
 boost blas lapack eigen opencv lua \
-bullet box2d openscenegraph qt qt5-doc qt4
+bullet box2d openscenegraph qt5 qt5-doc qt4
 echo "install 3rd Party Done"
