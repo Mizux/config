@@ -8,7 +8,7 @@ echo "install System..."
 pacman -S --needed base base-devel namcap zsh gvim \
 dialog sudo \
 udevil udisks ntfs-3g dosfstools ncdu rsync \
-dialog perl-rename bc tree htop hwinfo acpi acpid openssh wget \
+dialog perl-rename bc tree htop sysstat hwinfo acpi acpid openssh wget \
 xorg-server xorg-xinit xorg-server-utils xf86-input-synaptics \
 xf86-video-nouveau xf86-video-intel \
 awesome xlockmore rxvt-unicode rox thunar thunar-archive-plugin file-roller \
