@@ -124,3 +124,9 @@ function clang_format {
 find .  -not -path "*/build/*" -type f -iname "*.[hc]pp" -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
 }
 alias bcf='clang_format'
+
+# NodeJS
+export NPM_PACKAGES=~/.npm-packages
+export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+export PATH=$NPM_PACKAGES/bin:~/.nodejs/current/bin:$PATH
+unset MANPATH; export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
