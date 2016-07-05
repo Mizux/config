@@ -121,6 +121,6 @@ alias qcm='clang_make'
 
 # Formating
 function clang_format {
-find .  -not -path "./build/*" -type f -iname "*.[hc]pp" -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
+find .  -not -path "*/build/*" -type f -iname "*.[hc]pp" -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
 }
 alias qcf='clang_format'
