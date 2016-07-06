@@ -29,7 +29,7 @@ export PATH=~/.local/bin:$PATH
 
 # ANDROID
 export JAVA_HOME=/usr/lib/jvm/default
-export ANDROID_NDK_ROOT=~/android/android-ndk-r10e
+export ANDROID_NDK_ROOT=~/android/android-ndk-r12b
 export ANDROID_SDK_ROOT=~/android/android-sdk-linux
 export ANDROID_QT_ROOT=~/Qt/5.7/android_armv7
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH

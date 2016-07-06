@@ -6,19 +6,18 @@ mkdir -pv ~/android
 cd ~/android
 
 # NDK
-NDK="android-ndk-r10e-linux-x86_64.bin"
-if [ ! -d android-ndk-r10e ]; then
+NDK="android-ndk-r12b-linux-x86_64.zip"
+if [ ! -d android-ndk-r12b ]; then
 	if [ ! -f $NDK ]; then
 		echo "Download android ndk..."
-		wget http://dl.google.com/android/ndk/${NDK}
+		wget http://dl.google.com/android/repository/${NDK}
 	fi
-	if ! md5sum -c <(echo "19af543b068bdb7f27787c2bc69aba7f  ${NDK}"); then
+	if ! md5sum -c <(echo "1d1a5ee71a5123be01e0dd9adb5df80d  ${NDK}"); then
 		rm ${NDK}
 		exit 1
 	fi
 	echo "Install android ndk..."
-	chmod a+x ${NDK}
-	./${NDK}
+	unzip ${NDK}
 	rm ${NDK}
 fi
 
@@ -49,7 +48,7 @@ expect "Do you accept the license" { exp_send "y\r";exp_continue } '
 echo "Please add this to your bashrc..."
 echo "# ANDROID"
 echo "export JAVA_HOME=/usr/lib/jvm/default"
-echo "export ANDROID_NDK_ROOT=~/android/android-ndk-r10e"
+echo "export ANDROID_NDK_ROOT=~/android/android-ndk-r12b"
 echo "export ANDROID_SDK_ROOT=~/android/android-sdk-linux"
 echo "export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
 
