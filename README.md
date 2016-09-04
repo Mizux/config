@@ -88,7 +88,7 @@ useradd -g users -m -s /usr/bin/zsh <username>
 ```
 Adding user to a group:  
 ```
-usermod -a -G <wheel,audio,video,disk,storage> <username>  
+usermod -a -G <wheel,audio,video,disk,storage,docker> <username>  
 ```
 
 User config Installation
