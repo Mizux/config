@@ -6,7 +6,7 @@ echo "update System Done"
 
 echo "install Dev tools..."
 pacman -S --needed base-devel \
-qtcreator ipython \
+qtcreator ipython docker \
 git tk tig mercurial aspell-en aspell-fr meld \
 upx strace valgrind cppcheck \
 doxygen graphviz ctags cscope sloccount \
