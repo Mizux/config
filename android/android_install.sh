@@ -19,6 +19,7 @@ if [ ! -d android-ndk-r12b ]; then
 	echo "Install android ndk..."
 	unzip ${NDK}
 	rm ${NDK}
+	mv android-ndk* android-ndk
 fi
 
 # SDK
@@ -42,15 +43,16 @@ export PATH=~/android/android-sdk-linux/tools:$PATH
 #android list sdk --extended
 expect -c ' set timeout -1;\
 spawn android - update sdk --all --no-ui --filter \
-platform-tools,build-tools-23.0.2,android-19,sys-img-armeabi-v7a-android-19;\
+platform-tools,tools,build-tools-19.1.0,android-19,sys-img-armeabi-v7a-android-19;\
 expect "Do you accept the license" { exp_send "y\r";exp_continue } '
 
 echo "Please add this to your bashrc..."
 echo "# ANDROID"
 echo "export JAVA_HOME=/usr/lib/jvm/default"
-echo "export ANDROID_NDK_ROOT=~/android/android-ndk-r12b"
-echo "export ANDROID_SDK_ROOT=~/android/android-sdk-linux"
-echo "export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH"
+echo "export ANDROID_HOME=~/android/android-sdk-linux"
+echo "export ANDROID_NDK=~/android/android-ndk"
+echo "export ANDROID_SDK=~/android/android-sdk-linux"
+echo "export PATH=${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools:$PATH"
 
 echo "Create Android Virtual Device rev.19 ARMv7"
 android create avd --name Default --target android-19 --abi armeabi-v7a
