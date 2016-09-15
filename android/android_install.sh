@@ -40,11 +40,8 @@ fi
 
 echo "Install all revision 19 related (android 4.4.2)"
 export PATH=~/android/android-sdk-linux/tools:$PATH
-#android list sdk --extended
-expect -c ' set timeout -1;\
-spawn android - update sdk --all --no-ui --filter \
-platform-tools,tools,build-tools-19.1.0,android-19,sys-img-armeabi-v7a-android-19;\
-expect "Do you accept the license" { exp_send "y\r";exp_continue } '
+echo y | android update sdk --force --all --no-ui --filter \
+platform-tools,tools,build-tools-24.0.2,android-19,sys-img-armeabi-v7a-android-19 \
 
 echo "Please add this to your bashrc..."
 echo "# ANDROID"
@@ -54,8 +51,8 @@ echo "export ANDROID_NDK=~/android/android-ndk"
 echo "export ANDROID_SDK=~/android/android-sdk-linux"
 echo "export PATH=${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools:$PATH"
 
-echo "Create Android Virtual Device rev.19 ARMv7"
-android create avd --name Default --target android-19 --abi armeabi-v7a
+#echo "Create Android Virtual Device rev.19 ARMv7"
+#android create avd --name Default --target android-19 --abi armeabi-v7a
 #echo "Test emulator..."
 #echo "export ANDROID_SDK_HOME=~"
 #emulator -avd Default # use ANDROID_SDK_HOME/.android for cache

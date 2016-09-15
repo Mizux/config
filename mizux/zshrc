@@ -33,8 +33,6 @@ export ANDROID_NDK=~/android/android-ndk
 export ANDROID_SDK=~/android/android-sdk-linux
 export ANDROID_QT=~/Qt/5.7/android_armv7
 export PATH=${ANDROID_SDK}/tools:$[ANDROID_SDK}/platform-tools:$PATH
-export PATH=~/Qt/5.7/gcc_64/bin:$PATH
-export PATH=~/Qt/Tools/QtCreator/bin:$PATH
 
 # Alias
 alias ls='ls --group-directories-first'
