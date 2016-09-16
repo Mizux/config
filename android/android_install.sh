@@ -12,7 +12,7 @@ unzip android-ndk* && rm android-ndk*.zip && mv android-ndk* android-ndk
 curl -L -O https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
 tar xf android-sdk* && rm android-sdk*.tgz
 echo y | ./android-sdk-linux/tools/android update sdk --force --all --no-ui --filter \
-platform-tools,tools,build-tools-24.0.2,android-19,sys-img-armeabi-v7a-android-19
+platform-tools,tools,build-tools-24.0.2,build-tools-19.1.0,android-19,sys-img-armeabi-v7a-android-19
 
 echo "Please add this to your bashrc..."
 echo "# ANDROID"
