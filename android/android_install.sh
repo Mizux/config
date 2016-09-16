@@ -1,55 +1,26 @@
 #!/usr/bin/env bash
 
-# You'll need expect
-
+# You'll need curl, unzip and tar
 mkdir -pv ~/android
 cd ~/android
 
 # NDK
-NDK="android-ndk-r12b-linux-x86_64.zip"
-if [ ! -d android-ndk-r12b ]; then
-	if [ ! -f $NDK ]; then
-		echo "Download android ndk..."
-		wget http://dl.google.com/android/repository/${NDK}
-	fi
-	if ! md5sum -c <(echo "1d1a5ee71a5123be01e0dd9adb5df80d  ${NDK}"); then
-		rm ${NDK}
-		exit 1
-	fi
-	echo "Install android ndk..."
-	unzip ${NDK}
-	rm ${NDK}
-	mv android-ndk* android-ndk
-fi
+curl -L -O https://dl.google.com/android/repository/android-ndk-r12b-linux-x86_64.zip
+unzip android-ndk* && rm android-ndk*.zip && mv android-ndk* android-ndk
 
 # SDK
-SDK="android-sdk_r24.4.1-linux.tgz"
-if [ ! -d android-sdk-linux ]; then
-	if [ ! -f ${SDK} ]; then
-		echo "Download android sdk..."
-		wget http://dl.google.com/android/${SDK}
-	fi
-	if ! md5sum -c <(echo "978ee9da3dda10fb786709b7c2e924c0  ${SDK}"); then
-		rm ${SDK}
-		exit 2
-	fi
-	echo "Install android sdk..."
-	tar xzvf ${SDK}
-	rm ${SDK}
-fi
-
-echo "Install all revision 19 related (android 4.4.2)"
-export PATH=~/android/android-sdk-linux/tools:$PATH
-echo y | android update sdk --force --all --no-ui --filter \
-platform-tools,tools,build-tools-24.0.2,android-19,sys-img-armeabi-v7a-android-19 \
+curl -L -O https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+tar xf android-sdk* && rm android-sdk*.tgz
+echo y | ./android-sdk-linux/tools/android update sdk --force --all --no-ui --filter \
+platform-tools,tools,build-tools-24.0.2,android-19,sys-img-armeabi-v7a-android-19
 
 echo "Please add this to your bashrc..."
 echo "# ANDROID"
 echo "export JAVA_HOME=/usr/lib/jvm/default"
 echo "export ANDROID_HOME=~/android/android-sdk-linux"
-echo "export ANDROID_NDK=~/android/android-ndk"
-echo "export ANDROID_SDK=~/android/android-sdk-linux"
-echo "export PATH=${ANDROID_SDK}/tools:${ANDROID_SDK}/platform-tools:$PATH"
+echo "export ANDROID_NDK_HOME=~/android/android-ndk"
+echo "export ANDROID_SDK_HOME=~/android/android-sdk-linux"
+echo "export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH"
 
 #echo "Create Android Virtual Device rev.19 ARMv7"
 #android create avd --name Default --target android-19 --abi armeabi-v7a

@@ -24,6 +24,6 @@ fi
 
 echo "Please add this to your zshrc..."
 echo "# QT"
-echo "export ANDROID_QT=~/Qt/5.7/android_armv7"
+echo "export ANDROID_QT_HOME=~/Qt/5.7/android_armv7"
 
 echo "SUCCESS !"

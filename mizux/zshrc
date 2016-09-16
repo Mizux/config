@@ -29,10 +29,11 @@ export PATH=~/.local/bin:$PATH
 
 # ANDROID
 export JAVA_HOME=/usr/lib/jvm/default
-export ANDROID_NDK=~/android/android-ndk
-export ANDROID_SDK=~/android/android-sdk-linux
-export ANDROID_QT=~/Qt/5.7/android_armv7
-export PATH=${ANDROID_SDK}/tools:$[ANDROID_SDK}/platform-tools:$PATH
+export ANDROID_HOME=~/android/android-sdk-linux
+export ANDROID_NDK_HOME=~/android/android-ndk
+export ANDROID_SDK_HOME=~/android/android-sdk-linux
+export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:$PATH
+export ANDROID_QT_HOME=~/Qt/5.7/android_armv7
 
 # Alias
 alias ls='ls --group-directories-first'
