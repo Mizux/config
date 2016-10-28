@@ -106,11 +106,13 @@ To install japaneses, first install fonts:
 pacman -S adobe-source-han-sans-jp-fonts otf-ipafont
 ```
 
-Then install ibus and configure it.
+Then install ibus　and configure it.
 ```
 pacman -S ibus ibus-qt ibus-anthy 
+ibus-setup
 ```
-
+ibus-setup/Advanced: check use system layout.  
+ibus-setup/InputMethod: add anthy for japanese.  
 Also add this line in your .xinitrc (before setxkbmap fr)
 ```
 export GTK_IM_MODULE=ibus
