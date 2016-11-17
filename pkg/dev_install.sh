@@ -10,7 +10,7 @@ qtcreator ipython docker gitlab-ci-multi-runner \
 git tk tig mercurial aspell-en aspell-fr meld \
 upx strace valgrind cppcheck \
 doxygen graphviz ctags cscope sloccount \
-cmake ninja gcc gdb clang clang-analyzer llvm
+cmake ninja gcc gdb clang clang-tools-extra llvm
 echo "install Dev Done"
 echo "install 3rd Party..."
 pacman -S --needed \
