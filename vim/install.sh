@@ -1,20 +1,15 @@
 #!/usr/bin/env bash
+set -e
 
-echo "Install VIM..."
-
-echo "Remove old VIM"
+set -x
 rm -rf ~/.vim
 rm -f ~/.vimrc
 
-echo "Install VIM config"
 cp vimrc ~/.vimrc
-
-echo "Install Vundle"
 mkdir -p ~/.vim/bundle && \
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
-#echo "Finalize YouCompleteMe install"
-#cp /usr/lib/libclang.so ~/.vim/bundle/YouCompleteMe/third_party/ycmd/.
-
-echo "Install VIM...DONE"
+# Finalize YouCompleteMe install
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
