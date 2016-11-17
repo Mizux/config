@@ -6,22 +6,22 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
-" Plugin 'Valloric/YouCompleteMe' " A code-completion engine
+"Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
-Plugin 'tpope/vim-fugitive' " a Git wrapper so awesome
-Plugin 'mhinz/vim-signify' " show a VCS diff using sign colum
+"Plugin 'tpope/vim-fugitive' " a Git wrapper so awesome
+"Plugin 'mhinz/vim-signify' " show a VCS diff using sign colum
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plugin 'bling/vim-airline' " lean & mean status/tabline
-Plugin 'git://git.wincent.com/command-t.git' " fast, intuitive mechanism for opening files
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " A parser for a condensed HTML format
+"Plugin 'git://git.wincent.com/command-t.git' " fast, intuitive mechanism for opening files
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " A parser for a condensed HTML format
 Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
 call vundle#end() " required
 filetype plugin indent on " required
 " :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate
 
-colorscheme mustang | set background=dark | set guifont=DejaVu\ Sans\ Mono\ 12
+colorscheme mustang | set background=dark | set guifont=DejaVu\ Sans\ Mono\ 10
 set number | set cursorline | set textwidth=80
 syntax on | set showmatch | set hlsearch | set ignorecase | set smartcase
 set autoindent | set smartindent | set tabstop=4 | set shiftwidth=4 "| set expandtab
