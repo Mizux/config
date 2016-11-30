@@ -11,12 +11,8 @@ Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
-"Plugin 'tpope/vim-fugitive' " a Git wrapper so awesome
-"Plugin 'mhinz/vim-signify' " show a VCS diff using sign colum
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plugin 'bling/vim-airline' " lean & mean status/tabline
-"Plugin 'git://git.wincent.com/command-t.git' " fast, intuitive mechanism for opening files
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'} " A parser for a condensed HTML format
 Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
 call vundle#end() " required
 filetype plugin indent on " required
