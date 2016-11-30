@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -d build ]; then
+	cd build
+	ninja "$@"
+else
+	echo "(WARN) build directory missing, automatically run bgc..."
+	bgc
+	bgm "$@"
+fi

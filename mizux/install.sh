@@ -21,3 +21,9 @@ echo "Installing awesome configuration..."
 mkdir -pv ~/.config/awesome
 cp -r rc.lua ~/.config/awesome/rc.lua
 echo "Installing awesome configuration DONE"
+
+
+echo "Installing builder..."
+mkdir -pv ~/.local/bin
+cp bgc bgm bcc bcm bcf ~/.local/bin
+echo "Installing builder DONE"

@@ -75,67 +75,13 @@ autoload -Uz compinit && compinit
 function build_help {
 	echo "build_help (alias bh):"
 	echo "/!\\ All commands have to be run in root directory of the project /!\\"
-	echo "* build_gcc_config (alias bgc): CMake config using ninja/gcc"
-	echo "* build_gcc_make (alias bgm): Make using ninja/gcc"
-	echo "* build_clang_config (alias bcc): CMake config using ninja/clang"
-	echo "* build_clang_make (alias bcm): Make using ninja/clang"
-	echo "* build_clang_format (alias bcf): Formating using clang-format"
+	echo "* bgc: CMake config using ninja/gcc"
+	echo "* bgm: CMake build using ninja/gcc"
+	echo "* bcc: CMake config using ninja/clang"
+	echo "* bcm: CMake build using ninja/clang"
+	echo "* bcf: Formating using clang-format"
 }
 alias bh='build_help'
-#
-## Gcc Build
-function build_gcc_config {
-if [ -d build ]; then
-	rm -rf build
-fi
-mkdir build && cd build
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja "$@" ..
-cd ..
-}
-alias bgc='build_gcc_config'
-
-function build_gcc_make {
-if [ -d build ]; then
-	cd build
-	ninja "$@"
-	cd ..
-else
-	echo "build dir missing, run build_config first..."
-	build_gcc_config
-	build_gcc_make "$@"
-fi
-}
-alias bgm='build_gcc_make'
-
-## Clang Build
-function build_clang_config {
-if [ -d build ]; then
-	rm -rf build
-fi
-mkdir build && cd build
-cmake -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -GNinja "$@" ..
-cd ..
-}
-alias bcc='build_clang_config'
-
-function build_clang_make {
-if [ -d build ]; then
-	cd build
- 	ninja "$@"
-	cd ..
-else
-	echo "build dir missing, run build_config first..."
-	build_clang_config
-	build_clang_make "$@"
-fi
-}
-alias bcm='build_clang_make'
-
-## Clang Formating
-function build_clang_format {
-	find .  -not -path "*/build/*" -type f \( -iname "*.[hc]pp" -or -iname "*.hxx" \) -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;
-}
-alias bcf='build_clang_format'
 
 # NodeJS
 export NPM_PACKAGES=~/.npm-packages
