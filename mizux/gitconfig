@@ -1,6 +1,6 @@
 [user]
 email = dev@mizux.net
-name = Mizux
+name = "Mizux Seiha"
 
 [color]
 diff = auto
@@ -23,3 +23,7 @@ color = auto
 
 [merge]
 tool = meld
+[gui]
+fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+fontdiff = -family \"DejaVu Sans Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+tabsize = 2
