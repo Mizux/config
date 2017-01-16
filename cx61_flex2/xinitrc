@@ -4,8 +4,12 @@
 #
 # Executed by startx (run your window manager from here)
 
-xrandr --setprovideroutputsource modesetting NVIDIA-0
-xrandr --auto
+# Old Nvidia Setup
+#xrandr --setprovideroutputsource modesetting NVIDIA-0
+#xrandr --auto
+
+# Prime Setup
+xrandr --setprovideroffloadsink nouveau Intel
 
 xsetroot -cursor_name left_ptr
 setxkbmap fr
@@ -15,9 +19,9 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
-#exe awesome
+exe awesome
 #exec xmonad
 #exec gnome-session
 #exec startkde
-exec startxfce4
+#exec startxfce4
 # ...or the Window Manager of your choice
