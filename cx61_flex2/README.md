@@ -1,4 +1,4 @@
-CX61 Flex2 Config
+MSI CX61/Lenovo Flex2 Config
 =================
 
 On CX61/Flex2, sound and video does not work properly unless you tweak some configuration files.  
@@ -10,6 +10,7 @@ It seems that alsa choose the wrong device (aplay -l)
 ```
 cp asoundrc ~/.asoundrc
 ```
+note: please also add it to root account for acpi script to work
 
 Xorg Video configuration
 ------------------------
