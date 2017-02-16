@@ -36,17 +36,22 @@ urxvt*font: xft:DejaVu Sans Mono:pixelsize=10
 *color7:  #a6a6a6
 *color15: #e6e6e6
 
+
+URxvt.perl-ext-common: default,matcher,tabbed,resize-font
 ! Lien cliquable
 ! Valeur possible pour l'option matcher button: 1=clic gauche, 2= clic milieu, 3=clic droit
-URxvt.perl-ext-common: default,matcher
-URxvt.urlLauncher:     firefox
+URxvt.urlLauncher:     chromium
 URxvt.matcher.button:  3
 
-! Prise en charge des onglets
+! Prise en charge des onglets (extension: tabbed)
 ! shift+bas ou clic sur NEW= ouvrir nouvel onglet,
 ! shift + fleche gauche/droite=navigation dans les onglets.
 ! ctrl + fleche gauche/droite= deplacement onglet
 ! ctrl+d ou taper exit = fermer onglet/terminal
-URxvt.perl-ext-common: default,tabbed
+
+! Prise en charge font resize (extension: resize-font)
+! ctrl + plus/minus= increase/decrease font
+! ctrl + equal= reset font to default size
+! ctrl + ?= show current font config
 
 ! vim:ft=xdefaults
