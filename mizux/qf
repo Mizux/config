@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+set -x
 find .  -not -path "*/build/*" -type f \( -iname "*.[hc]pp" -or -iname "*.hxx" \) -exec echo "Formatting {}" \; -exec clang-format -style=file -i {} \;

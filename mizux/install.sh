@@ -16,4 +16,4 @@ cp gtkrc-2.0 ~/.gtkrc-2.0
 mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 
 mkdir -pv ~/.local/bin
-cp bgc bgm bcc bcm bcf ~/.local/bin
+cp qc qm qf ~/.local/bin
