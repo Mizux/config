@@ -15,6 +15,9 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
 
+#xrandr --output eDP1 --auto --output HDMI1 --above eDP1 --auto
+#xrandr --output eDP1 --auto --output HDMI1 --left-of eDP1 --auto
+
 exec awesome
 #exec xmonad
 #exec gnome-session
