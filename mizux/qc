@@ -1,34 +1,47 @@
 #!/usr/bin/env bash
-read -p 'Use Ninja [yN]: ' NINJA
-NINJA=${NINJA:n}
-case $NINJA in
-	Y|y)
-		echo "Using Ninja"
+
+# Build Type
+read -p 'Use Debug Build Type [Yn]: ' DEBUG
+case ${DEBUG:-y} in
+	N|n)
+		echo "Build Type: Release"
+		BUILD_TYPE='-DCMAKE_BUILD_TYPE=Release'
+		;;
+	Y|y|*)
+		echo "Build Type: Debug"
+		BUILD_TYPE='-DCMAKE_BUILD_TYPE=Debug'
+		;;
+esac
+
+# Generator
+read -p 'Use Unix Makefiles Generator [Yn]: ' MAKEFILES
+case ${MAKEFILES:-y} in
+	N|n)
+		echo "Generator: Ninja"
 		GENERATOR='-G "Ninja"'
 		;;
-	N|n|*)
-		echo "Using Unix Makefiles"
+	Y|y|*)
+		echo "Generator: Unix Makefiles"
 		GENERATOR='-G "Unix Makefiles"'
 		;;
 esac
 
-read -p 'Use Clang [yN]: ' CLANG
-CLANG=${CLANG:n}
-case $CLANG in
-	Y|y)
-		echo "Using Clang"
+# Compiler
+read -p 'Use GCC Compiler [Yn]: ' GCC
+case ${GCC:-y} in
+	N|n)
+		echo "Compiler: Clang"
 		COMPILER='-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++'
 		;;
-	N|n|*)
-		echo "Using GCC"
+	Y|y|*)
+		echo "Compiler: GCC"
 		COMPILER='-DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++'
 		;;
 esac
 
 if [ -d build ]; then
-	set -x
 	rm -rf build
 fi
 set -x
 mkdir build && cd build
-eval cmake ${GENERATOR} ${COMPILER} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@" ..
+eval cmake ${BUILD_TYPE} ${GENERATOR} ${COMPILER} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@" ..
