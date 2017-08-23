@@ -66,7 +66,7 @@ autoload -Uz compinit && compinit
 # BUILDER
 ## Help
 function build_help {
-	echo "build_help (alias bh):"
+	echo "build_help (alias qh):"
 	echo "/!\\ All commands have to be run in root directory of the project /!\\"
 	echo "* qc: CMake config using Makefile/Ninja gcc/clang"
 	echo "* qm: CMake build using Makefile/Ninja gcc/clang"
