@@ -68,26 +68,24 @@ autoload -Uz compinit && compinit
 function build_help {
 	echo "build_help (alias bh):"
 	echo "/!\\ All commands have to be run in root directory of the project /!\\"
-	echo "* bgc: CMake config using ninja/gcc"
-	echo "* bgm: CMake build using ninja/gcc"
-	echo "* bcc: CMake config using ninja/clang"
-	echo "* bcm: CMake build using ninja/clang"
-	echo "* bcf: Formating using clang-format"
+	echo "* qc: CMake config using Makefile/Ninja gcc/clang"
+	echo "* qm: CMake build using Makefile/Ninja gcc/clang"
+	echo "* qf: Formating using clang-format"
 }
-alias bh='build_help'
+alias qh='build_help'
 
 # ANDROID
 function android-19 {
 	export JAVA_HOME=/usr/lib/jvm/default
-	export ANDROID_HOME=/home/mizux/Android/Sdk
+	export ANDROID_HOME=${HOME}/Android/Sdk
 	export ANDROID_NDK=${ANDROID_HOME}/ndk-bundle
 	export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/19.1.0:$PATH
 }
-function android-25 {
+function android-26 {
 	export JAVA_HOME=/usr/lib/jvm/default
-	export ANDROID_HOME=/home/mizux/Android/Sdk
+	export ANDROID_HOME=${HOME}/Android/Sdk
 	export ANDROID_NDK=${ANDROID_HOME}/ndk-bundle
-	export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/25.0.2:$PATH
+	export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/build-tools/26.0.1:$PATH
 }
 
 # NodeJS
