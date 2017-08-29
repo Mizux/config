@@ -2,7 +2,7 @@
 
 urxvt*modifier: mod4
 URxvt*scrollBar: False
-urxvt*font: xft:DejaVu Sans Mono:pixelsize=10
+urxvt*font: xft:DejaVu Sans Mono:pixelsize=12
 !URxvt*background: black
 !URxvt*foreground: white
 
