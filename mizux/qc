@@ -39,9 +39,34 @@ case ${GCC:-y} in
 		;;
 esac
 
+# Documentation
+read -p 'Enable Documentation [Yn]: ' DOC
+case ${DOC:-y} in
+	N|n)
+		echo "Documentation: Disable"
+		DOCUMENTATION=''
+		;;
+	Y|y|*)
+		echo "Documentation: Enable"
+		DOCUMENTATION='-DENABLE_DOC=ON'
+		;;
+esac
+
+# Coverage
+read -p 'Enable Coverage [Yn]: ' DOC
+case ${DOC:-y} in
+	N|n)
+		echo "Coverage: Disable"
+		COVERAGE=''
+		;;
+	Y|y|*)
+		echo "Coverage: Enable"
+		COVERAGE='-DENABLE_GCOV=ON'
+		;;
+esac
+
 if [ -d build ]; then
 	rm -rf build
 fi
-set -x
 mkdir build && cd build
-eval cmake ${BUILD_TYPE} ${GENERATOR} ${COMPILER} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@" ..
+eval cmake ${BUILD_TYPE} ${GENERATOR} ${COMPILER} ${DOCUMENTATION} ${COVERAGE} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$@" ..
