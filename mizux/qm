@@ -2,7 +2,7 @@
 
 if [ -d build ]; then
 	set -x
-	cmake --build build "$@"
+	cmake --build build -- "$@"
 else
 	echo "(WARN) build directory missing, automatically run qc..."
 	qc
