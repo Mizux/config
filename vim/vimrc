@@ -58,3 +58,5 @@ let g:doxygen_enhanced_colour = 0
 let doxygen_my_rendering = 1
 let doxygen_javadoc_autobrief = 0
 let doxygen_end_punctuation = '[.]'
+" SVG load xml syntax for indentation
+au BufNewFile,BufRead *.svg set filetype=xml
