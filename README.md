@@ -69,6 +69,12 @@ list network: nmcli con show
 connect to network: nmcli dev wifi connect <name> password <password> [iface wlan1]  
 or use the ncurse ui tool "nmtui"
 
+NTP Time Synchronization
+------------------------
+```sh
+timedatectl set-ntp true
+```
+
 Archlinux package config
 ------------------------
 In root run:
