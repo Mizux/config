@@ -144,9 +144,15 @@ Printer Management
 pacman -S --needed cups ghostscript hplip
 systemctl enable cups
 systemctl start cups
+systemctl start/enable org.cups.cupsd.service
+systemctl start/enable cups-browsed.service
 ```
 Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network  
 note use hpcups over hpijs to get border printed   
+
+###HP ENVY 5540
+Add printer using: `socket://192.168.1.14:9100` and for driver: 
+`HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
 
 Disable laptop lid switch handle (usefull when using external screen)
 ---------------------------------------------------------------------
