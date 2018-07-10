@@ -60,3 +60,7 @@ let doxygen_javadoc_autobrief = 0
 let doxygen_end_punctuation = '[.]'
 " SVG load xml syntax for indentation
 au BufNewFile,BufRead *.svg set filetype=xml
+" SWIG load swig syntax for indentation
+au BufNewFile,BufRead *.i set filetype=swig
+" .NET load xml syntax for indentation
+au BufNewFile,BufRead *.fsproj set filetype=xml
