@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
+Plugin 'scrooloose/nerdtree' " Nerd Tree
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
@@ -42,7 +43,8 @@ endfunction()
 " Remove trailing whitespaces when saving:
 autocmd bufwritepre * call CleanWhiteSpace()
 
-nmap <silent> <c-n> :Explore<cr> " open TreeExplorer
+nmap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
+nmap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
 nmap <silent> <c-t> :TagbarToggle<cr> " open TagBar
 nmap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
 
