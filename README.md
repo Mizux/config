@@ -1,24 +1,20 @@
 My install and configuration script for Archlinux.
 
-Archlinux Install
-=================
+# Archlinux Install
 
-Create USB
-----------
+## Create USB
 ```
 dd if=*.iso of=/dev/sdb
 ```
 
-Init
-----
+## Init
 ```
 loadkeys jp106
 loadkeys fr-latin9
 wifi-menu
 ```
 
-Prepare the storage devices
----------------------------
+## Prepare the storage devices
 cfdisk (82 swap )...  
 
 | Name | Boot  | Size   | Format     | Mount |
@@ -37,8 +33,7 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda4 /mnt/home  
 swapon /dev/sda2  
 ```
-Install the base system
------------------------
+## Install the base system
 Replace \<foobar\> by what you want...
 ```
 pacstrap /mnt base base-devel syslinux vim  
@@ -59,8 +54,7 @@ then edit /boot/syslinux/syslinux.cfg if /dev/sda3 is not correct
 Pacman...  
 activate Color and multilib in /etc/pacman.conf
 
-Wireless network configuration
-------------------------------
+## Wireless network configuration
 ```
 pacman -S networkmanager  
 systemctl enable NetworkManager.service  
@@ -69,14 +63,12 @@ list network: nmcli con show
 connect to network: nmcli dev wifi connect <name> password <password> [iface wlan1]  
 or use the ncurse ui tool "nmtui"
 
-NTP Time Synchronization
-------------------------
+## NTP Time Synchronization
 ```sh
 timedatectl set-ntp true
 ```
 
-Archlinux package config
-------------------------
+## Archlinux package config
 In root run:
 ```
 cd tmp
@@ -84,11 +76,9 @@ git clone --depth=1 https://github.com/Mizux/config.git config
 cd config/pkg && ./dev_install.sh
 ```
 
-User Configuration
-==================
+# User Configuration
 
-Adding User
------------
+## Adding User
 ```
 useradd -g users -m -s /usr/bin/zsh <username>  
 ```
@@ -97,16 +87,12 @@ Adding user to a group:
 usermod -a -G <wheel,audio,video,disk,storage,docker> <username>  
 ```
 
-User config Installation
--------------------------
-
+## User config Installation
 ArchLinux configuration files (zshrc...)  
 simply run mizux/install.sh  
 warning no backup are performed !  
 
-Japanese Install
-----------------
-
+## Japanese Install
 To install japaneses, first install fonts:
 ```
 pacman -S adobe-source-han-sans-jp-fonts otf-ipafont
@@ -128,18 +114,15 @@ ibus-daemon -drx
 ```
 note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)
 
-Misc
-====
+# Misc
 
-X Server multi-user
--------------------
+## X Server multi-user
 Edit /etc/pam.d/su su-l and add:  
 ```
 session        optional        pam_xauth.so
 ```
 
-Printer Management
-------------------
+## Printer Management
 ```
 pacman -S --needed cups ghostscript hplip
 systemctl enable cups
@@ -150,13 +133,38 @@ systemctl start/enable cups-browsed.service
 Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network  
 note use hpcups over hpijs to get border printed   
 
-###HP ENVY 5540
+### HP ENVY 5540
 Add printer using: `socket://192.168.1.14:9100` and for driver: 
 `HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
 
-Disable laptop lid switch handle (usefull when using external screen)
----------------------------------------------------------------------
+## Disable laptop lid switch handle (usefull when using external screen)
 Edit /etc/systemd/logind.conf and enable:  
 ```
 LidSwitchIgnoreInhibited=yes
+```
+
+## xdg-open management
+You must append `.desktop` to any binary.  
+e.g. `feh` becomes `feh.desktop`...
+
+### Query filetype
+```sh
+$ xdg-mime query filetype <example.png>
+image/png
+```
+
+### Query default app
+```sh
+$ xdg-mime query default <image/png>
+foobar.desktop
+```
+
+### Set default app
+```sh
+$ xdg-mime default <foobar.desktop> <image/png>
+```
+
+### Open file using default app
+```sh
+$ xdg-open <example.png>
 ```
