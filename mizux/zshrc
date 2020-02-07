@@ -1,4 +1,4 @@
-# Prompt
+# Set up the prompt
 autoload -U colors && colors
 
 local c_red="%{$fg[red]%}"
@@ -37,6 +37,7 @@ alias ll='ls -lh'
 alias llc='ll --color'
 alias la='ls -lha'
 alias lac='la --color'
+alias grepc='grep --color'
 
 # History
 HISTFILE=~/.histfile
@@ -99,7 +100,10 @@ $PATH
 }
 
 # NodeJS
-export NPM_PACKAGES=~/.npm-packages
-export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
-export PATH=$NPM_PACKAGES/bin:~/.nodejs/current/bin:$PATH
-unset MANPATH; export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+# see: http://npm.github.io/installation-setup-docs/installing/a-note-on-permissions.html
+export NPM_CONFIG_PREFIX=${HOME}/.npm-global
+export PATH=$PATH:${HOME}/.npm-global/bin
+#export NPM_PACKAGES=~/.npm-packages
+#export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
+#export PATH=$NPM_PACKAGES/bin:~/.nodejs/current/bin:$PATH
+#unset MANPATH; export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
