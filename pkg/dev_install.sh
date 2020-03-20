@@ -4,13 +4,22 @@ echo "update System..."
 pacman -Syu
 echo "update System Done"
 
+# Deprecated:
+# gitlab-ci-multi-runner
+
 echo "install Dev tools..."
 pacman -S --needed base-devel \
-qtcreator ipython docker gitlab-ci-multi-runner \
-git tk tig mercurial aspell-en aspell-fr meld \
+cmake ninja gcc gdb clang llvm \
+git tk tig mercurial \
+meld \
+docker \
+ipython \
+qtcreator code \
+aspell-en aspell-fr \
+doxygen graphviz \
 upx strace valgrind cppcheck \
-doxygen graphviz ctags cscope sloccount \
-cmake ninja gcc gdb clang clang-tools-extra llvm
+ctags cscope sloccount \
+
 echo "install Dev Done"
 echo "install 3rd Party..."
 pacman -S --needed \
