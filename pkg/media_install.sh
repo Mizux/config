@@ -7,8 +7,9 @@ echo "update System Done"
 echo "install Media..."
 pacman -S --needed unrar unzip p7zip \
 chromium firefox flashplugin filezilla hexchat perl-file-mimeinfo \
-smplayer vlc audacious audacious-plugins libcue libmms neon wavpack alsa-utils  \
-scrot gimp inkscape feh gcolor2 blender wings3d \
+smplayer smtube vlc audacious audacious-plugins libcue libmms neon wavpack alsa-utils  \
+scrot gimp inkscape feh gcolor2 \
+blender wings3d \
 calibre libreoffice \
 zathura zathura-pdf-mupdf zathura-djvu evince pdftk \
 nethack wesnoth dwarffortress armagetronad
