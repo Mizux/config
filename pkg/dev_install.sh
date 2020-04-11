@@ -21,6 +21,14 @@ upx strace valgrind cppcheck \
 ctags cscope sloccount \
 
 echo "install Dev Done"
+
+echo "Extensions for vscode:"
+echo "* vscodevim.vim"
+echo "* ms-vscode.cmake-tools"
+echo "* twxs.cmake"
+echo "* geequlim.godot-tools"
+echo ""
+
 echo "install 3rd Party..."
 pacman -S --needed \
 boost blas lapack eigen opencv lua \
