@@ -43,13 +43,13 @@ ip link
 ## Prepare the storage devices
 cfdisk (82 swap )...  
 
-| Name | Boot  | Size   | Format     | Mount |
-| ---- | :---: | -----: | :--------: | ----- |
-| sda1 | *     | 260M   | mkfs.ext2  | /boot |
-| sda1 | *     | 260M   | efi        | /efi  |
-| sda2 |       | 2G     | mkswap     |       |
-| sda3 |       | 32G    | mkfs.ext4  | /     |
-| sda4 |       | ALL    | mkfs.ext4  | /home |
+| Name | Boot  | Size   | Format        | Mount |
+| ---- | :---: | -----: | :-----------: | ----- |
+| sda1 | *     | 260M   | mkfs.ext2     | /boot |
+| sda1 | *     | 260M   | mkfs.fat -F32 | /efi  |
+| sda2 |       | 2G     | mkswap        |       |
+| sda3 |       | 32G    | mkfs.ext4     | /     |
+| sda4 |       | ALL    | mkfs.ext4     | /home |
 
 mkfs all...  
 mount all...  
