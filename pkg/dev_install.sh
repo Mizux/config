@@ -17,6 +17,7 @@ bullet box2d \
 qtcreator qt5 qt5-doc \
 code nodejs npm \
 ipython \
+dotnet-sdk \
 doxygen graphviz
 echo "install Dev Done"
 
