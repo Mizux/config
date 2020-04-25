@@ -1,4 +1,4 @@
-# Set up the prompt
+# Prompt
 autoload -U colors && colors
 
 local c_red="%{$fg[red]%}"
@@ -102,8 +102,4 @@ $PATH
 # NodeJS
 # see: http://npm.github.io/installation-setup-docs/installing/a-note-on-permissions.html
 export NPM_CONFIG_PREFIX=${HOME}/.npm-global
-export PATH=$PATH:${HOME}/.npm-global/bin
-#export NPM_PACKAGES=~/.npm-packages
-#export NODE_PATH=$NPM_PACKAGES/lib/node_modules:$NODE_PATH
-#export PATH=$NPM_PACKAGES/bin:~/.nodejs/current/bin:$PATH
-#unset MANPATH; export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+export PATH=${PATH}:${NPM_CONFIG_PREFIX}/bin
