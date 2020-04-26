@@ -14,7 +14,8 @@ audacity kid3-qt \
 scrot feh gimp inkscape gcolor2 gcolor3 \
 smplayer vlc ffmpeg \
 blender wings3d \
-zathura zathura-pdf-mupdf zathura-djvu pdftk
+zathura zathura-pdf-mupdf zathura-djvu pdftk \
+mcomix mupdf-tools
 echo "install Media Done"
 
 echo "install Game..."
