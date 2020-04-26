@@ -9,7 +9,7 @@ pacman -S --needed \
 unrar unzip p7zip \
 chromium firefox youtube-dl \
 hexchat \
-audacious audacious-plugins audacity \
+cmus audacious audacious-plugins audacity \
 scrot feh gimp inkscape gcolor2 gcolor3 \
 smplayer vlc ffmpeg \
 blender wings3d \
