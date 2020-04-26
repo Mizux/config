@@ -29,6 +29,6 @@ flashplugin filezilla perl-file-mimeinfo \
 smtube libcue libmms neon wavpack  \
 krita \
 calibre libreoffice evince \
-yaourt -S --needed --noconfirm chromium-pepper-flash
+yay -S --needed --noconfirm chromium-pepper-flash
 
 armagetronad \
