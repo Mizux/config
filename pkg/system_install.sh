@@ -15,6 +15,7 @@ wget curl \
 alsa-utils
 echo "install System Done"
 
+# Xorg server and WM
 echo "install Xorg..."
 pacman -S --needed \
 xorg-server xorg-xinit xterm \
@@ -25,6 +26,12 @@ gnome-icon-theme gnome-icon-theme-extras \
 oxygen-icons oxygen-icons-svg oxygen-gtk2 \
 ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-freefont
 echo "install Xorg Done"
+
+# Vulkan
+echo "install Vulkan..."
+pacman -S --needed \
+vulkan-devel vulkan-intel vulkan-icd-loader
+echo "install Vulkan Done"
 
 exit
 
@@ -49,8 +56,6 @@ mesa-demos \
 xlockmore \
 thunar thunar-archive-plugin \
 
-# Vulkan
-pacman -S --needed vulkan-devel vulkan-intel vulkan-icd-loader
 
 # Japanese Input Support
 ibus ibus-qt ibus-anthy otf-ipafont ttf-hanazono \
