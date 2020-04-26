@@ -17,7 +17,7 @@ echo "install System Done"
 
 echo "install Xorg..."
 pacman -S --needed \
-xorg-server xorg-xinit \
+xorg-server xorg-xinit xterm \
 awesome rxvt-unicode rox file-roller \
 lxappearance \
 gtk-engines gtk-engine-murrine \
@@ -45,6 +45,7 @@ xorg-server-utils \
 xf86-input-synaptics \
 xf86-video-nouveau \
 xf86-video-intel \
+mesa-demos \
 
 xlockmore \
 thunar thunar-archive-plugin \

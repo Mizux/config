@@ -19,7 +19,8 @@ echo "install Media Done"
 echo "install Game..."
 pacman -S --needed \
 nethack dwarffortress wesnoth \
-xonotic minetest
+xonotic minetest \
+steam-native-runtime
 echo "install Game Done"
 
 exit
