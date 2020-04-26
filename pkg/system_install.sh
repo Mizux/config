@@ -7,7 +7,7 @@ echo "update System Done"
 echo "install System..."
 pacman -S --needed \
 base base-devel zsh gvim \
-exfat-utils dosfstools \
+exfat-utils dosfstools udisks2 \
 perl-rename \
 tree ncdu rsync \
 htop hwinfo \
@@ -34,7 +34,6 @@ namcap \
 dialog \
 sudo \
 udevil \
-udisks \
 ntfs-3g  \
 bc \
 sysstat \
@@ -49,7 +48,9 @@ mesa-demos \
 
 xlockmore \
 thunar thunar-archive-plugin \
-lxappearance-gtk3 \
+
+# Vulkan
+pacman -S --needed vulkan-devel vulkan-intel vulkan-icd-loader
 
 # Japanese Input Support
 ibus ibus-qt ibus-anthy otf-ipafont ttf-hanazono \
