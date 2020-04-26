@@ -1,7 +1,8 @@
-My install and configuration script for Archlinux.
+My install steps and configuration script for Archlinux.
 
 # Archlinux Install
-from: https://wiki.archlinux.org/index.php/Installation_guide 
+First read and keep open the [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide).
+
 ## Download and Archlinux iso
 Download from any mirror listed here: https://www.archlinux.org/download/
 e.g. using https://mirrors.eric.ovh/arch/iso/2020.04.01/
@@ -66,7 +67,7 @@ mount all...
 mount /dev/sda2 /mnt  
 mkdir /mnt/boot  
 mount /dev/sda1 /mnt/boot  
-swapon /dev/sda2  
+swapon /dev/sda3
 ```
 
 ### UEFI with GPT (nuc10i7)
@@ -75,11 +76,11 @@ cfdisk /dev/nvme0n1
 ```
 note: Choose [**GPT** for UEFI](https://wiki.archlinux.org/index.php/Partitioning#Choosing_between_GPT_and_MBR)
 
-| Name           | Boot  | Size   | Format Cmd    | Mount    |
-| -------------- | :---: | -----: | :-----------: | -------- |
-| /dev/nvme0n1p1 | *     | 384M   | mkfs.fat -F32 | /mnt/efi |
-| /dev/nvme0n1p2 |       | 928G   | mkfs.ext4     | /mnt     |
-| /dev/nvme0n1p3 |       | 2G     | mkswap        |          |
+| Name           | Size   | Type       | Format Cmd    | Mount    |
+| -------------- | -----: | ---------: | :-----------: | -------- |
+| /dev/nvme0n1p1 | 384M   | EFI Sys    | mkfs.fat -F32 | /mnt/efi |
+| /dev/nvme0n1p2 | 928G   | Linux Sys  | mkfs.ext4     | /mnt     |
+| /dev/nvme0n1p3 | 2G     | Linux SWAP | mkswap        |          |
 
 ref: [EFI partition format](https://wiki.archlinux.org/index.php/EFI_system_partition#Format_the_partition)
 
@@ -197,7 +198,16 @@ linux /EFI/arch/vmlinuz-linux
 initrd /EFI/arch/initramfs-linux.img
 options root=/dev/nvme0n1p2 rw
 ```
-note: For `root` parameter, the linux kernel support [this](https://github.com/torvalds/linux/blob/f49aa1de98363b6c5fba4637678d6b0ba3d18065/init/do_mounts.c#L191-L219).
+
+and a `/efi/loader/entries/arch_fallback.conf` :
+```
+title Arch Linux Fallback
+linux /EFI/arch/vmlinuz-linux
+initrd /EFI/arch/initramfs-linux-fallback.img
+options root=/dev/nvme0n1p2 rw
+```
+
+note: For `root` parameter, the linux kernel support [this format](https://github.com/torvalds/linux/blob/f49aa1de98363b6c5fba4637678d6b0ba3d18065/init/do_mounts.c#L191-L219).
 
 **NOW, YOU SHOULD BE ABLE TO REBOOT**
 
