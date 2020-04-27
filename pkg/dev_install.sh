@@ -6,19 +6,20 @@ echo "update System Done"
 
 echo "install Dev tools..."
 pacman -S --needed \
-base-devel gvim aspell-en aspell-fr \
+base-devel shellcheck \
+gvim aspell-en aspell-fr \
 git tk tig \
 meld \
-cmake ninja gcc gdb clang \
 upx strace valgrind ctags \
+cmake ninja gcc gdb clang \
+qtcreator qt5 qt5-doc \
+ipython python python-pip python-virtualenv \
+code nodejs npm \
+dotnet-sdk \
+doxygen graphviz \
 lua \
 opencv \
-bullet box2d \
-qtcreator qt5 qt5-doc \
-code nodejs npm \
-ipython \
-dotnet-sdk \
-doxygen graphviz
+bullet box2d
 echo "install Dev Done"
 
 echo "install Docker..."
