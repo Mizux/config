@@ -6,7 +6,7 @@ echo "update System Done"
 
 #echo "install Python2 dev..."
 pacman -S --needed \
-ipython2 python2-pip \
+ipython2 python2-pip python2-virtualenv \
 python2-numpy
 echo "install Python2 dev Done"
 
