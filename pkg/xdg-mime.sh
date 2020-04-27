@@ -3,6 +3,13 @@ set -euxo pipefail
 
 # seems to be stored in: $HOME/.config/mimeapps.list
 echo "Setup mimetype..."
+xdg-mime default rox.desktop inode/directory
+xdg-mime default zathura.desktop application/pdf
+xdg-mime default mcomix.desktop application/x-cbr
+xdg-mime default mcomix.desktop application/x-cbz
+xdg-mime default org.gnome.FileRoller.desktop application/x-rar
+xdg-mime default org.gnome.FileRoller.desktop application/x-zip
+
 xdg-mime default gvim.desktop text/plain
 xdg-mime default gvim.desktop text/xml
 xdg-mime default gvim.desktop text/x-shellscript
