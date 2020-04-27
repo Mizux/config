@@ -15,6 +15,7 @@ cmake ninja gcc gdb clang \
 qtcreator qt5 qt5-doc \
 ipython python python-pip python-virtualenv \
 code nodejs npm \
+jdk-openjdk maven \
 dotnet-sdk \
 doxygen graphviz \
 lua swig \
