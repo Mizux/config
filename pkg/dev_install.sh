@@ -17,7 +17,7 @@ ipython python python-pip python-virtualenv \
 code nodejs npm \
 dotnet-sdk \
 doxygen graphviz \
-lua \
+lua swig \
 opencv \
 bullet box2d
 echo "install Dev Done"
