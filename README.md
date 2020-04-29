@@ -226,7 +226,7 @@ useradd -g users -m -s /usr/bin/zsh <username>
 ```
 Adding user to a group:  
 ```sh
-usermod -a -G <wheel,audio,video,disk,storage,docker> <username>  
+usermod -a -G <wheel,audio,video,disk,storage,docker,cups> <username>  
 ```
 
 ## User config Installation
@@ -266,8 +266,6 @@ session        optional        pam_xauth.so
 ## Printer Management
 ```sh
 pacman -S --needed cups ghostscript hplip
-systemctl enable cups
-systemctl start cups
 systemctl start/enable org.cups.cupsd.service
 systemctl start/enable cups-browsed.service
 ```
@@ -275,7 +273,7 @@ Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network
 note use hpcups over hpijs to get border printed   
 
 ### HP ENVY 5540
-Add printer using: `socket://192.168.1.14:9100` and for driver: 
+Add printer using: `socket://192.168.1.12:9100` and for driver: 
 `HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
 
 ## Flex2 Disable laptop lid switch handle (usefull when using external screen)
