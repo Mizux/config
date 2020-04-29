@@ -17,7 +17,7 @@ ipython python python-pip python-virtualenv \
 code nodejs npm \
 jdk-openjdk maven \
 dotnet-sdk \
-doxygen graphviz \
+doxygen graphviz plantuml \
 lua swig \
 opencv \
 bullet box2d
