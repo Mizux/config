@@ -23,9 +23,18 @@ awesome rxvt-unicode rox file-roller \
 lxappearance \
 gtk-engines gtk-engine-murrine \
 gnome-icon-theme gnome-icon-theme-extras \
-oxygen-icons oxygen-icons-svg oxygen-gtk2 \
-ttf-dejavu ttf-droid ttf-inconsolata ttf-liberation ttf-freefont
+oxygen-icons oxygen-icons-svg oxygen-gtk2
 echo "install Xorg Done"
+
+echo "install Fonts..."
+pacman -S --needed \
+ttf-liberation ttf-croscore \
+ttf-dejavu \
+gnu-free-fonts ttf-freefont \
+ttf-droid ttf-roboto \
+noto-fonts noto-fonts-emoji \
+ttf-inconsolata ttf-hack
+echo "install Fonts Done"
 
 # Vulkan
 echo "install Vulkan..."
