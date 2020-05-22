@@ -33,7 +33,8 @@ ttf-dejavu \
 gnu-free-fonts ttf-freefont \
 ttf-droid ttf-roboto \
 noto-fonts noto-fonts-emoji \
-ttf-inconsolata ttf-hack
+ttf-inconsolata ttf-hack \
+ipa-fonts ttf-hanazono ttf-sazanami
 echo "install Fonts Done"
 
 # Vulkan
