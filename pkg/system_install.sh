@@ -6,6 +6,7 @@ echo "update System Done"
 
 echo "install System..."
 pacman -S --needed \
+networkmanager \
 base base-devel zsh gvim \
 exfat-utils dosfstools udisks2 \
 perl-rename \
