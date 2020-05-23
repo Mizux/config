@@ -69,6 +69,10 @@ mesa-demos \
 xlockmore \
 thunar thunar-archive-plugin \
 
+plasma \
+cinnamon \
+gnome \
+xfce4 \
 
 # Japanese Input Support
 ibus ibus-qt ibus-anthy otf-ipafont ttf-hanazono \
