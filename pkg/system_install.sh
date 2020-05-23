@@ -20,6 +20,7 @@ echo "install Xorg..."
 pacman -S --needed \
 xorg-server xorg-xinit xterm \
 awesome rxvt-unicode rox file-roller \
+breeze-gtk breeze-icons \
 lxappearance \
 gtk-engines gtk-engine-murrine \
 gnome-icon-theme gnome-icon-theme-extras \
