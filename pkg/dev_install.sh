@@ -7,7 +7,7 @@ echo "update System Done"
 
 echo "install Dev tools..."
 pacman -S --needed \
-base-devel shellcheck \
+base-devel dos2unix shellcheck \
 man-pages man-db \
 gvim aspell-en aspell-fr \
 git tk tig \
