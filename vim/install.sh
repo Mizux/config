@@ -17,3 +17,6 @@ vim +PluginInstall +qall
 # Finalize YouCompleteMe install
 cd ~/.vim/bundle/YouCompleteMe
 ./install.py --clang-completer
+
+# Finalize Nodejs install
+vim +"CocInstall coc-json coc-tsserver" +qall

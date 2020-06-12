@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
+Plugin 'neoclide/coc.nvim' " Nodejs support
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'scrooloose/nerdtree' " Nerd Tree
 Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
