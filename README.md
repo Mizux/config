@@ -5,10 +5,10 @@ First read and keep open the [Installation Guide](https://wiki.archlinux.org/ind
 
 ## Download and Archlinux iso
 Download from any mirror listed here: https://www.archlinux.org/download/
-e.g. using https://mirrors.eric.ovh/arch/iso/2020.04.01/
+e.g. using https://mirrors.eric.ovh/arch/iso/2020.09.01/
 ```sh
-wget https://mirrors.eric.ovh/arch/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso
-wget https://mirrors.eric.ovh/arch/iso/2020.04.01/archlinux-2020.04.01-x86_64.iso.sig
+wget https://mirrors.eric.ovh/arch/iso/2020.09.01/archlinux-2020.09.01-x86_64.iso
+wget https://mirrors.eric.ovh/arch/iso/2020.09.01/archlinux-2020.09.01-x86_64.iso.sig
 pacman-key -v archlinux-*-x86_64.iso.sig
 ```
 note: on non archlinux system verify using
@@ -23,7 +23,7 @@ dd if=*.iso of=/dev/sdX status=progress oflag=sync
 ref: [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION)
 
 ## Init
-nuc10i7: You may need to disable safe-boot in order to boot from the usb stick.
+nuc10i7: You may need to disable the secure-boot in order to boot from the Arch Linux usb stick.
 
 Change keyboard layout (default us):
 ```sh
@@ -39,7 +39,11 @@ ls /sys/firmware/efi/efivars
 
 Setup wifi:
 ```sh
-wifi-menu
+iwctl
+# device list
+# station wlan0 scan
+# station wlan0 get-networks
+# station wlan0 connect SSID
 ip link
 ping archlinux.org
 ```
@@ -131,7 +135,11 @@ First, try using:
 ```sh
 mkdir -p /efi/EFI/arch
 mount --bind /efi/EFI/arch /boot
+pacman -S linux
 ```
+note: You need to regenerate the image since the `mount --bind` will hide the
+previously generated one...
+
 Then, simply add to /etc/fstab (see bootloader part at the end)
 ```
 /efi/EFI/arch          /boot           none            defaults,bind   0 0
@@ -172,7 +180,7 @@ timedatectl set-ntp true
 ## UEFI Bootloader
 First create the loader stuff in the `/efi` partition 
 ```
-bootctl --path=/efi
+bootctl install --root-path=/efi
 ```
 ### Create Default loader
 Then in `/efi/loader/loader.conf` 
@@ -224,14 +232,24 @@ cd config/pkg && ./dev_install.sh
 ```sh
 useradd -g users -m -s /usr/bin/zsh <username>  
 ```
+Changing password to user:
+```sh
+passwd <username>
+```
+
 Adding user to a group:  
 ```sh
 usermod -a -G <wheel,audio,video,disk,storage,docker,cups> <username>  
 ```
 
+Allowing user (in group `wheel`) to sudo, you'll need to edit `/etc/sudoers`:
+```diff
++%wheel ALL=(ALL) ALL
+```
+
 ## User config Installation
 ArchLinux configuration files (zshrc...)  
-simply run mizux/install.sh  
+simply run `mizux/install.sh`  
 warning no backup are performed !  
 
 # Japanese Install
