@@ -14,9 +14,29 @@ local path_p="${blue_op}${c_yellow}%~${c_reset}${blue_cp}"
 local user_host="${c_red}%n${c_reset}@${c_yellow}%m${c_reset}"
 local ret_status="${blue_op}%(?,${c_green}%?${c_reset},${c_red}%?${c_reset})${blue_cp}"
 local hist_no="${blue_op}%h${blue_cp}"
-local smiley="${blue_op}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${blue_cp}"
-PROMPT="${ret_status}─${path_p}
-${smiley}─${user_host} %#"
+
+function smiley() {
+  case $(( $(od -An -N1 -tu < /dev/random) %3 )) in
+    0)
+      happy='^v^'
+      sad='>_<' ;;
+    1)
+      happy='^u^'
+      sad='!_!' ;;
+    *)
+      happy='*v*'
+      sad='o_0' ;;
+  esac
+  echo "${blue_op}%(?,${c_green}${happy}${c_reset},${c_red}${sad}${c_reset})${blue_cp}" 2>/dev/null
+}
+setopt PROMPT_SUBST
+PROMPT='${ret_status}─${path_p}
+$(smiley)─${user_host} %#'
+
+#local smiley="${blue_op}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${blue_cp}"
+#PROMPT="${ret_status}─${path_p}
+#${smiley}─${user_host} %#"
+
 local cur_cmd="${blue_op}%_${blue_cp}"
 PROMPT2="${cur_cmd}> "
 
