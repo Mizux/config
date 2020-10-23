@@ -8,10 +8,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
-Plugin 'neoclide/coc.nvim' " Nodejs support
+"Plugin 'neoclide/coc.nvim' " Nodejs support
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'scrooloose/nerdtree' " Nerd Tree
-Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
+"Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
@@ -24,7 +24,7 @@ filetype plugin indent on " required
 colorscheme mouse | set background=dark | set guifont=DejaVu\ Sans\ Mono\ 10
 set number | set ruler | set cursorline | set textwidth=80
 syntax on | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
-set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 "|set expandtab
+set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
 set foldmethod=syntax | set foldlevelstart=99 | set foldenable
 let g:xml_syntax_folding=1
 set ssop-=options | set ssop-=folds
@@ -32,7 +32,7 @@ set ssop-=options | set ssop-=folds
 " Remove trailing whitespace
 function! CleanWhiteSpace()
   " Don't strip on these filetypes
-  if &ft =~ 'markdown\|perl'
+  if &ft =~ 'markdown\|perl\|diff'
     return
   endif
   let _s=@/
@@ -48,7 +48,7 @@ autocmd bufwritepre * call CleanWhiteSpace()
 nmap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
 nmap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
 nmap <silent> <c-t> :TagbarToggle<cr> " open TagBar
-nmap <silent> <c-m> :MinimapToggle<cr> " open Minimap
+"nmap <silent> <c-m> :MinimapToggle<cr> " open Minimap
 nmap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
 
 " CTags Completion (C-F8 generate)
