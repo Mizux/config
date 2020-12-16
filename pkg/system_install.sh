@@ -75,4 +75,8 @@ gnome \
 xfce4 \
 
 # Japanese Input Support
-ibus ibus-qt ibus-anthy otf-ipafont ttf-hanazono \
+# ibus-qt depend on aur qt4...
+pacman -S --needed \
+ibus ibus-anthy otf-ipafont ttf-hanazononadobe-source-han-sans-jp-fonts \
+
+ibus-setup
