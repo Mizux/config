@@ -36,6 +36,7 @@ fi
 
 xsetroot -cursor_name left_ptr
 setxkbmap fr
+numlockx &
 
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
