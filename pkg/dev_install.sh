@@ -19,7 +19,7 @@ echo "install C++..."
 pacman -S --needed \
 qtcreator qt5 qt5-doc \
 doxygen \
-upx strace valgrind ctags \
+upx strace valgrind kcachegrind ctags \
 cmake ninja \
 gcc gdb clang \
 lua swig \
