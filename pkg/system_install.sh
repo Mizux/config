@@ -20,7 +20,6 @@ echo "install System Done"
 echo "install Xorg..."
 pacman -S --needed \
 xorg-server xorg-xinit xterm numlockx \
-xf86-video-intel xf86-video-fbdev xf86-video-vesa \
 awesome rxvt-unicode rox file-roller \
 breeze-gtk breeze-icons \
 lxappearance \
@@ -65,6 +64,8 @@ xf86-input-synaptics \
 xf86-video-nouveau \
 xf86-video-intel \
 mesa-demos \
+xf86-video-fbdev \
+xf86-video-vesa \
 
 xlockmore \
 thunar thunar-archive-plugin \
