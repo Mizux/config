@@ -23,7 +23,12 @@ color = auto
 
 [merge]
 tool = meld
+verbosity = 3
+
 [gui]
 fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 fontdiff = -family \"DejaVu Sans Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 tabsize = 2
+
+[init]
+defaultBranch = main
