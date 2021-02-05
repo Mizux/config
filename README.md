@@ -275,6 +275,13 @@ ibus-daemon -drx
 note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)
 
 # Misc
+## Font viewer
+
+To add in rox-filer for ttf files:
+```sh
+fontforge -nosplash -quiet "$@"
+```
+
 ## X Server multi-user
 Edit /etc/pam.d/su su-l and add:  
 ```sh
