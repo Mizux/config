@@ -275,6 +275,13 @@ ibus-daemon -drx
 note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)
 
 # Misc
+## Memory Check
+to check type of memory installed:
+```sh
+sudo dmidecode -t memory
+sudo lshw -short -C Memory
+```
+
 ## Font viewer
 
 To add in rox-filer for ttf files:

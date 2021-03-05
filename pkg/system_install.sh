@@ -11,7 +11,7 @@ base base-devel zsh gvim \
 exfat-utils dosfstools udisks2 \
 perl-rename \
 tree ncdu rsync \
-htop hwinfo \
+htop hwinfo lshw dmidecode \
 wget curl \
 alsa-utils
 echo "install System Done"
