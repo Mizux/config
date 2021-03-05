@@ -54,7 +54,7 @@ timedatectl set-ntp true
 ```
 
 ## Prepare the storage devices
-### BIOS with MBR (cx61, flex2)
+### BIOS with MBR (cx61, flex2, eeepc)
 ```sh
 cfdisk /dev/sda
 ```
@@ -126,6 +126,8 @@ locale-gen
 echo "LANG=\"en_US.UTF-8\"" > /etc/locale.conf
 echo "KEYMAP=<fr-latin9/jp106>" > /etc/vconsole.conf
 ```
+
+eeepc 1015PEM: `KEYMAP=fr` (with `fr-latin9` cmd `ctrl+c/e` won't work)
 
 ### Initramfs
 #### [UEFI only] Setup
