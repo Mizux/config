@@ -25,7 +25,7 @@ breeze-gtk breeze-icons \
 lxappearance \
 gtk-engines gtk-engine-murrine \
 gnome-icon-theme gnome-icon-theme-extras \
-oxygen-icons oxygen-icons-svg oxygen-gtk2
+oxygen-icons oxygen-icons-svg
 echo "install Xorg Done"
 
 echo "install Fonts..."
