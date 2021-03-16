@@ -8,6 +8,7 @@ echo "install System..."
 pacman -S --needed \
 networkmanager \
 base base-devel zsh gvim \
+gpg expect \
 exfat-utils dosfstools udisks2 \
 perl-rename \
 tree ncdu rsync \
