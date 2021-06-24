@@ -27,6 +27,9 @@ echo "install Game Done"
 
 exit
 
+# Twitch Streaming
+obs-studio
+
 # Deprecated
 flashplugin filezilla perl-file-mimeinfo \
 smtube libcue libmms neon wavpack  \
