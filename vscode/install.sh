@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 set -euxo pipefail
 
 # Cleanup
@@ -25,3 +24,8 @@ code --install-extension vscodevim.vim
 # Copy my default settings
 mkdir -pv "$HOME/.config/Code - OSS/User/"
 cp settings.json "$HOME/.config/Code - OSS/User/"
+
+# VSX CORS Fixup
+# see: https://github.com/VSCodium/vscodium/issues/746#issuecomment-881049046
+mkdir -pv "$HOME/.vscode-oss"
+cp argv.json "$HOME/.vscode-oss"
