@@ -17,6 +17,7 @@ Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plugin 'bling/vim-airline' " lean & mean status/tabline
 Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
+"Plugin 'leafOfTree/vim-svelte-plugin' " svelte indent & syntax
 call vundle#end() " required
 filetype plugin indent on " required
 " :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate
