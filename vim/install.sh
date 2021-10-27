@@ -15,8 +15,9 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 # Finalize YouCompleteMe install
+# see: https://github.com/ycm-core/YouCompleteMe/blob/master/README.md#linux-64-bit
 cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+./install.py --clangd-completer
 
 # Finalize Nodejs install
 vim +"CocInstall coc-json coc-tsserver" +qall
