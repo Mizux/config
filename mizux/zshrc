@@ -58,6 +58,7 @@ alias llc='ll --color'
 alias la='ls -lha'
 alias lac='la --color'
 alias grepc='grep --color'
+alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 
 # History
 HISTFILE=~/.histfile
