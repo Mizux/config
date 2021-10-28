@@ -47,6 +47,7 @@ export EDITOR=vim
 # PATH
 export PATH=~/.local/bin:$PATH
 export JAVA_HOME=/usr/lib/jvm/default
+export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 # Alias
 alias ls='ls --group-directories-first'
