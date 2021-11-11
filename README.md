@@ -284,10 +284,20 @@ To add in rox-filer for ttf files:
 fontforge -nosplash -quiet "$@"
 ```
 
+## DNS change
+Example using Google DNS instead of FAI ones.
 ```sh
+nmcli connection modify <connection_name> ipv4.ignore-auto-dns yes
+nmcli connection modify <connection_name> ipv6.ignore-auto-dns yes
+%nmcli connection modify <connection_name> ipv4.dns "8.8.8.8 8.8.4.4"
+%nmcli connection modify <connection_name> ipv6.dns "2001:4860:4860::8888 2001:4860:4860::8844"
+nmcli connection down <connection_name>
+nmcli connection up <connection_name>
 ```
 
+You can check using:
 ```sh
+cat /etc/resolv.conf
 ```
 
 ## X Server multi-user
