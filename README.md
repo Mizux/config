@@ -221,7 +221,7 @@ note: For `root` parameter, the linux kernel support [this format](https://githu
 
 **NOW, YOU SHOULD BE ABLE TO REBOOT**
 
-# Archlinux package config
+## Archlinux package config
 In root run:
 ```sh
 cd tmp
@@ -267,6 +267,7 @@ ibus-setup
 ```
 ibus-setup/Advanced: check use system layout.  
 ibus-setup/InputMethod: add anthy for japanese.  
+
 Also add this line in your `.xinitrc` (before `setxkbmap fr`)
 ```sh
 export GTK_IM_MODULE=ibus
@@ -277,43 +278,22 @@ ibus-daemon -drx
 note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)
 
 # Misc
-## Memory Check
-to check type of memory installed:
-```sh
-sudo dmidecode -t memory
-sudo lshw -short -C Memory
-```
-
 ## Font viewer
-
 To add in rox-filer for ttf files:
 ```sh
 fontforge -nosplash -quiet "$@"
+```
+
+```sh
+```
+
+```sh
 ```
 
 ## X Server multi-user
 Edit /etc/pam.d/su su-l and add:  
 ```sh
 session        optional        pam_xauth.so
-```
-
-## Printer Management
-```sh
-pacman -S --needed cups ghostscript hplip
-systemctl start/enable org.cups.cupsd.service
-systemctl start/enable cups-browsed.service
-```
-Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network  
-note use hpcups over hpijs to get border printed   
-
-### HP ENVY 5540
-Add printer using: `socket://192.168.1.12:9100` and for driver: 
-`HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
-
-## Flex2 Disable laptop lid switch handle (usefull when using external screen)
-Edit /etc/systemd/logind.conf and enable:  
-```
-LidSwitchIgnoreInhibited=yes
 ```
 
 ## xdg-open management
@@ -340,4 +320,35 @@ $ xdg-mime default <foobar.desktop> <image/png>
 ### Open file using default app
 ```sh
 $ xdg-open <example.png>
+```
+
+# Device
+
+## Memory Check
+to check type of memory installed:
+```sh
+sudo dmidecode -t memory
+sudo lshw -short -C Memory
+```
+
+## Printer Management
+```sh
+pacman -S --needed cups ghostscript hplip
+systemctl start/enable org.cups.cupsd.service
+systemctl start/enable cups-browsed.service
+```
+Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network  
+note use hpcups over hpijs to get border printed   
+
+### HP ENVY 5540
+Add printer using: `socket://192.168.1.12:9100` and for driver: 
+`HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
+
+## Flex2
+
+### Disable laptop lid switch handle
+usefull when using external screen
+Edit /etc/systemd/logind.conf and enable:  
+```
+LidSwitchIgnoreInhibited=yes
 ```
