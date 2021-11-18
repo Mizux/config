@@ -107,6 +107,10 @@ function format_files {
 }
 alias qf="format_files"
 
+# RUBY
+export GEM_HOME="${HOME}/.local/share/gem"
+export PATH="${GEM_HOME}/ruby/3.0.0/bin:$PATH"
+
 # ANDROID
 function android-19 {
 	export JAVA_HOME=/usr/lib/jvm/default
