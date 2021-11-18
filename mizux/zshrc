@@ -60,6 +60,7 @@ alias la='ls -lha'
 alias lac='la --color'
 alias grepc='grep --color'
 alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+alias bazel='JAVA_HOME=/usr/lib/jvm/java-11-openjdk bazel'
 
 # History
 HISTFILE=~/.histfile
