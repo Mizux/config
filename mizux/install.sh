@@ -21,6 +21,9 @@ mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 cp Xdefaults ~/.Xdefaults
 mkdir -pv ~/.urxvt/ext && cp resize-font ~/.urxvt/ext
 
+# ruby
+#gem install jekyll bundler
+
 # Build tools
 #mkdir -pv ~/.local/bin
 #cp qc qm qf ~/.local/bin
