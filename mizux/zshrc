@@ -98,6 +98,15 @@ function build_help {
 }
 alias qh='build_help'
 
+function format_files {
+	find . -not -path "*/build/*" \
+		-type f \
+		\( -iname "*.[hc]pp" -or -iname "*.hxx" \) \
+		-exec echo "Formatting {}" \; \
+		-exec clang-format -style=file -i {} \;
+}
+alias qf="format_files"
+
 # ANDROID
 function android-19 {
 	export JAVA_HOME=/usr/lib/jvm/default
