@@ -15,6 +15,9 @@ vscodevim.vim
 ms-vscode.cmake-tools # CMake cmd integration
 twxs.cmake # Syntax
 
+# tools
+ritwickdey.LiveServer
+
 # Languages
 esbenp.prettier-vscode
 llvm-vs-code-extensions.vscode-clangd

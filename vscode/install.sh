@@ -18,6 +18,7 @@ code --install-extension ms-python.python
 code --install-extension ms-vscode.cmake-tools
 code --install-extension PKief.material-icon-theme
 code --install-extension redhat.java
+code --install-extension ritwickdey.LiveServer
 code --install-extension twxs.cmake
 code --install-extension vscodevim.vim
 
