@@ -11,7 +11,8 @@ chromium firefox youtube-dl \
 hexchat \
 cmus audacious audacious-plugins \
 audacity kid3-qt \
-scrot feh gimp inkscape synfigstudio synfig gcolor2 gcolor3 \
+scrot feh gimp xcftools inkscape synfigstudio synfig \
+gcolor2 gcolor3 \
 smplayer vlc ffmpeg \
 blender wings3d \
 zathura zathura-pdf-mupdf zathura-djvu pdftk \
