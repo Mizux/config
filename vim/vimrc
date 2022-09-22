@@ -11,6 +11,7 @@ Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
 "Plugin 'neoclide/coc.nvim' " Nodejs support
 Plugin 'scrooloose/syntastic' " Syntax checking hacks
 Plugin 'scrooloose/nerdtree' " Nerd Tree
+Plugin 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
 "Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
 Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
