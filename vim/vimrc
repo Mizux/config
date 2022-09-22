@@ -46,11 +46,11 @@ endfunction()
 " Remove trailing whitespaces when saving:
 autocmd bufwritepre * call CleanWhiteSpace()
 
-nmap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
-nmap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
-nmap <silent> <c-t> :TagbarToggle<cr> " open TagBar
-"nmap <silent> <c-m> :MinimapToggle<cr> " open Minimap
-nmap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
+nnoremap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
+nnoremap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
+nnoremap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
+nnoremap <silent> <c-t> :TagbarToggle<cr> " open TagBar
+"nnoremap <silent> <c-m> :MinimapToggle<cr> " open Minimap
 
 " CTags Completion (C-F8 generate)
 set tags=./tags;
