@@ -31,6 +31,17 @@ endfunction()
 " Remove trailing whitespaces when saving:
 autocmd bufwritepre * call CleanWhiteSpace()
 
+" Configuration
+colorscheme mouse | set background=dark | set termguicolors
+set number | set ruler | set cursorline | set textwidth=80
+syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
+set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
+set foldmethod=syntax | set foldlevelstart=99 | set foldenable
+let g:xml_syntax_folding=1
+let g:sh_fold_enabled=5
+" sessions options
+set ssop-=options | set ssop-=folds
+
 nnoremap <silent> <C-e> :Explore<CR> " open built-in TreeExplorer
 nnoremap <silent> <C-n> :NERDTreeToggle<CR> " open NerdTree
 nnoremap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
@@ -38,6 +49,7 @@ nnoremap <silent> <C-t> :TagbarToggle<cr> " open TagBar
 
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+let NERDTreeMinimalUI = 1
 " augroup nerdtree_open
 "     autocmd!
 "     autocmd VimEnter * NERDTree | wincmd p
