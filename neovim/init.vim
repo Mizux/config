@@ -1,3 +1,6 @@
+set nocompatible " be iMproved, required
+set mouse=a " Use mouse in vim
+
 " Plugins...
 call plug#begin()
 Plug 'bling/vim-airline' " lean & mean status/tabline
