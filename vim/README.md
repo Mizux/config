@@ -1,4 +1,4 @@
-## Install
+# Install
 
 Simply run the script `install.sh`
 

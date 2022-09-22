@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
-set -e
+set -euxo pipefail
 
-set -x
-rm -rf ~/.vim
-rm -f ~/.vimrc
+# Cleanup
+rm -rf "$HOME"/.vim
+rm -f "$HOME"/.vimrc
 
-cp vimrc ~/.vimrc
+# Install conf
+cp vimrc "$HOME"/.vimrc
+mkdir -p "$HOME"/.vim/colors
+#cp mouse.vim "$HOME"/.vim/colors/
 
-mkdir -p ~/.vim/colors
-#cp mouse.vim ~/.vim/colors/
-
-mkdir -p ~/.vim/bundle && \
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install plugins
+mkdir -p "$HOME"/.vim/bundle && \
+git clone https://github.com/gmarik/Vundle.vim.git "$HOME"/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 # Finalize YouCompleteMe install
 # see: https://github.com/ycm-core/YouCompleteMe/blob/master/README.md#linux-64-bit
-cd ~/.vim/bundle/YouCompleteMe
+cd "$HOME"/.vim/bundle/YouCompleteMe
 ./install.py --clangd-completer
 
 # Finalize Nodejs install
