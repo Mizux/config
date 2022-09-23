@@ -1,4 +1,4 @@
-# Prompt
+# Set up the prompt
 autoload -U colors && colors
 
 local c_red="%{$fg[red]%}"
@@ -15,22 +15,28 @@ local user_host="${c_red}%n${c_reset}@${c_yellow}%m${c_reset}"
 local ret_status="${blue_op}%(?,${c_green}%?${c_reset},${c_red}%?${c_reset})${blue_cp}"
 local hist_no="${blue_op}%h${blue_cp}"
 
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats "-${blue_op}${c_yellow}%b${c_reset}${blue_cp}"
+
 function smiley() {
   case $(( $(od -An -N1 -tu < /dev/random) %3 )) in
-    0)
-      happy='^v^'
-      sad='>_<' ;;
-    1)
-      happy='^u^'
-      sad='!_!' ;;
-    *)
-      happy='*v*'
-      sad='o_0' ;;
+  0)
+    happy='^v^'
+    sad='>_<' ;;
+  1)
+    happy='^u^'
+    sad='!_!' ;;
+  *)
+    happy='*v*'
+    sad='o_0' ;;
   esac
   echo "${blue_op}%(?,${c_green}${happy}${c_reset},${c_red}${sad}${c_reset})${blue_cp}" 2>/dev/null
 }
 setopt PROMPT_SUBST
-PROMPT='${ret_status}─${path_p}
+PROMPT='${ret_status}─${path_p}${vcs_info_msg_0_}
 $(smiley)─${user_host} %#'
 
 #local smiley="${blue_op}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${blue_cp}"
@@ -58,7 +64,7 @@ alias ll='ls -lh'
 alias llc='ll --color'
 alias la='ls -lha'
 alias lac='la --color'
-alias grepc='grep --color'
+alias grepc='grep --color=always'
 alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias bazel='JAVA_HOME=/usr/lib/jvm/java-11-openjdk bazel'
 
