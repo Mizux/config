@@ -6,18 +6,19 @@ filetype off " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
+Plugin 'bling/vim-airline' " lean & mean status/tabline
+Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
+Plugin 'preservim/nerdtree' " File explorer
+Plugin 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
+Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
+"Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
+Plugin 'preservim/tagbar' " displays tags in a window, ordered by scope
+Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
+Plugin 'vim-syntastic/syntastic' " Syntax checking hacks
+
 Plugin 'Valloric/YouCompleteMe' " A code-completion engine
 Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
 "Plugin 'neoclide/coc.nvim' " Nodejs support
-Plugin 'scrooloose/syntastic' " Syntax checking hacks
-Plugin 'scrooloose/nerdtree' " Nerd Tree
-Plugin 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
-"Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
-Plugin 'majutsushi/tagbar' " displays tags in a window, ordered by scope
-Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
-Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
-Plugin 'bling/vim-airline' " lean & mean status/tabline
-Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
 call vundle#end() " required
 filetype plugin indent on " required
 " :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate
