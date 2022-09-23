@@ -4,6 +4,7 @@ set mouse=a " Use mouse in vim
 " Plugins...
 call plug#begin()
 Plug 'bling/vim-airline' " lean & mean status/tabline
+Plug 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy search
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' } " File explorer
@@ -11,6 +12,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
 Plug 'jlanzarotta/bufexplorer' " Buffer explorer
 Plug 'preservim/tagbar' " ctags in a window
 Plug 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
+Plug 'vim-syntastic/syntastic' " Syntax checking hacks
+
 "Plug 'junegunn/vim-github-dashboard'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
