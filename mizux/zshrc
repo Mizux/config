@@ -35,6 +35,7 @@ function smiley() {
   esac
   echo "${blue_op}%(?,${c_green}${happy}${c_reset},${c_red}${sad}${c_reset})${blue_cp}" 2>/dev/null
 }
+
 setopt PROMPT_SUBST
 PROMPT='${ret_status}─${path_p}${vcs_info_msg_0_}
 $(smiley)─${user_host} %#'
@@ -67,6 +68,7 @@ alias lac='la --color'
 alias grepc='grep --color=always'
 alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias bazel='JAVA_HOME=/usr/lib/jvm/java-11-openjdk bazel'
+alias qvim='nvim-qt'
 
 # History
 HISTFILE=~/.histfile
