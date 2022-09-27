@@ -39,7 +39,7 @@ endfunction()
 autocmd bufwritepre * call CleanWhiteSpace()
 
 " Configuration
-colorscheme mouse | set background=dark | set termguicolors
+colorscheme mouse | set background=dark | set guifont="DejaVu Sans Mono:h10" | set termguicolors
 set number | set ruler | set cursorline | set textwidth=80
 syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
 set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
