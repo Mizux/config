@@ -22,6 +22,26 @@ Plug 'vim-syntastic/syntastic' " Syntax checking hacks
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
 
+" Configuration
+colorscheme mouse | set background=dark | set guifont="DejaVu Sans Mono:h10" | set termguicolors
+set number | set ruler | set cursorline | set textwidth=80
+syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
+set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
+set foldmethod=syntax | set foldlevelstart=99 | set foldenable
+let g:xml_syntax_folding=1
+let g:sh_fold_enabled=5
+" sessions options
+set ssop-=options | set ssop-=folds
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " Remove trailing whitespace
 function! CleanWhiteSpace()
   " Don't strip on these filetypes
@@ -38,21 +58,12 @@ endfunction()
 " Remove trailing whitespaces when saving:
 autocmd bufwritepre * call CleanWhiteSpace()
 
-" Configuration
-colorscheme mouse | set background=dark | set guifont="DejaVu Sans Mono:h10" | set termguicolors
-set number | set ruler | set cursorline | set textwidth=80
-syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
-set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
-set foldmethod=syntax | set foldlevelstart=99 | set foldenable
-let g:xml_syntax_folding=1
-let g:sh_fold_enabled=5
-" sessions options
-set ssop-=options | set ssop-=folds
 
-nnoremap <silent> <C-e> :Explore<CR> " open built-in TreeExplorer
-nnoremap <silent> <C-n> :NERDTreeToggle<CR> " open NerdTree
+nnoremap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
+nnoremap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
 nnoremap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
-nnoremap <silent> <C-t> :TagbarToggle<cr> " open TagBar
+nnoremap <silent> <c-t> :TagbarToggle<cr> " open TagBar
+"nnoremap <silent> <c-m> :MinimapToggle<cr> " open Minimap
 
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
