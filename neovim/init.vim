@@ -42,29 +42,24 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" Remove trailing whitespace
-function! CleanWhiteSpace()
-  " Don't strip on these filetypes
-  if &ft =~ 'markdown\|perl\|diff'
-    return
-  endif
-  let _s=@/
-  let l = line(".")
-  let c = col(".")
-  :%s/\s\+$//e
-  let @/=_s
-  call cursor(l, c)
-endfunction()
-" Remove trailing whitespaces when saving:
-autocmd bufwritepre * call CleanWhiteSpace()
+let s:fontsize = 10
+function! AdjustFontSize(amount)
+  let s:fontsize = s:fontsize+a:amount
+  :execute "GuiFont! DejaVu Sans Mono:h" . s:fontsize
+endfunction
 
+nnoremap <silent> <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>
+nnoremap <silent> <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>
+inoremap <silent> <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a
+inoremap <silent> <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a
 
-nnoremap <silent> <c-e> :Explore<cr> " open built-in TreeExplorer
-nnoremap <silent> <c-n> :NERDTreeToggle<cr> " open NerdTree
-nnoremap <silent> <c-b> :BufExplorer<cr> " open BufExplorer
-nnoremap <silent> <c-t> :TagbarToggle<cr> " open TagBar
-"nnoremap <silent> <c-m> :MinimapToggle<cr> " open Minimap
+nnoremap <silent> <C-e> :Explore<CR> " open built-in TreeExplorer
+nnoremap <silent> <C-n> :NERDTreeToggle<CR> " open NerdTree
+nnoremap <silent> <C-b> :BufExplorer<CR> " open BufExplorer
+nnoremap <silent> <C-t> :TagbarToggle<CR> " open TagBar
+"nnoremap <silent> <C-m> :MinimapToggle<CR> " open Minimap
 
+" NerdTree style
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
 let NERDTreeMinimalUI = 1
@@ -86,3 +81,19 @@ au BufNewFile,BufRead *.svg set filetype=xml
 au BufNewFile,BufRead *.i set filetype=swig
 " .NET load xml syntax for indentation
 au BufNewFile,BufRead *.fsproj set filetype=xml
+
+" Remove trailing whitespace
+function! CleanWhiteSpace()
+  " Don't strip on these filetypes
+  if &ft =~ 'markdown\|perl\|diff'
+    return
+  endif
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  :%s/\s\+$//e
+  let @/=_s
+  call cursor(l, c)
+endfunction()
+" Remove trailing whitespaces when saving:
+autocmd bufwritepre * call CleanWhiteSpace()
