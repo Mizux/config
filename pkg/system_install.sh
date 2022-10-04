@@ -7,7 +7,8 @@ echo "update System Done"
 echo "install System..."
 pacman -S --needed \
 networkmanager \
-base base-devel zsh gvim \
+bat bat-extras git-delta exa \
+base base-devel zsh gvim neovim-qt \
 gpg expect \
 exfat-utils dosfstools udisks2 \
 perl-rename \
