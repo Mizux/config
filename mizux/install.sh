@@ -21,6 +21,10 @@ mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 cp Xdefaults ~/.Xdefaults
 mkdir -pv ~/.urxvt/ext && cp resize-font ~/.urxvt/ext
 
+## kitty
+mkdir -pv ~/.config/kitty && cp kitty.conf ~/.config/kitty/
+
+
 # ruby
 #gem install jekyll bundler
 
