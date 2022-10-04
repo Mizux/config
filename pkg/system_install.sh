@@ -38,6 +38,7 @@ gnu-free-fonts ttf-freefont \
 ttf-droid ttf-roboto \
 noto-fonts noto-fonts-emoji \
 ttf-inconsolata ttf-hack \
+nerd-fonts-complete \
 ipa-fonts ttf-hanazono ttf-sazanami
 echo "install Fonts Done"
 
