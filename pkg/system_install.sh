@@ -22,7 +22,8 @@ echo "install System Done"
 echo "install Xorg..."
 pacman -S --needed \
 xorg-server xorg-xinit xterm numlockx \
-awesome rxvt-unicode rox file-roller \
+awesome rxvt-unicode kitty kitty-terminfo \
+rox file-roller \
 breeze-gtk breeze-icons \
 lxappearance \
 gtk-engines gtk-engine-murrine \
