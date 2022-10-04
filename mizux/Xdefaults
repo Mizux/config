@@ -2,7 +2,13 @@
 
 urxvt*modifier: mod4
 URxvt*scrollBar: False
-urxvt*font: xft:DejaVu Sans Mono:pixelsize=12
+
+!urxvt*font: xft:DejaVuSansMono:pixelsize=12
+!urxvt*font: xft:Fira Code Retina:pixelsize=12
+
+!urxvt*font: xft:Fira Code Nerd Font Mono:pixelsize=12
+urxvt*font: xft:DejaVuSansMono Nerd Font Mono:pixelsize=12
+
 !URxvt*background: black
 !URxvt*foreground: white
 
