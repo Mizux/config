@@ -46,6 +46,7 @@ $(smiley)─${user_host} %#'
 
 local cur_cmd="${blue_op}%_${blue_cp}"
 PROMPT2="${cur_cmd}> "
+#autoload -Uz promptinit && promptinit
 
 bindkey -e
 export TERM=xterm-256color
@@ -53,7 +54,9 @@ export EDITOR=vim
 
 # PATH
 export PATH=~/.local/bin:$PATH
+export PATH=${PATH}:${HOME}/go/bin
 export JAVA_HOME=/usr/lib/jvm/default
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 # Alias
@@ -69,6 +72,10 @@ alias grepc='grep --color=always'
 alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 alias bazel='JAVA_HOME=/usr/lib/jvm/java-11-openjdk bazel'
 alias qvim='nvim-qt'
+
+alias ks='exa --icons'
+alias kl='ks -l'
+alias ka='ks -la'
 
 # History
 HISTFILE=~/.histfile
