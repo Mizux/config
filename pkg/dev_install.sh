@@ -10,7 +10,7 @@ pacman -S --needed \
 base-devel dos2unix shellcheck \
 man-pages man-db \
 gvim aspell-en aspell-fr \
-git tk tig \
+git tk tig lazygit \
 meld \
 graphviz plantuml
 echo "install Dev Done"
