@@ -47,6 +47,7 @@ code --install-extension ms-azuretools.vscode-docker
 # Copy my default settings
 mkdir -pv "$HOME/.config/Code - OSS/User/"
 cp settings.json "$HOME/.config/Code - OSS/User/"
+cp keybindings.json "$HOME/.config/Code - OSS/User/"
 
 # VSX CORS Fixup
 # see: https://github.com/VSCodium/vscodium/issues/746#issuecomment-881049046
