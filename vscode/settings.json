@@ -1,7 +1,22 @@
 {
+    "workbench.startupEditor": "none",
     "workbench.preferredDarkColorTheme": "GitHub Dark Default",
-    "workbench.colorTheme": "GitHub Dark Default",
+    "workbench.colorTheme": "GitHub Dark",
     "workbench.iconTheme": "material-icon-theme",
     "material-icon-theme.hidesExplorerArrows": true,
-    "material-icon-theme.activeIconPack": "vue_vuex"
+    "material-icon-theme.activeIconPack": "vue_vuex",
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "cmake.buildArgs": [
+        "-j8",
+    ],
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-j>": false,
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false,
+    },
 }

@@ -30,7 +30,7 @@ ms-azuretools.vscode-docker
 ```
 
 # Setting
-Located in `~/.config/Code\ -\ OSS/User/settings.json`
+Located in `~/.config/Code\ -\ OSS/User/settings.json` or `~/.config/Code/User/settings.json`
 
 ```json
 {
