@@ -13,11 +13,8 @@ code --install-extension alefragnani.Bookmarks
 code --install-extension GitHub.github-vscode-theme
 code --install-extension PKief.material-icon-theme
 code --install-extension vscodevim.vim
-code --install-extension eamodio.gitlens
 
 ## Language
-code --install-extension esbenp.prettier-vscode
-
 ### C++
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.cpptools-extension-pack
@@ -34,14 +31,23 @@ code --install-extension Dart-Code.flutter
 ### Golang
 code --install-extension golang.go
 
+### .Net
+code --install-extension ms-dotnettools.csharp
+
 ### Java
 code --install-extension redhat.java
+code --install-extension vscjava.vscode-maven
 
 ### Python
 code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
 
 ### Web
+code --install-extension esbenp.prettier-vscode
 code --install-extension ritwickdey.LiveServer
+
+## Tooling
+code --install-extension eamodio.gitlens
 code --install-extension ms-azuretools.vscode-docker
 
 # Copy my default settings
