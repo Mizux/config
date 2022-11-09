@@ -15,12 +15,18 @@ code --install-extension PKief.material-icon-theme
 code --install-extension vscodevim.vim
 
 ## Language
+#### Build system
+code --install-extension ms-vscode.makefile-tools
+code --install-extension ms-vscode.cmake-tools
+code --install-extension twxs.cmake
+
+### Proto
+code --install-extension zxh404.vscode-proto3
+
 ### C++
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.cpptools-extension-pack
 code --install-extension ms-vscode.cpptools-themes
-code --install-extension ms-vscode.cmake-tools
-code --install-extension twxs.cmake
 code --install-extension llvm-vs-code-extensions.vscode-clangd
 code --install-extension jeff-hykin.better-cpp-syntax
 
