@@ -48,7 +48,7 @@ echo "install .Net Done"
 
 echo "install Docker..."
 pacman -S --needed \
-docker
+docker docker-buildx
 systemctl enable docker.service
 systemctl start docker.service
 echo "install Docker Done"
