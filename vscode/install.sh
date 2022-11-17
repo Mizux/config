@@ -13,6 +13,9 @@ code --install-extension alefragnani.Bookmarks
 code --install-extension GitHub.github-vscode-theme
 code --install-extension PKief.material-icon-theme
 code --install-extension vscodevim.vim
+### Preview
+code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension jock.svg
 
 ## Language
 #### Build system
