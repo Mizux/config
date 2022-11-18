@@ -1,70 +1,78 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-# Cleanup
-rm -rf "$HOME/.config/code-oss"
-rm -rf "$HOME/.config/Code - OSS"
-rm -rf "$HOME/.vscode-oss"
+## Cleanup
+#rm -rf "$HOME/.config/code-oss"
+#rm -rf "$HOME/.config/Code - OSS"
+#rm -rf "$HOME/.vscode-oss"
 
 # Install my extensions
+if [ -x "$(command -v codium)" ]; then
+  CODE=codium
+elif [ -x "$(command -v code)" ]; then
+  CODE=code
+else
+  exit 2
+fi
+
 
 ## IDE
-code --install-extension alefragnani.Bookmarks
-code --install-extension GitHub.github-vscode-theme
-code --install-extension PKief.material-icon-theme
-code --install-extension vscodevim.vim
+$CODE --install-extension alefragnani.Bookmarks
+$CODE --install-extension GitHub.github-vscode-theme
+$CODE --install-extension PKief.material-icon-theme
+$CODE --install-extension vscodevim.vim
 ### Preview
-code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension jock.svg
+$CODE --install-extension shd101wyy.markdown-preview-enhanced
+$CODE --install-extension jock.svg
 
 ## Language
 #### Build system
-code --install-extension ms-vscode.makefile-tools
-code --install-extension ms-vscode.cmake-tools
-code --install-extension twxs.cmake
+$CODE --install-extension ms-vscode.makefile-tools
+$CODE --install-extension ms-vscode.cmake-tools
+$CODE --install-extension twxs.cmake
 
 ### Proto
-code --install-extension zxh404.vscode-proto3
+$CODE --install-extension zxh404.vscode-proto3
 
 ### C++
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.cpptools-extension-pack
-code --install-extension ms-vscode.cpptools-themes
-code --install-extension llvm-vs-code-extensions.vscode-clangd
-code --install-extension jeff-hykin.better-cpp-syntax
+$CODE --install-extension ms-vscode.cpptools
+$CODE --install-extension ms-vscode.cpptools-extension-pack
+$CODE --install-extension ms-vscode.cpptools-themes
+$CODE --install-extension llvm-vs-code-extensions.vscode-clangd
+$CODE --install-extension jeff-hykin.better-cpp-syntax
 
 ### Dart / Flutter
-code --install-extension Dart-Code.dart-code
-code --install-extension Dart-Code.flutter
+$CODE --install-extension Dart-Code.dart-code
+$CODE --install-extension Dart-Code.flutter
 
 ### Golang
-code --install-extension golang.go
+$CODE --install-extension golang.go
 
 ### .Net
-code --install-extension ms-dotnettools.csharp
+$CODE --install-extension ms-dotnettools.csharp
 
 ### Java
-code --install-extension redhat.java
-code --install-extension vscjava.vscode-maven
+$CODE --install-extension redhat.java
+$CODE --install-extension vscjava.vscode-maven
 
 ### Python
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
+$CODE --install-extension ms-python.python
+$CODE --install-extension ms-python.vscode-pylance
 
 ### Web
-code --install-extension esbenp.prettier-vscode
-code --install-extension ritwickdey.LiveServer
+$CODE --install-extension esbenp.prettier-vscode
+$CODE --install-extension ritwickdey.LiveServer
 
 ## Tooling
-code --install-extension eamodio.gitlens
-code --install-extension ms-azuretools.vscode-docker
+$CODE --install-extension eamodio.gitlens
+$CODE --install-extension ms-azuretools.vscode-docker
 
-# Copy my default settings
-mkdir -pv "$HOME/.config/Code - OSS/User/"
-cp settings.json "$HOME/.config/Code - OSS/User/"
-cp keybindings.json "$HOME/.config/Code - OSS/User/"
-
-# VSX CORS Fixup
-# see: https://github.com/VSCodium/vscodium/issues/746#issuecomment-881049046
-mkdir -pv "$HOME/.vscode-oss"
-cp argv.json "$HOME/.vscode-oss"
+## Copy my default settings
+#mkdir -pv "$HOME/.config/Code - OSS/User/"
+#cp settings.json "$HOME/.config/Code - OSS/User/"
+#cp keybindings.json "$HOME/.config/Code - OSS/User/"
+#
+## VSX CORS Fixup
+## see: https://github.com/VSCodium/vscodium/issues/746#issuecomment-881049046
+#mkdir -pv "$HOME/.vscode-oss"
+#cp argv.json "$HOME/.vscode-oss"
