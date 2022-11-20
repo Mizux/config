@@ -15,6 +15,7 @@ scrot feh gimp xcftools inkscape synfigstudio synfig \
 gcolor2 gcolor3 \
 smplayer vlc ffmpeg \
 blender wings3d \
+sweethome3d \
 zathura zathura-pdf-mupdf zathura-djvu pdftk \
 mcomix mupdf-tools
 echo "install Media Done"
