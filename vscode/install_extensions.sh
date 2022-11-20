@@ -29,8 +29,8 @@ $CODE --install-extension twxs.cmake
 $CODE --install-extension zxh404.vscode-proto3
 
 ### C++
-$CODE --install-extension ms-vscode.cpptools
-$CODE --install-extension ms-vscode.cpptools-extension-pack
+#$CODE --install-extension ms-vscode.cpptools
+#$CODE --install-extension ms-vscode.cpptools-extension-pack
 $CODE --install-extension ms-vscode.cpptools-themes
 $CODE --install-extension llvm-vs-code-extensions.vscode-clangd
 $CODE --install-extension jeff-hykin.better-cpp-syntax
@@ -43,7 +43,7 @@ $CODE --install-extension Dart-Code.flutter
 $CODE --install-extension golang.go
 
 ### .Net
-$CODE --install-extension ms-dotnettools.csharp
+#$CODE --install-extension ms-dotnettools.csharp
 
 ### Java
 $CODE --install-extension redhat.java
@@ -51,7 +51,7 @@ $CODE --install-extension vscjava.vscode-maven
 
 ### Python
 $CODE --install-extension ms-python.python
-$CODE --install-extension ms-python.vscode-pylance
+#$CODE --install-extension ms-python.vscode-pylance
 
 ### Web
 $CODE --install-extension esbenp.prettier-vscode
