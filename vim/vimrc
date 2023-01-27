@@ -30,6 +30,8 @@ set number | set ruler | set cursorline | set textwidth=80
 syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
 set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
 set foldmethod=syntax | set foldlevelstart=99 | set foldenable
+set backspace=indent,eol,start " backspace didn't work in insert mode
+set belloff=all " disable bell
 let g:xml_syntax_folding=1
 let g:sh_fold_enabled=5
 " sessions options
