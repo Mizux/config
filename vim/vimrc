@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim' " let Vundle manage Vundle, required
 Plugin 'bling/vim-airline' " lean & mean status/tabline
 Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
+Plugin 'ryanoasis/vim-devicons' " Add icons
 Plugin 'preservim/nerdtree' " File explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
@@ -45,7 +46,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 
 nnoremap <silent> <C-e> :Explore<CR> " open built-in TreeExplorer
 nnoremap <silent> <C-n> :NERDTreeToggle<CR> " open NerdTree

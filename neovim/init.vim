@@ -5,6 +5,7 @@ set mouse=a " Use mouse in vim
 call plug#begin()
 Plug 'bling/vim-airline' " lean & mean status/tabline
 Plug 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
+Plug 'ryanoasis/vim-devicons' " Add icons
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy search
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' } " File explorer
