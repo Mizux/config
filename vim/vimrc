@@ -12,9 +12,9 @@ Plugin 'flazz/vim-colorschemes' " one colorscheme pack to rule them all!
 Plugin 'ryanoasis/vim-devicons' " Add icons
 Plugin 'preservim/nerdtree' " File explorer
 Plugin 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
+Plugin 'preservim/tagbar' " displays tags in a window, ordered by scope
 Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
 "Plugin 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
-Plugin 'preservim/tagbar' " displays tags in a window, ordered by scope
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plugin 'vim-syntastic/syntastic' " Syntax checking hacks
 
