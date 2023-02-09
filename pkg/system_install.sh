@@ -21,7 +21,7 @@ echo "install System Done"
 # Xorg server and WM
 echo "install Xorg..."
 pacman -S --needed \
-xorg-server xorg-xinit xterm numlockx \
+xorg-server xorg-xinit xterm numlockx xclip \
 awesome rxvt-unicode kitty kitty-terminfo \
 rox file-roller \
 breeze-gtk breeze-icons \
