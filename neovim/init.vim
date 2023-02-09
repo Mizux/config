@@ -15,11 +15,14 @@ Plug 'preservim/tagbar' " ctags in a window
 Plug 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plug 'vim-syntastic/syntastic' " Syntax checking hacks
 
+" Completion
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
 "Plug 'junegunn/vim-github-dashboard'
 "Plug 'SirVer/ultisnips'
 "Plug 'honza/vim-snippets'
 "Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
 
@@ -63,6 +66,7 @@ nnoremap <silent> <C-t> :TagbarToggle<CR> " open TagBar
 " NerdTree style
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
+" disable help line
 let NERDTreeMinimalUI = 1
 " augroup nerdtree_open
 "     autocmd!

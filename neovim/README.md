@@ -70,3 +70,8 @@ call plug#end()
 ## Colorscheme
 
 You may be interested by https://github.com/Mizux/neovim-colorschemes
+
+## Troubleshooting
+
+Q: Copy/paste the clipboard using middle click is not working.
+A: Install the package `xclip`.
