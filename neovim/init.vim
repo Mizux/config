@@ -11,6 +11,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree', { 'on':  'NERDTreeToggle' } " File explorer
 Plug 'Xuyuanp/nerdtree-git-plugin' " git status in NerdTree
 Plug 'jlanzarotta/bufexplorer' " Buffer explorer
+"Plug 'severin-lemaignan/vim-minimap' " Sublime minimap equivalent
 Plug 'preservim/tagbar' " ctags in a window
 Plug 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plug 'vim-syntastic/syntastic' " Syntax checking hacks
@@ -27,25 +28,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Configuration
-colorscheme mouse | set background=dark | set guifont="DejaVu Sans Mono:h10" | set termguicolors
-set number | set ruler | set cursorline | set textwidth=80
-syntax enable | set showmatch | set hlsearch | set hlsearch | set ignorecase | set smartcase
-set autoindent | set smartindent | set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
+set number | set signcolumn=yes | set ruler | set cursorline
+set nobackup | set nowritebackup " Some langage servers have issues with backup files
+syntax enable | set showmatch
+set hlsearch | set hlsearch
+set ignorecase | set smartcase
 set foldmethod=syntax | set foldlevelstart=99 | set foldenable
 let g:xml_syntax_folding=1
 let g:sh_fold_enabled=5
-" sessions options
-set ssop-=options | set ssop-=folds
+set updatetime=300 " default is 4000ms
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
+" Theme
+colorscheme mouse | set background=dark | set guifont="DejaVu Sans Mono:h10" | set termguicolors
 let s:fontsize = 10
 function! AdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
@@ -57,6 +51,25 @@ nnoremap <silent> <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>
 inoremap <silent> <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a
 inoremap <silent> <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a
 
+" Status line
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Auto Format
+set autoindent | set smartindent
+set textwidth=80
+set tabstop=2 | set shiftwidth=2 | set softtabstop=2 | set expandtab
+
+" sessions options
+set ssop-=options | set ssop-=folds
+
+" Key Binding
 nnoremap <silent> <C-e> :Explore<CR> " open built-in TreeExplorer
 nnoremap <silent> <C-n> :NERDTreeToggle<CR> " open NerdTree
 nnoremap <silent> <C-b> :BufExplorer<CR> " open BufExplorer
