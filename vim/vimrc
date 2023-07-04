@@ -21,9 +21,9 @@ Plugin 'jlanzarotta/bufexplorer' " convenient buffer explorer
 Plugin 'airblade/vim-gitgutter' " shows a git diff/stage/revert using sign column
 Plugin 'vim-syntastic/syntastic' " Syntax checking hacks
 
-Plugin 'Valloric/YouCompleteMe' " A code-completion engine
-Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
-"Plugin 'neoclide/coc.nvim' " Nodejs support
+"Plugin 'Valloric/YouCompleteMe' " A code-completion engine
+"Plugin 'rdnetto/YCM-Generator' " Generate YCM file using :YcmGenerateConfig
+Plugin 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs support
 call vundle#end() " required
 filetype plugin indent on " required
 " :PluginInstall - installs plugins; append `!` to update or just :PluginUpdate
@@ -32,7 +32,7 @@ filetype plugin indent on " required
 set number | set signcolumn=yes | set ruler | set cursorline
 set nobackup | set nowritebackup " Some langage servers have issues with backup files
 syntax enable | set showmatch
-set hlsearch | set hlsearch
+set incsearch | set hlsearch
 set ignorecase | set smartcase
 set foldmethod=syntax | set foldlevelstart=99 | set foldenable
 let g:xml_syntax_folding=1
@@ -40,7 +40,7 @@ let g:sh_fold_enabled=5
 set updatetime=300 " default is 4000ms
 
 " Theme
-colorscheme mouse | set background=dark | set guifont=DejaVu\ Sans\ Mono\ Nerd\ Font\ 11 | set termguicolors
+colorscheme mouse | set background=dark | set guifont=DejaVuSansM\ Nerd\ Font\ Mono\ 11 | set termguicolors
 
 " Status line
 set statusline+=%#warningmsg#
@@ -49,7 +49,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 " Auto Format
@@ -70,6 +70,34 @@ nnoremap <silent> <C-b> :BufExplorer<CR> " open BufExplorer
 nnoremap <silent> <C-t> :TagbarToggle<CR> " open TagBar
 "nnoremap <silent> <C-m> :MinimapToggle<CR> " open Minimap
 
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 " CTags Completion (C-F8 generate)
 set tags=./tags;
 map <C-F8> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
@@ -77,8 +105,7 @@ map <C-F8> :!ctags -R --sort=yes --c++-kinds=+pl --fields=+iaS --extra=+q .<CR>
 " NerdTree style
 " the ignore patterns are regular expression strings and seprated by comma
 let NERDTreeIgnore = ['\.pyc$', '^__pycache__$']
-" disable help line
-let NERDTreeMinimalUI = 1
+let NERDTreeMinimalUI = 1 " disable help line
 " augroup nerdtree_open
 "     autocmd!
 "     autocmd VimEnter * NERDTree | wincmd p
