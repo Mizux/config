@@ -32,6 +32,9 @@ exit
 # Twitch Streaming
 obs-studio
 
+# A multi-system chiptune tracker
+furnace
+
 # Deprecated
 flashplugin filezilla perl-file-mimeinfo \
 smtube libcue libmms neon wavpack  \
