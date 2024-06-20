@@ -13,8 +13,8 @@ gpg expect \
 exfat-utils dosfstools udisks2 \
 perl-rename \
 tree ncdu rsync \
-htop hwinfo lshw dmidecode \
-wget curl \
+neofetch htop hwinfo lshw dmidecode \
+wget curl tmux \
 alsa-utils
 echo "install System Done"
 

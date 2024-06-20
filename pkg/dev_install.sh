@@ -17,10 +17,10 @@ echo "install Dev Done"
 
 echo "install C++..."
 pacman -S --needed \
-qtcreator qt5 qt5-doc \
+qtcreator qt6 qt6-doc \
 doxygen \
 upx strace valgrind kcachegrind ctags \
-cmake ninja \
+cmake ninja ccache \
 gcc gdb clang \
 lua swig \
 opencv bullet box2d
@@ -28,7 +28,7 @@ echo "install c++ Done"
 
 echo "install Python..."
 pacman -S --needed \
-ipython python python-pip python-virtualenv
+ipython python python-pip python-wheel python-virtualenv
 echo "install Python Done"
 
 echo "install JS..."
@@ -53,20 +53,29 @@ systemctl enable docker.service
 systemctl start docker.service
 echo "install Docker Done"
 
+echo "install Vagrant..."
+pacman -S --needed \
+vagrant virtualbox
+echo "install Vagrant Done"
+
 exit
 
 # Deprecated
+# shellcheck disable=SC2317  # Don't warn about unreachable commands
 cppcheck llvm \
 mercurial \
 cscope sloccount \
 
+# shellcheck disable=SC2317  # Don't warn about unreachable commands
 boost blas lapack eigen \
 openscenegraph \
-qt4
+qt5 qt4
 
-echo "Extensions for vscode:"
+# shellcheck disable=SC2317  # Don't warn about unreachable commands
+# `code --list-extensions`
+(echo "Extensions for vscode:"
 echo "* vscodevim.vim"
 echo "* ms-vscode.cmake-tools"
 echo "* twxs.cmake"
 echo "* geequlim.godot-tools"
-echo ""
+echo "")
