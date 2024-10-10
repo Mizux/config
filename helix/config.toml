@@ -1,5 +1,6 @@
 #theme = "doom_acario_dark"
-theme = "github_dark_high_contrast"
+#theme = "github_dark_high_contrast"
+theme = "vim_dark_high_contrast"
 
 [editor]
 # Force the theme to show colors
@@ -34,4 +35,11 @@ left = ["mode", "spinner", "version-control", "file-name"]
 "C-r" = [":config-reload"]
 "C-o" = [":open ~/.config/helix/config.toml"]
 "G" = ["goto_last_line"]
+g = { a = "code_action" } # Maps `ga` to show possible code actions
 "=" = [ ":format" ]
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"
+
+[keys.select]
+X = ["extend_line_up", "extend_to_line_bounds"]
+A-x = "extend_to_line_bounds"
