@@ -15,10 +15,6 @@ rulers = [80,120]
 # Show currently open buffers, only when more than one exists.
 #bufferline = "multiple"
 
-[editor.indent-guides]
-character = "╎"
-render = true
-
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -27,6 +23,10 @@ select = "underline"
 [editor.file-picker]
 ignore = false
 hidden = false
+
+[editor.indent-guides]
+character = "╎"
+render = true
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name"]
