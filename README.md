@@ -109,8 +109,8 @@ note: For MBR you can add **syslinux** (bootloader)
 ```sh
 genfstab -L -p /mnt >> /mnt/etc/fstab
 ```
-`-L` will use device name e.g. `/dev/sdaX`,
-you should use `-U` for `UUID` it's more robust but it's ugly IMHO.
+`-L` will use device Label name e.g. `/dev/sdaX`,
+you should use `-U` for `UUID` since it's more robust but it's ugly IMHO.
 
 ###  Chroot
 Time to chroot in it to finish the installation !
@@ -357,8 +357,8 @@ Add printer using: `socket://192.168.1.12:9100` and for driver:
 ## Flex2
 
 ### Disable laptop lid switch handle
-usefull when using external screen
-Edit /etc/systemd/logind.conf and enable:  
+usefull when using external monitor<br>
+Edit `/etc/systemd/logind.conf` and enable:  
 ```
 LidSwitchIgnoreInhibited=yes
 ```
