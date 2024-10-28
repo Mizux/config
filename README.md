@@ -120,14 +120,18 @@ arch-chroot /mnt
 ```
 ### Localization / Time zone / Keymap
 ```sh
-echo <laptop-name> > /etc/hostname
+# Time
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+## gen /etc/adjtime
+hwclock --systohc
+# Localization
 vim /etc/locale.gen (en_us, fr, ja & utf-8)
 locale-gen
 echo "LANG=\"en_US.UTF-8\"" > /etc/locale.conf
 echo "KEYMAP=<fr-latin9/jp106>" > /etc/vconsole.conf
+# Network Configuration
+echo <laptop-name> > /etc/hostname
 ```
-
 eeepc 1015PEM: `KEYMAP=fr` (with `fr-latin9` cmd `ctrl+c/e` won't work)
 
 ### Initramfs
@@ -220,6 +224,13 @@ options root=/dev/nvme0n1p2 rw
 
 note: For `root` parameter, the linux kernel support [this format](https://github.com/torvalds/linux/blob/f49aa1de98363b6c5fba4637678d6b0ba3d18065/init/do_mounts.c#L191-L219).
 
+### Root password
+Set the root password:
+```sh
+passwd
+```
+
+`exit` the chroot and `umount -R /mnt`.
 **NOW, YOU SHOULD BE ABLE TO REBOOT**
 
 ## Archlinux package config
