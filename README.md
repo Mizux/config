@@ -187,7 +187,7 @@ timedatectl set-ntp true
 ## UEFI Bootloader
 First create the loader stuff in the `/efi` partition 
 ```
-bootctl install --root-path=/efi
+bootctl install --esp-path=/efi
 ```
 ### Create Default loader
 Then in `/efi/loader/loader.conf` 
