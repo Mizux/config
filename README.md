@@ -4,16 +4,16 @@ My install steps and configuration script for Archlinux.
 First read and keep open the [Installation Guide](https://wiki.archlinux.org/index.php/Installation_guide).
 
 ## Download and Archlinux iso
-Download from any mirror listed here: https://www.archlinux.org/download/
-e.g. using https://mirrors.eric.ovh/arch/iso/2020.09.01/
+Download from any mirror listed here: https://www.archlinux.org/download/<br>
+e.g. using https://mirrors.eric.ovh/arch/iso/latest/
 ```sh
-wget https://mirrors.eric.ovh/arch/iso/2020.09.01/archlinux-2020.09.01-x86_64.iso
-wget https://mirrors.eric.ovh/arch/iso/2020.09.01/archlinux-2020.09.01-x86_64.iso.sig
-pacman-key -v archlinux-*-x86_64.iso.sig
+wget https://mirrors.eric.ovh/arch/iso/latest/archlinux-x86_64.iso
+wget https://mirrors.eric.ovh/arch/iso/latest/archlinux-x86_64.iso.sig
+pacman-key -v archlinux-x86_64.iso.sig
 ```
 note: on non archlinux system verify using
 ```sh
-gpg --keyserver-options auto-key-retrieve --verify archlinux-*-x86_64.iso.sig
+gpg --keyserver-options auto-key-retrieve --verify archlinux-x86_64.iso.sig
 ```
 
 ## Create USB
@@ -23,7 +23,8 @@ dd if=*.iso of=/dev/sdX status=progress oflag=sync
 ref: [dd(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/dd.1#DESCRIPTION)
 
 ## Init
-nuc10i7: You may need to disable the secure-boot in order to boot from the Arch Linux usb stick.
+nuc10i7: You may need to disable the secure-boot in order to boot from the Arch Linux usb stick.<br>
+i.e. F12 to access BIOS and change in security...
 
 Change keyboard layout (default us):
 ```sh
