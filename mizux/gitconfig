@@ -15,6 +15,9 @@ added = yellow
 changed = green
 untracked = cyan
 
+[diff]
+renameLimit = 99999
+
 [push]
 default = upstream
 
@@ -32,3 +35,9 @@ tabsize = 2
 
 [init]
 defaultBranch = main
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
