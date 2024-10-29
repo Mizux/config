@@ -27,13 +27,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 	unset f
 fi
 
-setxkbmap fr
 numlockx &
 
+#setxkbmap fr
+setxkbmap us
+
 exec awesome
+#exec startkde
 #exec startxfce4
 #exec gnome-session
-#exec startkde
 
 #twm &
 #xclock -geometry 50x50-1+1 &
