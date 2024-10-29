@@ -55,8 +55,12 @@ export EDITOR=vim
 # PATH
 export PATH=~/.local/bin:$PATH
 export PATH=${PATH}:${HOME}/go/bin
-export JAVA_HOME=/usr/lib/jvm/default
+
+export CMAKE_C_COMPILER_LAUNCHER=ccache
+export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export JAVA_HOME=/usr/lib/jvm/default
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 
 # Alias
@@ -70,12 +74,13 @@ alias la='ls -lha'
 alias lac='la --color'
 alias grepc='grep --color=always'
 alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
-alias bazel='JAVA_HOME=/usr/lib/jvm/java-11-openjdk bazel'
+#alias bazel='JAVA_HOME=/usr/lib/jvm/java-22-openjdk bazel'
 alias qvim='nvim-qt'
 
 alias ks='exa --icons'
-alias kl='ks -l'
-alias ka='ks -la'
+alias k1='ks -1'
+alias kl='ks -lh'
+alias ka='ks -lha'
 
 # History
 HISTFILE=~/.histfile
