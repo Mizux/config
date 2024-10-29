@@ -28,6 +28,11 @@ echo "install c++ Done"
 
 echo "install Python..."
 pacman -S --needed \
+rustup
+echo "install Python Done"
+
+echo "install Python..."
+pacman -S --needed \
 ipython python python-pip python-wheel python-virtualenv
 echo "install Python Done"
 
