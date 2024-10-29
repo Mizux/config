@@ -9,7 +9,7 @@ pacman -S --needed \
 networkmanager \
 bat bat-extras git-delta exa \
 base base-devel zsh gvim neovim-qt \
-gpg expect \
+gnupg expect \
 exfat-utils dosfstools udisks2 \
 perl-rename \
 tree ncdu rsync \
@@ -23,11 +23,9 @@ echo "install Xorg..."
 pacman -S --needed \
 xorg-server xorg-xinit xterm numlockx xclip \
 awesome rxvt-unicode kitty kitty-terminfo \
-rox file-roller \
-breeze-gtk breeze-icons \
-lxappearance \
+file-roller \
+deepin lxde mate plasma \
 gtk-engines gtk-engine-murrine \
-gnome-icon-theme gnome-icon-theme-extras \
 oxygen-icons oxygen-icons-svg
 echo "install Xorg Done"
 
@@ -39,8 +37,8 @@ gnu-free-fonts ttf-freefont \
 ttf-droid ttf-roboto \
 noto-fonts noto-fonts-emoji \
 ttf-inconsolata ttf-hack \
-nerd-fonts-complete \
-ipa-fonts ttf-hanazono ttf-sazanami
+ipa-fonts ttf-hanazono ttf-sazanami \
+nerd-fonts
 echo "install Fonts Done"
 
 # Vulkan
