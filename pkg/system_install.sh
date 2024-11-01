@@ -29,6 +29,12 @@ gtk-engines gtk-engine-murrine \
 oxygen-icons oxygen-icons-svg
 echo "install Xorg Done"
 
+# Wayland server and WM
+echo "install Wayland..."
+pacman -S --needed \
+hyprland wofi dolphin
+echo "install Wayland Done"
+
 echo "install Fonts..."
 pacman -S --needed \
 ttf-liberation ttf-croscore \
