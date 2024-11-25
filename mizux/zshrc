@@ -58,6 +58,7 @@ export PATH=${PATH}:${HOME}/go/bin
 
 export CMAKE_C_COMPILER_LAUNCHER=ccache
 export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+export CTEST_OUTPUT_ON_FAILURE=1
 
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export JAVA_HOME=/usr/lib/jvm/default
