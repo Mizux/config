@@ -15,6 +15,9 @@ mkdir -pv ~/.config/kitty && cp kitty.conf ~/.config/kitty/
 ## Awesome WM
 mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 
+## Hyprland
+mkdir -pv ~/.config/hypr && cp hyprland.conf ~/.config/hypr/hyprland.conf
+
 # X11
 #cp xinitrc ~/.xinitrc
 #cp xsession ~/.xsession
