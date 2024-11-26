@@ -32,7 +32,8 @@ echo "install Xorg Done"
 # Wayland server and WM
 echo "install Wayland..."
 pacman -S --needed \
-hyprland hyprlock hypridle hyprpaper waybar wofi dolphin
+hyprland hyprlock hypridle hyprpaper \
+waybar wofi cliphist dolphin
 echo "install Wayland Done"
 
 echo "install Fonts..."

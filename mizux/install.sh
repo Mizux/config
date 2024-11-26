@@ -17,6 +17,7 @@ mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 
 ## Hyprland
 mkdir -pv ~/.config/hypr && cp hyprland.conf ~/.config/hypr/hyprland.conf
+mkdir -pv ~/.config/waybar && cp waybar.jsonc ~/.config/waybar/config.jsonc
 
 # X11
 #cp xinitrc ~/.xinitrc
