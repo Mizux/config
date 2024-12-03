@@ -11,7 +11,7 @@ chromium firefox yt-dlp \
 hexchat \
 cmus audacious audacious-plugins \
 audacity kid3-qt furnace \
-scrot feh gimp xcftools inkscape synfigstudio synfig \
+scrot feh gimp krita xcftools inkscape synfigstudio synfig \
 gcolor3 \
 smplayer vlc ffmpeg \
 blender goxel \
