@@ -10,7 +10,7 @@ networkmanager \
 bat bat-extras git-delta exa \
 base base-devel zsh gvim neovim-qt \
 gnupg expect \
-exfat-utils dosfstools udisks2 \
+exfat-utils dosfstools fatsort udisks2 \
 perl-rename \
 tree ncdu rsync \
 neofetch htop hwinfo lshw dmidecode \
