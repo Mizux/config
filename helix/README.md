@@ -7,12 +7,10 @@ config...
 
 ## Setup
 
-edit config: `C-o`
+edit config: `C-o`<br>
 reload config: `C-r`
 
 ### Usage
-
-Nice to read: https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
 
 TLDR: Operations and moves are reversed in Helix.
 First select whatever text you want to operate on, and then use a modifying operation.
@@ -29,9 +27,15 @@ copy a line:
 
 Select a word:
 * vim: `*`
-* helix: `w←b*`
+* helix: `bw*` (or `*` with my custom config)
+
+Nice to read:
+* https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
+* https://docs.helix-editor.com/keymap.html
 
 ## Colorscheme
+
+`:theme ...`
 
 ## Troubleshooting
 
