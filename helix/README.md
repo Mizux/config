@@ -17,6 +17,14 @@ First select whatever text you want to operate on, and then use a modifying oper
 That makes things more consistent (Vim needs a separate x and d operation because of the operator -> move order, Helix only needs the d operation).
 e.g.
 
+Select a word:
+* vim: `*`
+* helix: A-o*n (if there's a tree-sitter grammar or LSP) or be*n (or `*` with my custom config)
+
+jump to matching bracket:
+* vim: ``%``
+* helix: `mm`
+
 delete a word:
 * vim: `dw`
 * helix: `wd`
@@ -24,10 +32,6 @@ delete a word:
 copy a line:
 * vim: `yy`
 * helix: `xy`
-
-Select a word:
-* vim: `*`
-* helix: `bw*` (or `*` with my custom config)
 
 Nice to read:
 * https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
