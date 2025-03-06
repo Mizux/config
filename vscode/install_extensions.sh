@@ -22,6 +22,7 @@ $CODE --install-extension jock.svg
 
 ## Language
 #### Build system
+$CODE --install-extension bazelbuild.vscode-bazel
 $CODE --install-extension ms-vscode.makefile-tools
 $CODE --install-extension ms-vscode.cmake-tools
 $CODE --install-extension twxs.cmake

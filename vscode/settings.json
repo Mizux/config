@@ -13,29 +13,6 @@
         "cpp": "include",
         "dotnet": "windows"
     },
-    "C_Cpp.intelliSenseEngine": "Disabled",
-    "C_Cpp.intelliSenseEngineFallback": "Enabled",
-    "cmake.buildArgs": [
-        "-j8"
-    ],
-    "editor.minimap.enabled": false,
-    "editor.renderWhitespace": "none",
-    "vim.handleKeys": {
-        "<C-b>": false,
-        "<C-t>": false,
-        "<C-q>": false,
-        "<C-j>": false,
-        "<C-d>": true,
-        "<C-s>": false,
-        "<C-z>": false
-    },
-    // "vim.useCtrlKeys": false,
-    "editor.rulers": [
-        80
-    ],
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "colorize.languages": [
         "javascript",
         "css",
@@ -48,6 +25,32 @@
         "xml",
         "svg"
     ],
-    // "cmake.configureOnOpen": true,
-    "cmake.options.statusBarVisibility": "visible"
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        80
+    ],
+    "vim.handleKeys": {
+        "<C-b>": false,
+        "<C-t>": false,
+        "<C-q>": false,
+        "<C-j>": false,
+        "<C-d>": true,
+        "<C-s>": false,
+        "<C-z>": false
+    },
+    // "vim.useCtrlKeys": false,
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled",
+    "bazel.commandLine.commandArgs": [
+        "--compilation_mode=opt"
+    ],
+   // "cmake.configureOnOpen": true,
+    "cmake.options.statusBarVisibility": "visible",
+    "cmake.buildArgs": [
+        "-j8"
+    ],
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }
