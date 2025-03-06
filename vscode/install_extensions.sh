@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Can get extensions list using: `$CODE --list-extensions`
 set -euxo pipefail
 
 # Install my extensions
