@@ -3,9 +3,9 @@
 theme = "vim_dark_high_contrast"
 
 [editor]
+color-modes = true
 # Force the theme to show colors
 true-color = true
-color-modes = true
 # Highlight all lines with a cursor
 cursorline = true
 # Use relative line numbers
@@ -20,13 +20,21 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+# File explorer configuration
 [editor.file-picker]
 ignore = false
 hidden = false
 
+[editor.soft-wrap]
+enable = true
+
+# Do not render white spaces
+[editor.whitespace]
+render = "none"
+
 [editor.indent-guides]
-character = "╎"
 render = true
+character = "┊" # Some characters that work well: "╎", "┆", "┊", "⸽"
 
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name"]
@@ -39,8 +47,15 @@ g = { a = "code_action" } # Maps `ga` to show possible code actions
 "=" = [ ":format" ]
 X = ["extend_line_up", "extend_to_line_bounds"]
 A-x = "extend_to_line_bounds"
+# Simulate vim `*` which is `be*` in helix
 "*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection"] #, "search_next"
 
 [keys.select]
 X = ["extend_line_up", "extend_to_line_bounds"]
 A-x = "extend_to_line_bounds"
+
+# LSP Server configuration
+[editor.lsp]
+display-messages = true
+auto-signature-help = true
+display-signature-help-docs = true
