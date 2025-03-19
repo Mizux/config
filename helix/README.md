@@ -43,5 +43,5 @@ Nice to read:
 
 ## Troubleshooting
 
-Q: Copy/paste the clipboard using middle click is not working.
+Q: Copy/paste the clipboard using middle click is not working.<br>
 A: Install the package `xclip`.
