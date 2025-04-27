@@ -28,23 +28,35 @@ echo "install Game Done"
 
 exit
 
-# Twitch Streaming
-# shellcheck disable=SC2317
-obs-studio
-
+################################
 # A multi-system chiptune tracker
 # shellcheck disable=SC2317
+pacman -S --needed \
 furnace
 
+# Minecraft
+# shellcheck disable=SC2317
+pacman -S --needed \
+amulet-map-editor
+
 # aur
+# shellcheck disable=SC2317
+pacman -S --needed \
 wings3d mcomix
+
+# Twitch Streaming
+# shellcheck disable=SC2317
+pacman -S --needed \
+obs-studio
 
 # Deprecated
 # shellcheck disable=SC2317
+pacman -S --needed \
 flashplugin filezilla perl-file-mimeinfo \
 smtube libcue libmms neon wavpack  \
 sweethome3d \
-krita \
-libreoffice evince \
+libreoffice evince
+
+# shellcheck disable=SC2317
 yay -S --needed --noconfirm chromium-pepper-flash
 
