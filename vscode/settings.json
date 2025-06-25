@@ -15,13 +15,15 @@
   },
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "none",
+  "editor.showFoldingControls": "always",
   "editor.rulers": [80],
   "vim.handleKeys": {
     "<C-b>": false, // Primary Side Bar
     "<C-t>": false, // Secondary Side Bar
     "<C-j>": false, // Panel
     "<C-f>": false, // Find
-    "<C-d>": true,  // vim: cut line
+    "<C-d>": true,  // vim's cut line
+    "<C-k>": false, // Folding
     "<C-z>": false, // Undo
     "<C-s>": false, // Save
     "<C-w>": false, // Close
@@ -29,12 +31,31 @@
   },
   // "vim.useCtrlKeys": false,
   "git.openRepositoryInParentFolders": "always",
-  "C_Cpp.intelliSenseEngine": "Disabled",
-  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  // PROJECT BUILD
   "bazel.commandLine.commandArgs": ["--compilation_mode=opt"],
   // "cmake.configureOnOpen": true,
   "cmake.options.statusBarVisibility": "visible",
+  // "cmake.configureArgs": ["-DBUILD_DEPS=ON"],
   "cmake.buildArgs": ["-j8"],
+  // C++
+  "[cpp]": {},
+  "C_Cpp.intelliSenseEngine": "Disabled",
+  "C_Cpp.intelliSenseEngineFallback": "Enabled",
+  // JAVA
+  "[java]": {},
+  // WEB
+  "colorize.languages": [
+      "javascript",
+      "css",
+      "sass",
+      "scss",
+      "less",
+      "postcss",
+      "sss",
+      "stylus",
+      "xml",
+      "svg"
+  ],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
