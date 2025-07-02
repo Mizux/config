@@ -290,13 +290,29 @@ ibus-daemon -drx
 note: if using xfce4, put "ibus-daemon -drx" in autostart application otherwise firefox and chromium won't have ibus support (race cond)
 
 # Misc
+
+## File manager
+
+`rox` do not work anymore...
+
+`dolphin`, got issue with "open with" database...
+
+error: `"applications.menu"  not found in  QList("/etc/xdg/menus")`
+
+workaround:
+```sh
+sudo ln -s /etc/xdg/menus/plasma-applications.menu /etc/xdg/menus/applications.menu
+```
+
 ## Font viewer
+
 To add in rox-filer for ttf files:
 ```sh
 fontforge -nosplash -quiet "$@"
 ```
 
 ## DNS change
+
 Example using Google DNS instead of FAI ones.
 ```sh
 nmcli connection modify <connection_name> ipv4.ignore-auto-dns yes
@@ -313,33 +329,39 @@ cat /etc/resolv.conf
 ```
 
 ## X Server multi-user
+
 Edit /etc/pam.d/su su-l and add:  
 ```sh
 session        optional        pam_xauth.so
 ```
 
 ## xdg-open management
+
 You must append `.desktop` to any binary.  
 e.g. `feh` becomes `feh.desktop`...
 
 ### Query filetype
+
 ```sh
 $ xdg-mime query filetype <example.png>
 image/png
 ```
 
 ### Query default app
+
 ```sh
 $ xdg-mime query default <image/png>
 foobar.desktop
 ```
 
 ### Set default app
+
 ```sh
 $ xdg-mime default <foobar.desktop> <image/png>
 ```
 
 ### Open file using default app
+
 ```sh
 $ xdg-open <example.png>
 ```
@@ -347,6 +369,7 @@ $ xdg-open <example.png>
 # Device
 
 ## Memory Check
+
 to check type of memory installed:
 ```sh
 sudo dmidecode -t memory
@@ -354,6 +377,7 @@ sudo lshw -short -C Memory
 ```
 
 ## Printer Management
+
 ```sh
 pacman -S --needed cups ghostscript hplip
 systemctl start/enable org.cups.cupsd.service
@@ -363,6 +387,7 @@ Then add printer HP PhotoSmart 6520 using http://localhost:631/ discover network
 note use hpcups over hpijs to get border printed   
 
 ### HP ENVY 5540
+
 Add printer using: `socket://192.168.1.12:9100` and for driver: 
 `HP Envy 5540 Series, hpcups 3.17.11 (en, en)`
 
