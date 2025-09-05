@@ -29,17 +29,17 @@
         "hyprland/language",
         //"battery",
         //"battery#bat2",
-        "clock",
-        "tray"
-        //"custom/power"
+        "tray",
+        "clock"
+        //"custom/power",
     ],
     // Modules configuration
     "hyprland/workspaces": {
         "format": "{name}: {icon}",
         "format-icons": {
-          "1": "",
-          "2": "",
-          "3": "",
+          //"1": "",
+          //"2": "",
+          //"3": "",
           //"1": "",
           //"2": "",
           //"3": "",
@@ -56,6 +56,8 @@
         },
         "persistent-workspaces": {
           "*": 10, // 10 workspaces by default on every mon
+          //"DP-1": [1,2,3,4,5], // 5 workspaces by default on every mon
+          //"DP-2": [6,7,8,9,10] // 5 workspaces by default on every mon
         }
     //     "disable-scroll": true,
     //     "all-outputs": true,
