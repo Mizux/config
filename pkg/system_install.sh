@@ -33,7 +33,9 @@ echo "install Xorg Done"
 echo "install Wayland..."
 pacman -S --needed \
 hyprland hyprlock hypridle hyprpaper \
-waybar wofi cliphist dolphin
+waybar wofi cliphist \
+dolphin \
+thunar thunar-volman thunar-archive-plugin thunar-vcs-plugin
 echo "install Wayland Done"
 
 echo "install Fonts..."
@@ -77,7 +79,6 @@ xf86-video-fbdev \
 xf86-video-vesa \
 
 xlockmore \
-thunar thunar-archive-plugin \
 
 plasma \
 cinnamon \
@@ -87,6 +88,6 @@ xfce4 \
 # Japanese Input Support
 # ibus-qt depend on aur qt4...
 pacman -S --needed \
-ibus ibus-anthy otf-ipafont ttf-hanazononadobe-source-han-sans-jp-fonts \
-
+ibus ibus-anthy \
+otf-ipafont ttf-hanazononadobe-source-han-sans-jp-fonts \
 ibus-setup
