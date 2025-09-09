@@ -84,8 +84,8 @@ alias kl='ks -lh'
 alias ka='ks -lha'
 
 # run vim or helix in a new kitty windows
-alias khelix='kitty @ launch --cwd current -- helix'
-alias kvim='kitty @ launch --cwd current -- vim'
+alias khelix='kitty @ launch --cwd current --type os-window -- helix'
+alias kvim='kitty @ launch --cwd current --type os-window -- vim'
 
 # History
 HISTFILE=~/.histfile
