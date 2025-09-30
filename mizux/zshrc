@@ -21,7 +21,7 @@ local hist_no="${c_open}%h${c_close}"
 autoload -Uz vcs_info
 precmd() { vcs_info }
 # Format the vcs_info_msg_0_ variable
-zstyle ':vcs_info:git:*' formats "-${c_open}${c_red}%b${c_reset}${c_close}"
+zstyle ':vcs_info:git:*' formats "—${c_open}${c_red}%b${c_reset}${c_close}"
 
 function smiley() {
   case $(( $(od -An -N1 -tu < /dev/random) %3 )) in
@@ -39,16 +39,16 @@ function smiley() {
 }
 
 setopt PROMPT_SUBST
-PROMPT='${ret_status}-${path_p}${vcs_info_msg_0_}
-$(smiley)-${user_host}»'
+PROMPT='${ret_status}—${path_p}${vcs_info_msg_0_}
+$(smiley)—${user_host} »'
 
-#  » %#
+#  » %# — - _
 #local smiley="${c_open}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${c_close}"
 #PROMPT="${ret_status}-${path_p}
 #${smiley}-${user_host} %#"
 
 local cur_cmd="${c_open}%_${c_close}"
-PROMPT2="${cur_cmd}»"
+PROMPT2="${cur_cmd} »"
 #autoload -Uz promptinit && promptinit
 
 bindkey -e
