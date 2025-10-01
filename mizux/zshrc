@@ -47,8 +47,9 @@ $(smiley)—${user_host} »'
 #PROMPT="${ret_status}-${path_p}
 #${smiley}-${user_host} %#"
 
+local neck="${c_open} ‖ ${c_close}"
 local cur_cmd="${c_open}%_${c_close}"
-PROMPT2="${cur_cmd} »"
+PROMPT2="${neck}—${cur_cmd} »"
 #autoload -Uz promptinit && promptinit
 
 bindkey -e
