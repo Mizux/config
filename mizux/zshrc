@@ -88,7 +88,7 @@ alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
 #alias bazel='JAVA_HOME=/usr/lib/jvm/java-22-openjdk bazel'
 alias qvim='nvim-qt'
 
-alias ks='exa --icons'
+alias ks='eza --icons'
 alias k1='ks -1'
 alias kl='ks -lh'
 alias ka='ks -lha'
