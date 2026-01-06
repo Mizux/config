@@ -1,0 +1,43 @@
+[user]
+email = mizux.dev@gmail.com
+name = "Mizux Seiha"
+
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = true
+pager = true
+
+[color "status"]
+added = yellow
+changed = green
+untracked = cyan
+
+[diff]
+renameLimit = 99999
+
+[push]
+default = upstream
+
+[ui]
+color = auto
+
+[merge]
+tool = meld
+verbosity = 3
+
+[gui]
+#fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+#fontdiff = -family \"DejaVu Sans Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+tabsize = 2
+
+[init]
+defaultBranch = main
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

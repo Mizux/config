@@ -1,0 +1,130 @@
+# Set up the prompt
+autoload -U colors && colors
+
+local c_red="%{$fg[red]%}"
+local c_green="%{$fg[green]%}"
+local c_blue="%{$fg[blue]%}"
+local c_magenta="%{$fg[magenta]%}"
+local c_yellow="%{$fg[yellow]%}"
+local c_cyan="%{$fg[cyan]%}"
+local c_reset="%{$reset_color%}"
+
+local c_open="%{$fg[yellow]%}[%{$reset_color%}"
+local c_close="%{$fg[yellow]%}]%{$reset_color%}"
+
+local path_p="${c_open}${c_magenta}%~${c_reset}${c_close}"
+local ret_status="${c_open}%(?,${c_green}%?${c_reset},${c_red}%?${c_reset})${c_close}"
+local user_host="${c_open}${c_yellow}%n${c_reset}@${c_magenta}%m${c_reset}${c_close}"
+local hist_no="${c_open}%h${c_close}"
+
+# Load version control information
+autoload -Uz vcs_info
+precmd() { vcs_info }
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats "—${c_open}${c_red}%b${c_reset}${c_close}"
+
+function smiley() {
+  case $(( $(od -An -N1 -tu < /dev/random) %3 )) in
+  0)
+    happy='^v^'
+    sad='>_<' ;;
+  1)
+    happy='^u^'
+    sad='!_!' ;;
+  *)
+    happy='*v*'
+    sad='o_0' ;;
+  esac
+  echo "${c_open}%(?,${c_green}${happy}${c_reset},${c_red}${sad}${c_reset})${c_close}" 2>/dev/null
+}
+
+setopt PROMPT_SUBST
+PROMPT='${ret_status}—${path_p}${vcs_info_msg_0_}
+$(smiley)—${user_host} »'
+
+#  » %# — - _
+#local smiley="${c_open}%(?,${c_green}^v^${c_reset},${c_red}>_<${c_reset})${c_close}"
+#PROMPT="${ret_status}-${path_p}
+#${smiley}-${user_host} %#"
+
+local neck="${c_open} ‖ ${c_close}"
+local cur_cmd="${c_open}%_${c_close}"
+PROMPT2="${neck}—${cur_cmd} »"
+#autoload -Uz promptinit && promptinit
+
+bindkey -e
+#export TERM=xterm-256color
+export EDITOR=hx
+#export EDITOR=vim
+
+# PATH
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH=${HOME}/.local/bin:$PATH
+
+# C++
+#export CMAKE_C_COMPILER_LAUNCHER=ccache
+#export CMAKE_CXX_COMPILER_LAUNCHER=ccache
+export CTEST_OUTPUT_ON_FAILURE=1
+
+# .Net
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Golang
+export PATH=${PATH}:${HOME}/go/bin
+
+# Java
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
+#export JAVA_HOME=/usr/lib/jvm/default
+
+# Alias
+#alias ls='ls --group-directories-first'
+alias lsc='ls --color'
+alias l1='ls -1'
+alias l1c='l1 --color'
+alias ll='ls -lh'
+alias llc='ll --color'
+alias la='ls -lha'
+alias lac='la --color'
+alias grepc='grep --color=always'
+#alias kmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+#alias bazel='JAVA_HOME=/usr/lib/jvm/java-22-openjdk bazel'
+
+alias ks='eza --icons'
+alias k1='ks -1'
+alias kl='ks -lh'
+alias ka='ks -lha'
+
+# run vim or helix in a new kitty windows
+#alias khelix='kitty @ launch --cwd current --type os-window -- helix'
+#alias kvim='kitty @ launch --cwd current --type os-window -- vim'
+
+# History
+HISTFILE=~/.histfile
+HISTSIZE=8192
+SAVEHIST=8192
+setopt append_history
+setopt hist_expire_dups_first
+setopt hist_ignore_space
+setopt inc_append_history
+setopt share_history
+
+# Arrow History Management
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\eOA' up-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+bindkey '\eOB' down-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
+
+# Completion
+setopt autocd
+zstyle :compinstall filename '~/.zshrc'
+autoload -Uz compinit && compinit
+
+# NodeJS
+# see: http://npm.github.io/installation-setup-docs/installing/a-note-on-permissions.html
+export NPM_CONFIG_PREFIX=${HOME}/.npm-global
+export PATH=${PATH}:${NPM_CONFIG_PREFIX}/bin
