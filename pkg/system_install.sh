@@ -13,7 +13,7 @@ gnupg expect \
 exfat-utils dosfstools fatsort udisks2 \
 perl-rename \
 tree ncdu rsync \
-neofetch htop hwinfo lshw dmidecode \
+fastfetch htop btop hwinfo lshw dmidecode \
 wget curl tmux \
 alsa-utils
 echo "install System Done"
