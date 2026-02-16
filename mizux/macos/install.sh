@@ -8,6 +8,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/in
 brew install bash zsh bat eza htop tree wget
 brew install btop ncdu fastfetch
 brew install git tig git-gui cmake make ccache
+brew install font-dejavu-sans-mono-nerd-font
 
 brew install helix
 
