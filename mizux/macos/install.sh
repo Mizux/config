@@ -9,6 +9,8 @@ brew install bash zsh bat eza htop tree wget
 brew install btop ncdu fastfetch
 brew install git tig git-gui cmake make ccache
 
+brew install helix
+
 # brew install dart-sdk
 # brew install dotnet-sdk
 # brew install openjdk
