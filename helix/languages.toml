@@ -1,0 +1,10 @@
+[[language]]
+name = "swig"
+scope = "source.swig"
+injection-regex = "swig"
+file-types = ["i", "swig"]
+comment-token = "//"
+# Tell Helix to use the existing C++ tree-sitter parser
+grammar = "cpp"
+# Optional: Link to C++ LSP if you have clangd installed
+language-servers = [ "clangd" ]

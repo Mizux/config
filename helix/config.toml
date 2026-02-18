@@ -1,6 +1,8 @@
 #theme = "doom_acario_dark"
 #theme = "github_dark_high_contrast"
-theme = "vim_dark_high_contrast"
+#theme = "tokyonight"
+#theme = "vim_dark_high_contrast"
+theme = "mouse"
 
 [editor]
 color-modes = true
