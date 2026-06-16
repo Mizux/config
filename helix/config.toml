@@ -2,7 +2,7 @@
 #theme = "github_dark_high_contrast"
 #theme = "tokyonight"
 #theme = "vim_dark_high_contrast"
-theme = "mouse"
+theme = "cyberpunk"
 
 [editor]
 color-modes = true
