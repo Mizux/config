@@ -16,7 +16,7 @@ mkdir -pv ~/.config/kitty && cp kitty.conf ~/.config/kitty/
 mkdir -pv ~/.config/awesome && cp rc.lua ~/.config/awesome
 
 ## Hyprland
-mkdir -pv ~/.config/hypr && cp hyprland.conf ~/.config/hypr/hyprland.conf
+mkdir -pv ~/.config/hypr && cp hyprland.lua ~/.config/hypr/hyprland.lua
 mkdir -pv ~/.config/hypr && cp hyprlock.conf ~/.config/hypr/hyprlock.conf
 mkdir -pv ~/.config/waybar && cp waybar.jsonc ~/.config/waybar/config.jsonc
 
