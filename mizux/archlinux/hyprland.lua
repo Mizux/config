@@ -223,6 +223,7 @@ hl.config({
   misc = {
     force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
     disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+    on_focus_under_fullscreen = 1,  -- Keep fulscreen if any when cycling window
   },
 })
 
@@ -296,6 +297,8 @@ hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+
+hl.bind(mainMod .. " + TAB", hl.dsp.window.cycle_next())
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
