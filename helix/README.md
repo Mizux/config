@@ -55,3 +55,15 @@ Nice to read:
 
 Q: Copy/paste the clipboard using middle click is not working.<br>
 A: Install the package `xclip`.
+
+Q: Syntax doesn't seems to work e.g. if on a keyword i type `:ts-scopes` i got
+`[]`.<br>
+A: Verify grammars are installed
+```sh
+# check grammar for a language
+hx --health cpp
+# install grammars
+hx --grammar fetch
+hx --grammar build
+```
+note: you may need `git config --global url."git@github.com:".insteadOf "https://github.com/"`
