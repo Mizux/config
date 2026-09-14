@@ -8,3 +8,8 @@ comment-token = "//"
 grammar = "cpp"
 # Optional: Link to C++ LSP if you have clangd installed
 language-servers = [ "clangd" ]
+
+# --- Hytale Blockymodel ---
+[[language]]
+name = "json"
+file-types = ["json", "blockymodel"]
