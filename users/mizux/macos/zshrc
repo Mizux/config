@@ -53,15 +53,21 @@ PROMPT2="${neck}—${cur_cmd} »"
 #autoload -Uz promptinit && promptinit
 
 bindkey -e
+bindkey '^U' backward-kill-line
 #export TERM=xterm-256color
 export EDITOR=hx
 #export EDITOR=vim
 
 # PATH
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/ncurses/bin:$PATH"
+PATH="/opt/homebrew/bin:$PATH"
 export PATH=${HOME}/.local/bin:$PATH
 
 # C++
+export Curses_ROOT=/opt/homebrew/opt/ncurses
+
 #export CMAKE_C_COMPILER_LAUNCHER=ccache
 #export CMAKE_CXX_COMPILER_LAUNCHER=ccache
 export CTEST_OUTPUT_ON_FAILURE=1
@@ -73,9 +79,15 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 export PATH=${PATH}:${HOME}/go/bin
 
 # Java
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+#export JAVA_HOME="/opt/homebrew/opt/openjdk"
+#export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+#export JAVA_HOME="/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home"
 #export JAVA_HOME=/usr/lib/jvm/default
+
+# Rust
+export PATH=${HOME}/.cargo/bin:$PATH
 
 # Alias
 #alias ls='ls --group-directories-first'
@@ -96,8 +108,8 @@ alias kl='ks -lh'
 alias ka='ks -lha'
 
 # run vim or helix in a new kitty windows
-#alias khelix='kitty @ launch --cwd current --type os-window -- helix'
-#alias kvim='kitty @ launch --cwd current --type os-window -- vim'
+alias khx='kitty @ launch --cwd current --type os-window -- hx'
+alias kvim='kitty @ launch --cwd current --type os-window -- vim'
 
 # History
 HISTFILE=~/.histfile
