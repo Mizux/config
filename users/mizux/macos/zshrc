@@ -68,8 +68,6 @@ export PATH=${HOME}/.local/bin:$PATH
 # C++
 export Curses_ROOT=/opt/homebrew/opt/ncurses
 
-#export CMAKE_C_COMPILER_LAUNCHER=ccache
-#export CMAKE_CXX_COMPILER_LAUNCHER=ccache
 export CTEST_OUTPUT_ON_FAILURE=1
 
 # .Net
